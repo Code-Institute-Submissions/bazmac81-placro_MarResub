@@ -85,6 +85,13 @@ The site owner has the following goals that they wish to achieve from this proje
 
 ### Design Choices
 
+#### Data
+The scope of this project only includes frontend web technologies and tools. The web app itself would lend itself to the use of backend technologies to provide a fully individualised experience for the user.
+
+To work around this, various different front end tools will be used to provide the feeling of an individual 'registered' user experience. This will be achieved by:
+
+- Using the Web API to access and manage local and session storage so store key information based on user actions and selections
+- Using JSON data format files to store required data in place of a backend database.
 
 #### Fonts 
 
@@ -108,16 +115,14 @@ Below is the wireframe for the Home page in mobile view.
 
 ![homepagemobileview](design/wireframe/homemobileview.png)
 
-As the Contact Me section isn't a page but a modal, you can see how this will behave below. Each of the other pages and device views can be found using the links that follow:
-
-![contactmemobileview](design/wireframe/contactmemobileview.png)
-
 - Home page: [Tablet](design/wireframe/hometabletview.png) | [Desktop](design/wireframe/homedesktopview.png)
-- Treatments page: [Mobile](design/wireframe/treatmentsmobileview.png) | [Tablet](design/wireframe/treatmentstabletview.png) | [Desktop](design/wireframe/treatmentsdesktopview.png)
-- Why Wax page: [Mobile](design/wireframe/) | [Tablet](design/wireframe/) | [Desktop](design/wireframe/)
-- COVID-19: [Mobile](design/wireframe/covidmobileview.png) | [Tablet](design/wireframe/covidtabletview.png) | [Desktop](design/wireframe/coviddesktopview.png)
-- About: [Mobile](design/wireframe/aboutmobileview.png) | [Tablet](design/wireframe/abouttabletview.png) | [Desktop](design/wireframe/aboutdesktopview.png)
-- Contact (modal): [Tablet](design/wireframe/contacttabletview.png) | [Desktop](design/wireframe/contactdesktopview.png)
+- Goals page: [Mobile](design/wireframe/goalmobileview.png) | [Tablet](design/wireframe/treatmentstabletview.png) | [Desktop](design/wireframe/treatmentsdesktopview.png)
+- Targets page: [Mobile](design/wireframe/targetmobilview.png) | [Tablet](design/wireframe/) | [Desktop](design/wireframe/)
+- Return page: [Mobile](design/wireframe/returnmobileview.png) | [Tablet](design/wireframe/covidtabletview.png) | [Desktop](design/wireframe/coviddesktopview.png)
+- Recipe page: [Mobile](design/wireframe/recipemobileview.png) | [Tablet](design/wireframe/abouttabletview.png) | [Desktop](design/wireframe/aboutdesktopview.png)
+- Meal plan page: [Mobile](design/wireframe/mealplanmobileview.png) | [Tablet](design/wireframe/contacttabletview.png) | [Desktop](design/wireframe/contactdesktopview.png)
+- Shopping list page: [Mobile](design/wireframe/listmobileview.png) | [Tablet](design/wireframe/contacttabletview.png) | [Desktop](design/wireframe/contactdesktopview.png)
+
 
 ### **Features & Future Releases**
 For this initial release, the web app for Placro will include the following item IDs from the features and requirements list above and will be in scope:
@@ -193,6 +198,7 @@ _[Back to Contents](#Contents)_
 - HTML5 - base content creation
 - CSS3 - site styling
 - Javascript - for all site interactivity
+- JSON - used as a datastore as the scope of this project does not utilise backend development
 
 ### Tools and Libraries Used
 - GitPod, Git and GitHub - Used to create code, manage version control and host the project
