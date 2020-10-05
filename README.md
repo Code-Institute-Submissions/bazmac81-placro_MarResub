@@ -122,7 +122,7 @@ Below is the wireframe for the Home page in mobile view.
 - Recipe page: [Mobile](design/wireframe/recipemobileview.png) | [Tablet](design/wireframe/abouttabletview.png) | [Desktop](design/wireframe/aboutdesktopview.png)
 - Meal plan page: [Mobile](design/wireframe/mealplanmobileview.png) | [Tablet](design/wireframe/contacttabletview.png) | [Desktop](design/wireframe/contactdesktopview.png)
 - Shopping list page: [Mobile](design/wireframe/listmobileview.png) | [Tablet](design/wireframe/contacttabletview.png) | [Desktop](design/wireframe/contactdesktopview.png)
-
+- Shopping list page: [Mobile](design/wireframe/aboutmobileview.png) | [Tablet](design/wireframe/abouttabletview.png) | [Desktop](design/wireframe/aboutdesktopview.png)
 
 ### **Features & Future Releases**
 For this initial release, the web app for Placro will include the following item IDs from the features and requirements list above and will be in scope:
