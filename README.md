@@ -84,6 +84,7 @@ The site owner has the following goals that they wish to achieve from this proje
 - Be **clean and simple** in design and not be perceived as overloaded and cluttered with excessive content
 
 ### Design Choices
+A sample prototype page can be found [here]() which shows the fonts and colourways that will be used as the basis for this project.
 
 #### Data
 The scope of this project only includes frontend web technologies and tools. The web app itself would lend itself to the use of backend technologies to provide a fully individualised experience for the user.
@@ -94,10 +95,11 @@ To work around this, various different front end tools will be used to provide t
 - Using JSON data format files to store required data in place of a backend database.
 
 #### Fonts 
-
+Rubik & Karla google fonts.
+Rubik will be used for headers while Karla will be used for body text.
 
 #### Colours
-
+Using coolors I have selected a selection of simple, high contrast colours.
 
 #### Icons
 In addition to the fonts and colourway, there are a few icons to be used through the site. These are sourced from Font Awesome and will be used to help direct users and sign post relevant sections using expected conventions. 
