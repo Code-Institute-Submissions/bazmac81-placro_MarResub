@@ -3,9 +3,78 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
     <title>Placro - Plan your meals to hit your macros!</title>
 </head>
+
 <body>
-    
+    <header class="container-fluid">
+        <nav class="row">
+            <div class="nav-brand">
+                <h1>PLACRO</h1>
+            </div>
+        </nav>
+    </header>
+
+    <main class="container-fluid">
+        <div class="jumbotron jumbotron-fluid">
+            <div class="container">
+                <h1 class="display-4">Macro based meal planning</h1>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-9 mx-auto">
+                <p>
+                    Intro to site
+                </p>
+                <p>
+                    About the steps being taken
+                </p>
+            </div>
+            <div class="col-9 mx-auto">
+                Form for intial stats entry
+                <form id="stats">
+                    <fieldset class="form-group">    
+                        <label class="sr-only" for="name">Name</label>
+                        <input class="form-control" id="name" type="text" placeholder="Name"/>
+                        <label class="sr-only" for="age">Age</label>
+                        <input class="form-control" id="age" type="number" placeholder="Age"/>
+                        <label class="sr-only" for="number">Weight</label>
+                        <input class="form-control" id="weight" type="number" placeholder="Weight"/>
+                        <label class="sr-only" for="height">Height</label>
+                        <input class="form-control" id="height" type="number" placeholder="Height"/>
+                        <label class="sr-only" for="body-fat">Body Fat %</label>
+                        <input class="form-control" id="body-fat" type="number" placeholder="Body Fat %"/>
+                        <div class="form-check form-check-inline">
+                            <label class="form-check-label" for="measure-imp">Imperial (in/lbs)</label>
+                            <input id="measure-imp" class="form-check-input" type="radio" />
+                        </div>
+                        <div class="form-check form-check-inline">
+                            <label class="form-check-label" for="measure-met">Metric (cm/kg)</label>
+                            <input id="measure-met" class="form-check-input" type="radio" />
+                        </div>
+                    </fieldset>
+                    <button class="btn btn-primary">Next</button>
+                </form>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-12">    
+                <h2>About</h2>
+                <p>
+                    Things about Placro here
+                </p>
+            </div>
+        </div>
+    </main>
+
+    <footer class="container-fluid">
+        <div class="row">
+            <i></i>
+            <i></i>
+            <span>About</span>
+            <span>Spiro Web Development 2020</span>
+        </div>
+    </footer>
 </body>
 </html>
