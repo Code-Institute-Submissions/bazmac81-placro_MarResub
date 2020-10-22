@@ -3,35 +3,47 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!---------- Add in Bootstrap and local CSS content -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+    <link rel="stylesheet" href="assets/css/style.css" type="text/css">
     <title>Placro - Plan your meals to hit your macros!</title>
 </head>
 
 <body>
-    <header class="container-fluid">
+    <!---------- Header content including Nav -->
+    <header class="container">
         <nav class="row">
-            <div class="nav-brand">
-                <h1>PLACRO</h1>
+            <div class="navbar-brand">
+                <h1 id="logo">PLACRO</h1>
             </div>
         </nav>
     </header>
 
-    <main class="container-fluid">
-        <div class="jumbotron jumbotron-fluid">
-            <div class="container">
-                <h1 class="display-4">Macro based meal planning</h1>
+    <!---------- Main body content -->
+    <main class="container-fluid px-0">
+    
+    <!---------- Main page cover image -->
+        <div class="jumbotron jumbotron-fluid" id="cover_img">
+            <div class="container heading" id="cover_title">
+                <h1 class="display-sm-3 display-md-4">Macro based meal planning</h1>
             </div>
         </div>
-        <div class="row">
-            <div class="col-9 mx-auto">
+
+    <!---------- Stats section -->
+        <div class="row no-gutters">
+            <div class="col-11 col-sm-10 col-lg-9 mx-auto">
+                <h2 class="heading">Welcome to Placro</h2> 
                 <p>
-                    Intro to site
+                    When you're building your meal plan to support your workout programme, you want to make sure that your fueling your body right to reach your goals. Just by entering a few deatils <span class="brand">Placro</span> will not only give you a clear overview of what your macros are but also help you choose from a wide range of recipes to build a meal plan tailored to you.
                 </p>
+                <h2 class="heading">A few details to get started</h2>
                 <p>
-                    About the steps being taken
+                    First up, you need to enter a few simple details to get started. By entering these stats, <span class="brand">placro</span> will have the basis of what it needs to generate your target numbers. Next we'll check what goal you're working towards; are you cutting, maintaining, or bulking. That's it - you can then start building your meal plan while <span class="brand">placro</span> keeps a track of how much you've 'spent'. You can even save your choices to your browser so they're available next time you come back to the site. Simple!
                 </p>
             </div>
-            <div class="col-9 mx-auto">
+        </div>
+        <div class="row no-gutters">
+            <div class="col-11 col-sm-10 col-lg-9 mx-auto">
                 Form for intial stats entry
                 <form id="stats">
                     <fieldset class="form-group">    
@@ -46,30 +58,100 @@
                         <label class="sr-only" for="body-fat">Body Fat %</label>
                         <input class="form-control" id="body-fat" type="number" placeholder="Body Fat %"/>
                         <div class="form-check form-check-inline">
+                            <input id="measure-imp" class="form-check-input" type="radio" name="measures"/>
                             <label class="form-check-label" for="measure-imp">Imperial (in/lbs)</label>
-                            <input id="measure-imp" class="form-check-input" type="radio" />
                         </div>
-                        <div class="form-check form-check-inline">
+                        <div class="form-check form-check-inline mx-auto">
+                            <input id="measure-met" class="form-check-input" type="radio" name="measures" checked/>
                             <label class="form-check-label" for="measure-met">Metric (cm/kg)</label>
-                            <input id="measure-met" class="form-check-input" type="radio" />
                         </div>
                     </fieldset>
-                    <button class="btn btn-primary">Next</button>
+                    <button class="btn">Next</button>
                 </form>
             </div>
         </div>
-        <div class="row">
-            <div class="col-12">    
-                <h2>About</h2>
+
+    <!---------- Goal selection -->
+        <div class="row no-gutters">
+            <div class="col-11 col-sm-10 col-lg-9 mx-auto">
+                <h2 class="heading">What is your goal?</h2>
                 <p>
-                    Things about Placro here
+                    Now that you've got your stats down, you need to choose your goal right now. This isn't fixed and you can adjust this at any time.
                 </p>
+                <p>
+                    Selecting your goal impacts the mix of macros you need to build your daily calorie target as well as the calorie target itself.
+                </p>
+            </div>
+        </div>
+        <div class="row no-gutters">
+            <div class="col-11 col-sm-10 col-lg-9 mx-auto">
+                <form class="mx-auto">
+                    <fieldset class="fieldset-group">
+                         <div class="form-check">
+                            <input id="goal-build" class="form-check-input" type="radio" name="goals" /> 
+                            <label class="form-check-label" for="goal-build">Build</label>
+                         </div>
+                         <div class="form-check">
+                            <input id="goal-maintain" class="form-check-input" type="radio" name="goals" />
+                            <label class="form-check-label" for="goal-maintain">Maintain</label>
+                         </div>
+                         <div class="form-check">
+                            <input id="goal-cut" class="form-check-input" type="radio" name="goals"/>
+                            <label class="form-check-label" for="goal-cut">Cut</label>
+                         </div>
+                    </fieldset>
+                    <button class="btn">Next</button>
+                </form>
+            </div>
+        </div>
+    
+    <!---------- About section -->   
+        <div class="row no-gutters">
+            <div class="col-11 col-sm-10 col-lg-9 mx-auto">    
+                <h2 class="heading">About</h2>
+                <h3 class="heading">What's behind Placro</h3>
+                <p>
+                    The science behind the numbers in Placro are based on the programme developed in Bigger Leaner Stronger by Mike Matthews. The principle is based on building muscle by giving the body the right fuel. By planning your meals using macro nutrients you are building a plan that maximises your daily calorie allowance to hit your goals. 
+                </p>
+                <h3 class="heading">What are Macros anyway?</h3>
+                <p>Macro nutrients are listed below:</p>
+                <ul>
+                    <li>Protein</li>
+                    <li>Carbohydrate</li>
+                    <li>Fat</li>
+                </ul>
+                <p>
+                    The key thing to note is this isn't designed to be a fad style diet overly emphasising or exluding any particular group. In fact its the opposite and designed to help you eat right based on your goals.
+                </p>
+                <h3 class="heading">What Goals does this actually help with?</h3>
+                <p>
+                    Typically in body building you would aim to achieve one of 3 goals with your diet:
+                </p>
+                <ul>
+                    <li>Bulk - Eat to gain body / muscle mass to support your training plan</li>
+                    <li>Maintain - Your meal plan is built to help you maintain your current body weight</li>
+                    <li>Cut - For when you want to move towards a more lean body mass, cutting your body fat</li>
+                </ul>
+                <p>
+                    By selecting your goal as part of your stats using Plecro, your target daily calorie intake and macro nutrient mix, are adjusted to deliver on your goal. 
+                </p>
+                <h3 class="heading">Where do I found out more?</h3>
+                <p>Below you will find a link to Bigger Leaner Stronger which will cover the philosophy in much great detail. Also you will find a link to the Shredded Chef, which contains great recipes to help you plan your macros, some of which you will find on Placro.</p>
+            </div>
+        </div>
+        <div class="row no-gutters">
+            <div class="col-7 col-sm-5 col-md-4 col-lg-3 mx-auto">
+                <a href="https://www.amazon.co.uk/gp/product/B006XF5BTG/ref=series_rw_dp_sw" target="_blank"><img class="book_cover" src="assets/images/BLScover.jpg" alt="Bigger Leaner Stronger book cover" /></a>
+            </div>
+            <div class="col-7 col-sm-5 col-md-4 col-lg-3 mx-auto">
+                <a href="https://www.amazon.co.uk/Shredded-Chef-Recipes-Building-Getting-ebook/dp/B007FW0PI8" target="_blank"><img class="book_cover" src="assets/images/shredchefcover.jpg" alt="The Shredded Chef book cover" /></a>
             </div>
         </div>
     </main>
 
+    <!---------- Footer content -->
     <footer class="container-fluid">
-        <div class="row">
+        <div class="row no-gutters">
             <i></i>
             <i></i>
             <span>About</span>
