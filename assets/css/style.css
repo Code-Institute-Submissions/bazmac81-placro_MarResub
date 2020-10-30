@@ -7,16 +7,31 @@ body {
     margin: 0px;
 }
 
+.container {
+    padding: 0;
+}
+
+/*---------- Navbar formatting -----*/
+
+.navbar {
+    padding: 0px;
+}
+
 .navbar-nav {
     background-color: #082649ff;
     width: 100%;
-    height: 40px;
     font-family: 'Rubik', Arial, Helvetica, sans-serif;
     font-weight: 600;
 }
 
-.nav-item {}
+.nav-item {
     margin: 0px 15px 0px 15px;
+    padding: 10px;
+}
+
+.nav-break {
+    border: 5px #082649ff solid;
+    margin: 0px 0px 5px 0px;
 }
 
 .dark {
@@ -31,28 +46,16 @@ body {
     margin-bottom: 0px;
 }
 
-#cover_img {
-    height: 70vh;
-    background: url("../images/meal_cover_img.jpg") no-repeat center;
-    background-clip: border-box;
-    background-size: cover;
-    padding: 0px;
-}
+/*---------- Base headings and titles -----*/
 
-h2 {
+h1, h2 {
     text-transform: uppercase;
 }
 
 .heading {
     font-family: 'Rubik', Arial, Helvetica, sans-serif;
     color: #495d63ff;
-    margin-top: 20px;
     font-size: 100%;
-}
-
-.book_cover {
-    width: 100%;
-    margin-top: 20px;
 }
 
 .brand {
@@ -71,7 +74,36 @@ h2 {
     margin: 20px 20px;
 }
 
-/*---------- Planner page stats and recipe formatting */
+/*---------- Links and buttons -----*/
+
+a, a:visited {
+    color: #f46036ff;
+}
+
+.nav a.current, a:active, a:hover {
+    color: #30bcedff;
+    text-decoration: none;
+}
+
+.btn {
+    background-color: #f46036ff;
+    color: #082649ff;
+}
+
+.btn:hover {
+    color: #30bcedff;
+}
+
+#cover_img {
+    height: 70vh;
+    background: url("../images/meal_cover_img.jpg") no-repeat center;
+    background-clip: border-box;
+    background-size: cover;
+    padding: 0px;
+}
+
+/*---------- Stats and Planner numbers -----*/
+
 .macro {
     border-radius: 50%;
     border: #495d63ff 5px solid;
@@ -82,7 +114,25 @@ h2 {
     margin-top: 20px;
 }
 
-.macro p {
+.macro_pc {
+    border-radius: 50%;
+    border: #495d63ff 5px solid;
+    width: 70px;
+    height: 70px;
+    background-color: #30bcedff;
+    margin-top: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center; 
+}
+
+.macro-elem {
+    margin: 0px;
+    padding: 0px;
+    text-align: center;
+}
+
+.macro p, .macro_pc p, .meal_pc {
     font-family: 'Fira Sans', Arial, Helvetica, sans-serif;
     font-weight: 200;
     text-transform: uppercase;
@@ -91,15 +141,108 @@ h2 {
     margin: 0px;
 }
 
+.macro_pc p, .meal_pc{
+    font-size: 1.75rem;
+}
+
 .stat {
     font-size: 3rem;
 }
+
+.icon {
+    width: 50px;
+    height: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#breakfast:before {
+    content: ' ';
+    display: block;
+    position: absolute;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0.4;
+    background: url("../images/croissant.svg") no-repeat center;
+    background-size: contain;
+}
+
+#lunch:before {
+    content: ' ';
+    display: block;
+    position: absolute;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0.4;
+    background: url("../images/sandwich.svg") no-repeat center;
+    background-size: contain;
+}
+
+#dinner:before {
+    content: ' ';
+    display: block;
+    position: absolute;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0.4;
+    background: url("../images/restaurant.svg") no-repeat center;
+    background-size: contain;
+}
+
+#snack:before {
+    content: ' ';
+    display: block;
+    position: absolute;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0.4;
+    background: url("../images/energy-bar.svg") no-repeat center;
+    background-size: contain;
+
+}
+
+.meal-banner {
+    background-color: #30bcedff;
+    margin: 30px 0px;
+    border-top: 2px solid #495d63ff;
+    border-bottom: 2px solid #495d63ff;
+    display: flex;
+    align-items: center;
+    height: 50px;
+}
+
+.meal-banner h2 {
+    font-size: 1.5rem;
+    margin: 0;
+}
+
+/*---------- Meal recipe cards -----*/
 
 .meal {
     border-radius: 10%;
     border: 0px;
     width: 150px;
     height: 150px;
+}
+
+.meal-img {
+    width: 100%;
+    height: 125px;
+    background-color: #495d63ff;
+    content: ' ' ;
 }
 
 .meal p {
@@ -111,7 +254,16 @@ h2 {
     margin: 0px;
 }
 
-footer {
+.recipe-card {
+    margin-bottom: 30px;
+    padding: 10px 10px;
+}
+
+footer.container-fluid {
+    padding: 0;
+}
+
+footer div{
     color: #f8f0fbff;
     background-color: #082649ff;
     height: 50px;
@@ -120,21 +272,15 @@ footer {
     margin-top: 20px;
 }
 
-a, a:visited {
-    color: #f46036ff;
+.middle {
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
-.nav a.current, a:active, a:hover {
-    color: #30bcedff;
-}
-
-.btn {
-    background-color: #f46036ff;
-    color: #082649ff;
-}
-
-.btn:hover {
-    color: #30bcedff;
+.book_cover {
+    width: 100%;
+    margin-top: 20px;
 }
 
 /* colour pallette: 
