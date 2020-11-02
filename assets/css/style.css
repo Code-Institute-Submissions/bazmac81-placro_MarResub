@@ -110,7 +110,10 @@ a, a:visited {
     width: 150px;
     height: 150px;
     background-color: #30bcedff;
-    align-content: middle;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
     margin-top: 20px;
 }
 
@@ -236,6 +239,9 @@ a, a:visited {
     border: 0px;
     width: 150px;
     height: 150px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .meal-img {
@@ -252,6 +258,7 @@ a, a:visited {
     text-transform: uppercase;
     text-align: center;
     margin: 0px;
+    line-height: 0.75;
 }
 
 .recipe-card {
