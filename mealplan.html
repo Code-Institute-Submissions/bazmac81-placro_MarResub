@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!---------- Add in Bootstrap and local CSS content -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+    <link rel="stylesheet" href="assets/css/style.css" type="text/css">
+    <!---------- Add in Fontawesome kit-->
+    <script src="https://kit.fontawesome.com/dd053466e8.js" crossorigin="anonymous"></script>
+    <title>Placro - Plan your meals to hit your macros!</title>
+</head>
+
+<body class="container-fluid px-0">
+    <!---------- Header content including Nav -->
+    <header class="row no-gutters">
+        <nav class="navbar navbar-expand-md navbar-light col-12 col-md-10 col-lg-9 mx-auto">
+            <div class="navbar-brand">
+                <h1 id="logo">PLACRO</h1>
+            </div>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarMenu" aria-controls="navbarSupportedContent" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse align-items-md-center" id="navbarMenu">
+                <ul class="navbar-nav justify-content-md-around align-items-md-center">
+                    <li class="nav-item">
+                        <a href="index.html#stats">Your stats</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="index.html#goals">Your goal</a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Meal</a>
+                        <div class="dropdown-menu">
+                            <a class="dropdown-item" href="planner.html">Breakfast</a>
+                            <a class="dropdown-item" href="planner.html">Lunch</a>
+                            <a class="dropdown-item" href="planner.html">Dinner</a>
+                            <a class="dropdown-item" href="planner.html">Snacks</a>
+                        </div>
+                    </li>
+                    <li class="nav-item">
+                        <a href="mealplan.html">Meal plan</a>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+
+    <hr class="nav-break d-md-none">
+
+    <!---------- Main body content -->
+    <main class="container-fluid px-0">
+    
+    <!---------- Macro tracker bar -->
+        <div class="row no-gutters"> 
+            <div class="col-12 col-md-10 col-lg-9 mx-auto">
+                <div class="row no-gutters">
+                    <div class="macro-elem col-3 mx-auto">
+                        <div class="macro_pc mx-auto">
+                            <p class="stat"><span id="calorie_pc">50%</span></p>
+                        </div>
+                        <p><span id="calorie">2000</span> calories</p>
+                    </div>
+                    <div class="macro-elem col-3 mx-auto">
+                        <div class="macro_pc mx-auto">
+                            <p class="stat"><span id="protein_pc">30%</span></p>
+                        </div>
+                        <p><span id="protein">70</span>g protein</p>
+                    </div>
+                    <div class="macro-elem col-3 mx-auto">
+                        <div class="macro_pc mx-auto">        
+                            <p class="stat"><span id="carb_pc">40%</span></p>
+                        </div>
+                        <p><span id="carb">60</span>g carbohydrate</p>
+                    </div>
+                    <div class="macro-elem col-3 mx-auto">
+                        <div class="macro_pc mx-auto">   
+                            <p class="stat"><span id="fat_pc">55%</span></p>
+                        </div>
+                        <p><span id="fat">45</span>g fat</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    <!---------- Meal stats tracker bar -->
+        <div class="row no-gutters">
+            <div class="col-12 col-md-10 col-lg-9 mx-auto">
+                <div class="row no-gutters">
+                    <div class="col-3 mx-auto">
+                        <div class="icon mx-auto" id="breakfast">
+                            <span class="meal_pc" id="breakfast_pc">30%</span>
+                        </div>
+                    </div>
+                    <div class="col-3 mx-auto">
+                        <div class="icon mx-auto" id="lunch">
+                            <span class="meal_pc" id="lunch_pc">0%</span>
+                        </div>
+                    </div>
+                    <div class="col-3 mx-auto">
+                        <div class="icon mx-auto" id="dinner">
+                            <span class="meal_pc" id="dinner_pc">0%</span>
+                        </div>
+                    </div>
+                    <div class="col-3 mx-auto">
+                        <div class="icon mx-auto" id="snack">
+                            <span class="meal_pc" id="snack_pc">0%</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!---------- Meal Plan Header with Shopping List button -->
+        <div class="row no-gutters">
+            <div class="col-12 col-md-10 col-lg-9 mx-auto">
+                <div class="row meal-banner">
+                    <div class="col-7 col-md-8 mx-auto pr-0">
+                        <h2 class="heading">Meal Plan</h2>
+                    </div>
+                    <div class="col-5 col-md-4 mx-auto px-0 justify-content-right">
+                        <button class="btn mx-auto" type="button" data-toggle="modal" data-target="#shopping-list">Shopping List</button> 
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!---------- Meal Plan Summary display -->
+        <div class="row no-gutters">
+            <div class="col-12 col-md-10 col-lg-9 mx-auto">
+                <div>
+                    <h3 class="heading">Breakfast</h3>
+                    <ul class="mealplan-list">
+                        <li class="mealplan-item">
+                            <button class="btn remove"><i class="fa fa-times-circle remove"></i></button><span class="recipe-name"> Recipe 1</span>
+                        </li>
+                        <li class="mealplan-item">
+                            <button class="btn remove"><i class="fa fa-times-circle remove"></i></button><span class="recipe-name"> Recipe 2</span>
+                        </li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="heading">Lunch</h3>
+                    <ul>
+                        <li class="mealplan-item">
+                            <button class="btn remove"><i class="fa fa-times-circle remove"></i></button><span class="recipe-name"> Recipe 3</span>
+                        </li>
+                        <li class="mealplan-item">
+                            <button class="btn remove"><i class="fa fa-times-circle remove"></i></button><span class="recipe-name"> Recipe 4</span>
+                        </li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="heading">Dinner</h3>
+                    <ul>
+                        <li class="mealplan-item">
+                            <button class="btn remove"><i class="fa fa-times-circle remove"></i></button><span class="recipe-name"> Recipe 5</span>
+                        </li>
+                        <li class="mealplan-item">
+                            <button class="btn remove"><i class="fa fa-times-circle remove"></i></button><span class="recipe-name"> Recipe 6</span>
+                        </li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="heading">Snack</h3>
+                    <ul>
+                        <li class="mealplan-item">
+                            <button class="btn remove"><i class="fa fa-times-circle remove"></i></button><span class="recipe-name"> Recipe 7</span>
+                        </li>
+                        <li class="mealplan-item">
+                            <button class="btn remove"><i class="fa fa-times-circle remove"></i></button><span class="recipe-name"> Recipe 8</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!---------- Footer content -->
+    <footer class="row no-gutters container-fluid">
+        <div class="col-12 col-md-10 col-lg-9 mx-auto align-items-center justify-content-around">
+            <i></i>
+            <i></i>
+            <span>About</span>
+            <span>Spiro Web Development 2020</span>
+        </div>
+    </footer>
+
+    <!---------- Stats Modal -->
+
+
+    <!---------- Goals Modal -->
+
+
+    <!---------- Shopping List Modal -->
+    <div class="modal fade" id="shopping-list" tabindex="-1" role="dialog" aria-labelledby="Shopping List" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-scrollable" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="heading modal-title">Ingredients Shopping List</h5>
+                    <button class="close" data-dismiss="modal" aria-label="close">
+                        <span>&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <ul>
+                        <li>Potatoes</li>
+                        <li>Cauliflower</li>
+                        <li>Tomatoes</li>
+                        <li>Garlic</li>
+                        <li>Raspberries</li>
+                        <li>0% fat yogurt</li>
+                        <li>Mango</li>
+                        <li>Salmon</li>
+                        <li>Chicken</li>
+                        <li>Broccoli</li>
+                    </ul>
+                </div>
+                <div class="modal-footer">
+                    <button class="btn">Copy to Clipboard</button>
+                    <button class="btn">Print</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- JS files for JQuery and Bootstrap-->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.min.js" integrity="sha384-w1Q4orYjBQndcko6MimVbzY0tgp4pWB4lZ7lr30WKz0vr/aWKhXdBNmNb5D92v7s" crossorigin="anonymous"></script>
+</body>
+</html>
