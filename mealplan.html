@@ -24,10 +24,10 @@
             <div class="collapse navbar-collapse align-items-md-center" id="navbarMenu">
                 <ul class="navbar-nav justify-content-md-around align-items-md-center">
                     <li class="nav-item">
-                        <a href="index.html#stats">Your stats</a>
+                        <a type="button" data-toggle="modal" data-target="#amend-stats">Your stats</a>
                     </li>
                     <li class="nav-item">
-                        <a href="index.html#goals">Your goal</a>
+                        <a type="button" data-toggle="modal" data-target="#amend-goal">Your goal</a>
                     </li>
                     <li class="nav-item dropdown">
                         <a class="dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Meal</a>
@@ -187,10 +187,46 @@
     </footer>
 
     <!---------- Stats Modal -->
-
+    <div class="modal fade" id="amend-stats" tabindex="-1" role="dialog" aria-labelledby="Amend Stats" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-scrollable" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="heading modal-title">Update your stats</h5>
+                    <button class="close" data-dismiss="modal" aria-label="close">
+                        <span>&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    
+                </div>
+                <div class="modal-footer">
+                    <button class="btn">Cancel</button>
+                    <button class="btn">Update</button>
+                </div>
+            </div>
+        </div>
+    </div>
 
     <!---------- Goals Modal -->
-
+    <div class="modal fade" id="amend-goal" tabindex="-1" role="dialog" aria-labelledby="Amend Goals" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-scrollable" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="heading modal-title">Update your goals</h5>
+                    <button class="close" data-dismiss="modal" aria-label="close">
+                        <span>&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    
+                </div>
+                <div class="modal-footer">
+                    <button class="btn">Cancel</button>
+                    <button class="btn">Update</button>
+                </div>
+            </div>
+        </div>
+    </div>
 
     <!---------- Shopping List Modal -->
     <div class="modal fade" id="shopping-list" tabindex="-1" role="dialog" aria-labelledby="Shopping List" aria-hidden="true">
