@@ -24,6 +24,10 @@ body {
     font-weight: 600;
 }
 
+.navbar-toggler {
+    margin-right: 10px;
+}
+
 .nav-item {
     margin: 0px 15px 0px 15px;
     padding: 10px;
@@ -80,7 +84,7 @@ a, a:visited, a:not([href]) {
     color: #f46036ff;
 }
 
-.nav a.current, a:active, a:hover {
+.nav a.current, a:active, a:hover, a:not([href]):hover {
     color: #30bcedff;
     text-decoration: none;
 }
@@ -91,8 +95,13 @@ a, a:visited, a:not([href]) {
     border: 2px solid #495d63ff;
 }
 
-.btn:hover, .btn.remove:hover {
+.btn:hover, .btn.remove:hover .cancel:hover{
     color: #30bcedff;
+}
+
+.cancel {
+    background-color: #495d63ff;
+    color: #f46036ff;
 }
 
 #cover_img {
@@ -296,6 +305,12 @@ footer div{
 .mealplan-item {
     text-decoration: none;
     margin-top: 10px;
+}
+
+/*---------- Forms -----*/
+
+input {
+    margin: 5px 0px;
 }
 
 .modal-content {

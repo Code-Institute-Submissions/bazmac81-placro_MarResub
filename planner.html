@@ -24,10 +24,10 @@
             <div class="collapse navbar-collapse align-items-md-center" id="navbarMenu">
                 <ul class="navbar-nav justify-content-md-around align-items-md-center">
                     <li class="nav-item">
-                        <a href="index.html#stats">Your stats</a>
+                        <a type="button" data-toggle="modal" data-target="#amend-stats">Your stats</a>
                     </li>
                     <li class="nav-item">
-                        <a href="index.html#goals">Your goal</a>
+                        <a type="button" data-toggle="modal" data-target="#amend-goal">Your goal</a>
                     </li>
                     <li class="nav-item dropdown">
                         <a class="dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Meal</a>
@@ -279,6 +279,86 @@
             <span>Spiro Web Development 2020</span>
         </div>
     </footer>
+
+    <!---------- Stats Modal -->
+    <div class="modal fade" id="amend-stats" tabindex="-1" role="dialog" aria-labelledby="Amend Stats" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-scrollable" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="heading modal-title">Update your stats</h5>
+                    <button class="close" data-dismiss="modal" aria-label="close">
+                        <span>&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <form id="stats">
+                        <fieldset class="form-group">    
+                            <label class="sr-only" for="name">Name</label>
+                            <input class="form-control" id="name" type="text" placeholder="Name"/>
+                            <label class="sr-only" for="age">Age</label>
+                            <input class="form-control" id="age" type="number" placeholder="Age"/>
+                            <label class="sr-only" for="number">Weight</label>
+                            <input class="form-control" id="weight" type="number" placeholder="Weight"/>
+                            <label class="sr-only" for="height">Height</label>
+                            <input class="form-control" id="height" type="number" placeholder="Height"/>
+                            <label class="sr-only" for="body-fat">Body Fat %</label>
+                            <input class="form-control" id="body-fat" type="number" placeholder="Body Fat %"/>
+                            <div class="form-check form-check-inline">
+                                <input id="measure-imp" class="form-check-input" type="radio" name="measures"/>
+                                <label class="form-check-label" for="measure-imp">Imperial (in/lbs)</label>
+                            </div>
+                            <div class="form-check form-check-inline mx-auto">
+                                <input id="measure-met" class="form-check-input" type="radio" name="measures" checked/>
+                                <label class="form-check-label" for="measure-met">Metric (cm/kg)</label>
+                            </div>
+                        </fieldset>
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <button class="btn cancel" data-dismiss="modal" aria-label="close">Cancel</button>
+                    <button class="btn">Update</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!---------- Goals Modal -->
+    <div class="modal fade" id="amend-goal" tabindex="-1" role="dialog" aria-labelledby="Amend Goals" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-scrollable" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="heading modal-title">Update your goals</h5>
+                    <button class="close" data-dismiss="modal" aria-label="close">
+                        <span>&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <p>Want to change your goal? Select your new goal and press update to refresh your macros.</p>
+                    <p>If you have already started building your meal plan, you may need to review you recipes to make sure they meet your targets.</p>
+                    <form class="mx-auto" id="goals">
+                        <fieldset class="fieldset-group">
+                            <div class="form-check">
+                                <input id="goal-build" class="form-check-input" type="radio" name="goals" /> 
+                                <label class="form-check-label" for="goal-build">Build</label>
+                            </div>
+                            <div class="form-check">
+                                <input id="goal-maintain" class="form-check-input" type="radio" name="goals" />
+                                <label class="form-check-label" for="goal-maintain">Maintain</label>
+                            </div>
+                            <div class="form-check">
+                                <input id="goal-cut" class="form-check-input" type="radio" name="goals"/>
+                                <label class="form-check-label" for="goal-cut">Cut</label>
+                            </div>
+                        </fieldset>
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <button class="btn cancel" data-dismiss="modal" aria-label="close">Cancel</button>
+                    <button class="btn">Update</button>
+                </div>
+            </div>
+        </div>
+    </div>
 
     <!-- JS files for JQuery and Bootstrap-->
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
