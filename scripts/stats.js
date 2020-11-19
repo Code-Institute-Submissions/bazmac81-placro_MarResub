@@ -1,27 +1,31 @@
 // Calculate Calories
 
-function macrosCalc(cals, goal) {
-    var protMulti, carbMulti, fatMulti = 0;
-    
-    var protein = Math.round((cals * 0.3) / 4);
-    var carbs = Math.round((cals * 0.45) / 4);
-    var fat = Math.round((cals * 0.25) / 9);
+function macrosCalc(cals, g) {
+    var protMulti, carbMulti, fatMulti, protein, carbs, fat = 0;
 
-    if (goal === "build"){
-        protMutli = 0.25;
-        carbMulti = 0.25;
-        fatMulti = 0.25;
+    if (g === "build"){
+        protMulti = 0.25;
+        carbMulti = 0.55;
+        fatMulti = 0.2;
+        cals = Math.round(cals * 1.1);
     } 
-    else if(goal === "cut"){
-        protMutli = 0.25;
-        carbMulti = 0.25;
-        fatMulti = 0.25;
+    else if(g === "cut"){
+        protMulti = 0.4;
+        carbMulti = 0.4;
+        fatMulti = 0.2;
+        cals = Math.round(cals * 0.75);
     } 
     else {
-        protMutli = 0.25;
-        carbMulti = 0.25;
+        protMulti = 0.3;
+        carbMulti = 0.45;
         fatMulti = 0.25;
     }
+
+    console.log(g, protMulti, carbMulti, fatMulti);
+
+    protein = Math.round((cals * protMulti) / 4);
+    carbs = Math.round((cals * carbMulti) / 4);
+    fat = Math.round((cals * fatMulti) / 9);
 
     var stats = [cals, protein, carbs, fat];
     return stats;

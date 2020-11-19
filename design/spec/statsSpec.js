@@ -38,31 +38,23 @@ describe("Calculate all Macros and total calories", function(){
         });
     });
     describe("Macros calc test", function(){
-        var goal = "build";
-        
-        if(goal === "build"){
-            it("should return 188", function(){
-                expect(macrosCalc(2510)).toEqual([2510, 173, 380, 61]);
-            });
-            it("should return 282", function(){
-                expect(macrosCalc(2678)).toEqual([2678, 184, 405, 65]);
-            });    
-        }
-        else if(goal === "cut"){
-            it("should return 188", function(){
-                expect(macrosCalc(2510)).toEqual([2510, 188, 188, 42]);
-            });
-            it("should return 282", function(){
-                expect(macrosCalc(2678)).toEqual([2678, 201, 201, 45]);
-            });
-        }
-        else {
-            it("should return 188", function(){
-                expect(macrosCalc(2510)).toEqual([2510, 188, 282, 70]);
-            });
-            it("should return 282", function(){
-                expect(macrosCalc(2678)).toEqual([2678, 201, 301, 74]);
-            });
-        };
+        it("should return macros for Build goal for 2510 cals", function(){
+            expect(macrosCalc(2510, "build")).toEqual([2761, 173, 380, 61]);
+        });
+        it("should return macros for Build goal for 2678 cals", function(){
+            expect(macrosCalc(2678, "build")).toEqual([2946, 184, 405, 65]);
+        });    
+        it("should return macros for Cut goal for 2510 cals", function(){
+            expect(macrosCalc(2510, "cut")).toEqual([1883, 188, 188, 42]);
+        });
+        it("should return macros for Cut goal for 2678 cals", function(){
+            expect(macrosCalc(2678, "cut")).toEqual([2009, 201, 201, 45]);
+        });
+        it("should return macros for Maintain goal for 2510 cals", function(){
+            expect(macrosCalc(2510, "maintain")).toEqual([2510, 188, 282, 70]);
+        });
+        it("should return macros for Maintain goal for 2678 cals", function(){
+            expect(macrosCalc(2678, "maintain")).toEqual([2678, 201, 301, 74]);
+        });
     });
 });
