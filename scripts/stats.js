@@ -21,8 +21,6 @@ function macrosCalc(cals, g) {
         fatMulti = 0.25;
     }
 
-    console.log(g, protMulti, carbMulti, fatMulti);
-
     protein = Math.round((cals * protMulti) / 4);
     carbs = Math.round((cals * carbMulti) / 4);
     fat = Math.round((cals * fatMulti) / 9);
@@ -52,8 +50,39 @@ function tdeeCalc(bmr){
     return tdee;
 };
 
-var goal = "build";
+function statsCapture(e){
+    console.log("Click captured");
+    e.preventDefault();
+};
+
+function getGoal(){
+    return "build";
+};
+
+function getMeasure(e){
+    var m = e.target;
+    
+    if(m.getAttribute('id') == "measure-met"){
+        document.getElementById('weight').setAttribute('placeholder', 'Weight kg');
+        return "metric";
+    }
+    else{
+        document.getElementById('weight').setAttribute('placeholder', 'Weight lbs');
+        return "imperial";
+    };
+}
+
+var statsForm = document.getElementById('stats');
+statsForm.addEventListener('submit', statsCapture, false);
+
+var goal = getGoal();
+var measureType = document.getElementsByName("measures");
+
+for (i = 0; i < measureType.length; i++){
+    measureType[i].addEventListener('click', function(e){
+        getMeasure(e);
+    });        
+};
+
 var calories = tdeeCalc(bmrCalc(39, 80, 170));
 var macros = macrosCalc(calories, goal);
-
-console.log(macros);
