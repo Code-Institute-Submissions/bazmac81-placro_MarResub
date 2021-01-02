@@ -59,10 +59,7 @@ describe("Calculate all Macros and total calories", function(){
     });
 });
 
-describe("Capture user form data to feed macro calculations", function(){
-    it("return the text 'Next' of element with ID 'stats_capture'", function(){
-        expect(document.getElementById('stats_capture').innerHTML).toBe("Next");
-    });
+describe("Capture user form data to feed macro calculations", function(){ 
     it("correctly return the option selected for weights and measures", function(){
         if(measure === "imperial"){
             expect(getMeasure()).toBe("imperial");

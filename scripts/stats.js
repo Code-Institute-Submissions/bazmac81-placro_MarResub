@@ -61,16 +61,34 @@ function getGoal(){
 
 function getMeasure(e){
     var m = e.target;
-    
-    if(m.getAttribute('id') == "measure-met"){
+    var measure = m.getAttribute('id');
+    var height = document.getElementById('height');
+    var weight = document.getElementById('weight');
+
+    if(measure == "measure-met"){
+        if(weight.value != "") {
+            weight.value = Math.round(weight.value / lbsmulti);
+        };
+        if(height.value != "") {
+            height.value = Math.round(height.value * inchmulti); 
+        };
         document.getElementById('weight').setAttribute('placeholder', 'Weight kg');
-        return "metric";
+        document.getElementById('height').setAttribute('placeholder', 'Height cm');
     }
-    else{
+    else {
+        if(weight.value != "") {
+            weight.value = Math.round(weight.value * lbsmulti);
+        };
+        if (height.value != "") {
+            height.value = Math.round(height.value / inchmulti);
+        };
         document.getElementById('weight').setAttribute('placeholder', 'Weight lbs');
-        return "imperial";
+        document.getElementById('height').setAttribute('placeholder', 'Height ins'); 
     };
 }
+
+const lbsmulti = 2.20462;
+const inchmulti = 2.54;
 
 var statsForm = document.getElementById('stats');
 statsForm.addEventListener('submit', statsCapture, false);
