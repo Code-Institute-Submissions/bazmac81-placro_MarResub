@@ -51,12 +51,22 @@ function tdeeCalc(bmr){
 };
 
 function statsCapture(e){
-    console.log("Click captured");
     e.preventDefault();
 };
 
-function getGoal(){
-    return "build";
+function getGoal(e){
+    e.preventDefault();
+    
+    var goalOptions = document.getElementsByName('goals');
+    var goalChoice = "maintain";
+
+    for (i = 0; i < goalOptions.length; i++) {
+        if (goalOptions[i].checked == true){
+            goalChoice = goalOptions[i].value;
+        }
+    };
+    console.log(goalChoice);
+    return goalChoice;
 };
 
 function getMeasure(e){
@@ -93,14 +103,15 @@ const inchmulti = 2.54;
 var statsForm = document.getElementById('stats');
 statsForm.addEventListener('submit', statsCapture, false);
 
-var goal = getGoal();
 var measureType = document.getElementsByName("measures");
-
 for (i = 0; i < measureType.length; i++){
     measureType[i].addEventListener('click', function(e){
         getMeasure(e);
     });        
 };
+
+var goalForm = document.getElementById('goals');
+goal = goalForm.addEventListener('submit', getGoal, false);
 
 var calories = tdeeCalc(bmrCalc(39, 80, 170));
 var macros = macrosCalc(calories, goal);
