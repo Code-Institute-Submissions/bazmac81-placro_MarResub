@@ -110,18 +110,20 @@ function getMeasure(e){
 function submitStats(e){
     e.preventDefault();
 
-    var goalOptions = document.getElementsByName('goals');
-    for (i = 0; i < goalOptions.length; i++) {
-        if (goalOptions[i].checked === true) {
-            goal = goalOptions[i].value;
-            console.log(goal);
+    for (i = 0; i < goalForm.length; i++) {
+        if (goalForm[i].checked === true) {
+            goal = goalForm[i].value;
         }
     };
+
+    for (i = 0; i < measureType.length; i++) {
+        if (measureType[i].checked === true) {
+            measure = measureType[i].value;
+        }
+    }
     
     stats = macrosCalc(calories, goal);
-
     storeStats();
-
     window.location.assign("../stats.html");
 };
 
