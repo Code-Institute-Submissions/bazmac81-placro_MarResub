@@ -8,17 +8,13 @@ function menuOption(e){
     else if (option.textContent === "Your goal"){
         changeGoal();
     }
-    else {
-
-    }
+    storeStats(inputs, modifiers, stats);
 };
 
 // Load Stats form with user entered data ready to change
 function changeStats(){
     var statsForm = document.getElementById('stats');
     var fields = statsForm.getElementsByClassName('form-control');
-
-    console.log(fields);
 
     for(i = 0; i < fields.length; i++){
         fields[i].value = inputs[i];
@@ -28,6 +24,8 @@ function changeStats(){
 // Load Goals form with user data ready to change
 function changeGoal(){
     var goalForm = document.getElementsByName('goals');
+
+    console.log(stats);
 
     for(i = 0; i < goalForm.length; i++){
         if(goalForm[i].value === modifiers[1] && goalForm[i].checked === false){
@@ -44,7 +42,7 @@ function updateStats(e){
         
     //Re-calculate the numbers and write them to memory
     statsCapture();
-    submitStats(inputs, stats, modifiers);
+    submitStats(inputs, modifiers, stats);
 
     //Write the numbers to the page
     writeStats();
