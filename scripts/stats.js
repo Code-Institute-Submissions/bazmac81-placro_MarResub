@@ -86,10 +86,10 @@ function getMeasure(e){
 
     if(measure === "metric"){
         if(w.value != "") {
-            w.value = Math.round(w.value / lbsmulti);
+            w.value = Math.round(w.value / lbsMulti);
         };
         if(h.value != "") {
-            h.value = Math.round(h.value * inchmulti); 
+            h.value = Math.round(h.value * inchMulti); 
         };
         document.getElementById('weight').setAttribute('placeholder', 'Weight kg');
         document.getElementById('height').setAttribute('placeholder', 'Height cm');
@@ -97,10 +97,10 @@ function getMeasure(e){
     else {
         // Display imperial values in form
         if(w.value != "") {
-            w.value = Math.round(w.value * lbsmulti);
+            w.value = Math.round(w.value * lbsMulti);
         };
         if (h.value != "") {
-            h.value = Math.round(h.value / inchmulti);
+            h.value = Math.round(h.value / inchMulti);
         };
         document.getElementById('weight').setAttribute('placeholder', 'Weight lbs');
         document.getElementById('height').setAttribute('placeholder', 'Height ins');
@@ -114,6 +114,7 @@ function submitStats(e){
     for (i = 0; i < goalOptions.length; i++) {
         if (goalOptions[i].checked === true) {
             goal = goalOptions[i].value;
+            console.log(goal);
         }
     };
     
@@ -127,6 +128,8 @@ function submitStats(e){
 function storeStats(){
     sessionStorage.setItem('name', name);
     sessionStorage.setItem('age', age);
+    sessionStorage.setItem('weight', weight);
+    sessionStorage.setItem('height', height);
     sessionStorage.setItem('measure', measure);
     sessionStorage.setItem('goal', goal);
     sessionStorage.setItem('calories', stats[0]);
