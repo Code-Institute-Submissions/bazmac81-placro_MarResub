@@ -6,7 +6,7 @@ function menuOption(e){
     if (option.textContent === "Your stats"){
         changeStats();
     }
-    else if (option.textContent === "Your Goal"){
+    else if (option.textContent === "Your goal"){
         changeGoal();
     }
 };
@@ -23,7 +23,18 @@ function changeStats(){
 };
 
 function changeGoal(){
+    var goalForm = document.getElementsByName('goals');
 
+    console.log(goalForm);
+    console.log(modifiers);
+
+    for(i = 0; i < goalForm.length; i++){
+        if(goalForm[i].value === modifiers[1] && goalForm[i].checked === false){
+            goalForm[i].checked = true;
+        } else if (goalForm[i].value !== modifiers[1 && goalForm[i].checked === true]){
+            goalForm[i].checked = false;
+        };
+    };
 };
 
 var menu = document.getElementById('navbarMenu');
