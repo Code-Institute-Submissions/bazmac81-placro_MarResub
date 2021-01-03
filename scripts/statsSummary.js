@@ -31,5 +31,3 @@ var modifiers = [];
 var stats = [];
 
 window.addEventListener('load', retrieveData, false);
-
-

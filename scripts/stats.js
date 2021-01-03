@@ -49,31 +49,34 @@ function tdeeCalc(bmr){
 
 // Submit initial form. Hide seciton and reveal goals section.
 function statsCapture(e){
-    e.preventDefault();
+    if(window.location.pathname === "/"){
+        e.preventDefault();
+    }
+
     n = document.getElementById('name');
     a = document.getElementById('age'); 
     h = document.getElementById('height');
     w = document.getElementById('weight');
 
     if (n.value != ""){
-        name = n.value;
+        inputs[0] = n.value;
     };
     if (a.value != "") {
-        age = parseInt(a.value);
+        inputs[1] = parseInt(a.value);
     };
     if (h.value != "") {
-        height = parseInt(h.value);
+        inputs[2] = parseInt(w.value);
     };
     if (w.value != "") {
-        weight = parseInt(w.value);
+        inputs[3] = parseInt(h.value);
     };
 
-    if(measure ==="imperial"){
-        height = Math.round(height * inchMulti);
-        weight = Math.round(weight / lbsMulti);
+    if(modifiers[0] ==="imperial"){
+        inputs[2] = Math.round(inputs[2] / lbsMulti);
+        inputs[3] = Math.round(inputs[3] * inchMulti);
     }
     
-    calories = tdeeCalc(bmrCalc(age, weight, height));
+    stats[0] = tdeeCalc(bmrCalc(inputs[1], inputs[2], inputs[3]));
 };
 
 // Manage user choice for measurement and update any inputs to reflect.
@@ -82,9 +85,9 @@ function getMeasure(e){
     var h = document.getElementById('height');
     var w = document.getElementById('weight');
 
-    measure = m.getAttribute('value');
+    modifiers[0] = m.getAttribute('value');
 
-    if(measure === "metric"){
+    if(modifiers[0] === "metric"){
         if(w.value != "") {
             w.value = Math.round(w.value / lbsMulti);
         };
@@ -108,41 +111,53 @@ function getMeasure(e){
 };
 
 function submitStats(e){
-    e.preventDefault();
+    // Only prevent defaul submit action when on the index page
+    if (window.location.pathname === "/"){
+        e.preventDefault();    
+    }
 
+    // Capture the selected goals option
     for (i = 0; i < goalForm.length; i++) {
         if (goalForm[i].checked === true) {
-            goal = goalForm[i].value;
+            modifiers[1] = goalForm[i].value;
         }
     };
 
+    // Capture the selected measures option
     for (i = 0; i < measureType.length; i++) {
         if (measureType[i].checked === true) {
-            measure = measureType[i].value;
+            modifiers[0] = measureType[i].value;
         }
     }
     
-    stats = macrosCalc(calories, goal);
-    storeStats();
-    window.location.assign("../stats.html");
+    // Calculate the macros and store them to memory for the next page
+    console.log(modifiers);
+    stats = macrosCalc(stats[0], modifiers[1]);
+    
+    // Load the stats.html page only if currently on the index page
+    if (window.location.pathname === "/"){
+        storeStats(inputs, modifiers, stats);
+        window.location.assign("../stats.html");
+    };
 };
 
-function storeStats(){
-    sessionStorage.setItem('name', name);
-    sessionStorage.setItem('age', age);
-    sessionStorage.setItem('weight', weight);
-    sessionStorage.setItem('height', height);
-    sessionStorage.setItem('measure', measure);
-    sessionStorage.setItem('goal', goal);
-    sessionStorage.setItem('calories', stats[0]);
-    sessionStorage.setItem('protein', stats[1]);
-    sessionStorage.setItem('carbs', stats[2]);
-    sessionStorage.setItem('fat', stats[3]);
+// Store all stats into session storage for site pages to access
+function storeStats(i, m, s){
+    sessionStorage.setItem('name', i[0]);
+    sessionStorage.setItem('age', i[1]);
+    sessionStorage.setItem('weight', i[2]);
+    sessionStorage.setItem('height', i[3]);
+    sessionStorage.setItem('measure', m[0]);
+    sessionStorage.setItem('goal', m[1]);
+    sessionStorage.setItem('calories', s[0]);
+    sessionStorage.setItem('protein', s[1]);
+    sessionStorage.setItem('carbs', s[2]);
+    sessionStorage.setItem('fat', s[3]);
 };
 
 const lbsMulti = 2.20462;
 const inchMulti = 2.54;
-var height, weight, name, age, goal, stats, measure;
+var inputs = [], modifiers = [], stats = [];
 var calories = 0;
 
 // Capture form and listen for submit action
