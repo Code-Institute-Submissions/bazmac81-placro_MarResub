@@ -8,7 +8,6 @@ function menuOption(e){
     else if (option.textContent === "Your goal"){
         changeGoal();
     }
-    storeStats(inputs, modifiers, stats);
 };
 
 // Load Stats form with user entered data ready to change
@@ -25,8 +24,6 @@ function changeStats(){
 function changeGoal(){
     var goalForm = document.getElementsByName('goals');
 
-    console.log(stats);
-
     for(i = 0; i < goalForm.length; i++){
         if(goalForm[i].value === modifiers[1] && goalForm[i].checked === false){
             goalForm[i].checked = true;
@@ -36,6 +33,7 @@ function changeGoal(){
     };
 };
 
+// Take the navmenu form stats to recalculate and display new figures
 function updateStats(e){
     var button = e.target;
     var closemodal = '#' + button.parentNode.parentNode.parentNode.parentNode.getAttribute('id');
@@ -52,8 +50,8 @@ function updateStats(e){
 };
 
 var menu = document.getElementById('navbarMenu');
-var statsChangeSubmit = document.getElementById('update-goal');
-var goalsChangeSubmit =  document.getElementById('update-stats');
+var statsChangeSubmit = document.getElementById('update-stats');
+var goalsChangeSubmit = document.getElementById('update-goal');
 
 menu.addEventListener('click', function(e){
     menuOption(e);
@@ -61,4 +59,6 @@ menu.addEventListener('click', function(e){
 statsChangeSubmit.addEventListener('click', function(e) {
     updateStats(e);
 });
-goalsChangeSubmit.addEventListener('click', updateStats, false);
+goalsChangeSubmit.addEventListener('click', function(e){
+    updateStats(e)
+});

@@ -19,12 +19,9 @@ function retrieveData(){
 
 function writeStats(){
     macros = document.getElementsByClassName('stat');
-    
-    console.log(macros);
 
     for (i = 0; i < macros.length; i++){
         macros[i].firstChild.textContent = stats[i];
-        console.log(stats[i]);
     };
 };
 
@@ -33,5 +30,3 @@ var modifiers = [];
 var stats = [];
 
 window.addEventListener('load', retrieveData, false);
-
-console.log(document.getElementById('height').value);

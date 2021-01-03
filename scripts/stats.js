@@ -47,7 +47,7 @@ function tdeeCalc(bmr){
     return tdee;
 };
 
-// Submit initial form. Hide seciton and reveal goals section.
+// Captures user input from first submission and amendments via navmenu forms
 function statsCapture(e){
     if(window.location.pathname === "/"){
         e.preventDefault();
@@ -71,7 +71,7 @@ function statsCapture(e){
         inputs[3] = parseInt(h.value);
     };
 
-    if(modifiers[0] ==="imperial"){
+    if(modifiers[0] === "imperial"){
         inputs[2] = Math.round(inputs[2] / lbsMulti);
         inputs[3] = Math.round(inputs[3] * inchMulti);
     }
@@ -131,12 +131,11 @@ function submitStats(e){
     }
     
     // Calculate the macros and store them to memory for the next page
-    console.log(modifiers);
     stats = macrosCalc(stats[0], modifiers[1]);
-    
+    storeStats(inputs, modifiers, stats);
+
     // Load the stats.html page only if currently on the index page
     if (window.location.pathname === "/"){
-        storeStats(inputs, modifiers, stats);
         window.location.assign("../stats.html");
     };
 };
