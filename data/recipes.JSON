@@ -1,0 +1,24 @@
+{
+  "recipeName": "Poached eggs surprise",
+  "mealType": "breakfast",
+  "mealStats": [
+    {
+      "calories": 200
+    },
+    {
+      "protein": 12
+    },
+    {
+      "carbs": 20
+    },
+    {
+      "fat": 5
+    }
+  ],
+  "ingredients": [
+    "Potatoes",
+    "Carrots",
+    "Peas"
+  ],
+  "Description": "Lovely breakfast"
+}
