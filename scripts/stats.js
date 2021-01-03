@@ -130,7 +130,7 @@ function storeStats(){
     sessionStorage.setItem('measure', measure);
     sessionStorage.setItem('goal', goal);
     sessionStorage.setItem('calories', stats[0]);
-    sessionStorage.setItem('protien', stats[1]);
+    sessionStorage.setItem('protein', stats[1]);
     sessionStorage.setItem('carbs', stats[2]);
     sessionStorage.setItem('fat', stats[3]);
 };
