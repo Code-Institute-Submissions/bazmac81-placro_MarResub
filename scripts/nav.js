@@ -45,6 +45,11 @@ function updateStats(e){
     //Write the numbers to the page
     writeStats();
 
+    //Update % sections if the relevant page is being used
+    if(window.location.pathname === "/mealplan.html" || window.location.pathname === "/planner.html"){
+        pcCalc();
+    };
+
     //Close the BS Modal window
     $(closemodal).modal('toggle')
 };
