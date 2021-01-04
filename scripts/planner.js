@@ -13,7 +13,7 @@ function loadRecipeData(recipeData){
     var recipeContainer = document.getElementById('recipe-card-container');
     var recipeList = '';
 
-    for (i = 0; i < 4; i++){
+    for (i = 0; i < recipeData.length; i++){
         recipeList += 
         '<div class="recipe-card col-10 col-md-5 mx-auto '+recipeData[i].mealType+'">'+
             '<div class="row no-gutters">'+
@@ -142,10 +142,8 @@ function manageMeal(){
 var allocStats = [0, 0, 0, 0];
 var allocPc = [0, 0, 0, 0];
 
-window.addEventListener('load', pcCalc, false);
-
-readRecipeFile("data/recipes.JSON", function(text){
+window.addEventListener('load', readRecipeFile("data/recipes.JSON", function(text){
     var data = (JSON.parse(text));
     loadRecipeData(data);
     manageMeal();
-});
+}));
