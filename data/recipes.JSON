@@ -1,13 +1,13 @@
 [
     {
-    "recipeName": "Poached eggs surprise",
+    "recipeName": "BLT eggs benedict",
     "mealType": "breakfast",
     "mealStats":
         {
-        "calories": 200,
-        "protein": 12,
-        "carbs": 20,
-        "fat": 5
+        "calories": 575,
+        "protein": 33,
+        "carbs": 62,
+        "fat": 24
         },
     "description": "Lovely breakfast with poached eggs and muffins.",
     "ingredients":
@@ -19,14 +19,14 @@
     "image": "eggs.png"
     },
     {
-    "recipeName": "Poached eggs surprise",
+    "recipeName": "Crispy polenta squares with warm blueberry sauce",
     "mealType": "breakfast",
     "mealStats":
         {
-        "calories": 200,
-        "protein": 12,
-        "carbs": 20,
-        "fat": 5
+        "calories": 467,
+        "protein": 27,
+        "carbs": 72,
+        "fat": 8
         },
     "description": "Lovely breakfast with poached eggs and muffins.",
     "ingredients":
@@ -38,14 +38,14 @@
     "image": "eggs.png"
     },
     {
-    "recipeName": "Poached eggs surprise",
+    "recipeName": "Salmon and Asparagus omelet",
     "mealType": "breakfast",
     "mealStats":
         {
-        "calories": 200,
-        "protein": 12,
-        "carbs": 20,
-        "fat": 5
+        "calories": 560,
+        "protein": 64,
+        "carbs": 13,
+        "fat": 28
         },
     "description": "Lovely breakfast with poached eggs and muffins.",
     "ingredients":
@@ -57,14 +57,14 @@
     "image": "eggs.png"
     },
     {
-    "recipeName": "Poached eggs surprise",
+    "recipeName": "Advocado and egg breakfast sandwiches",
     "mealType": "breakfast",
     "mealStats":
         {
-        "calories": 200,
-        "protein": 12,
-        "carbs": 20,
-        "fat": 5
+        "calories": 289,
+        "protein": 16,
+        "carbs": 29,
+        "fat": 13
         },
     "description": "Lovely breakfast with poached eggs and muffins.",
     "ingredients":
@@ -76,14 +76,14 @@
     "image": "eggs.png"
     },
     {
-    "recipeName": "Poached eggs surprise",
+    "recipeName": "Eggs and tomato breakfast melts",
     "mealType": "breakfast",
     "mealStats":
         {
-        "calories": 200,
-        "protein": 12,
-        "carbs": 20,
-        "fat": 5
+        "calories": 355,
+        "protein": 27,
+        "carbs": 31,
+        "fat": 13
         },
     "description": "Lovely breakfast with poached eggs and muffins.",
     "ingredients":
@@ -95,14 +95,14 @@
     "image": "eggs.png"
     },
     {
-    "recipeName": "Poached eggs surprise",
-    "mealType": "breakfast",
+    "recipeName": "Classic cobb salad",
+    "mealType": "lunch",
     "mealStats":
         {
-        "calories": 200,
-        "protein": 12,
-        "carbs": 20,
-        "fat": 5
+        "calories": 446,
+        "protein": 40,
+        "carbs": 23,
+        "fat": 23
         },
     "description": "Lovely breakfast with poached eggs and muffins.",
     "ingredients":
@@ -114,14 +114,14 @@
     "image": "eggs.png"
     },
     {
-    "recipeName": "Poached eggs surprise",
-    "mealType": "breakfast",
+    "recipeName": "Coconut crusted chicken salad",
+    "mealType": "lunch",
     "mealStats":
         {
-        "calories": 200,
-        "protein": 12,
-        "carbs": 20,
-        "fat": 5
+        "calories": 454,
+        "protein": 31,
+        "carbs": 36,
+        "fat": 21
         },
     "description": "Lovely breakfast with poached eggs and muffins.",
     "ingredients":
@@ -133,14 +133,14 @@
     "image": "eggs.png"
     },
     {
-    "recipeName": "Poached eggs surprise",
-    "mealType": "breakfast",
+    "recipeName": "Spicy santa fe taco salad",
+    "mealType": "lunch",
     "mealStats":
         {
-        "calories": 200,
-        "protein": 12,
-        "carbs": 20,
-        "fat": 5
+        "calories": 347,
+        "protein": 22,
+        "carbs": 28,
+        "fat": 18
         },
     "description": "Lovely breakfast with poached eggs and muffins.",
     "ingredients":
@@ -152,14 +152,14 @@
     "image": "eggs.png"
     },
     {
-    "recipeName": "Poached eggs surprise",
-    "mealType": "breakfast",
+    "recipeName": "Tropical chicken salad with pineapple and pecans",
+    "mealType": "lunch",
     "mealStats":
         {
-        "calories": 200,
-        "protein": 12,
-        "carbs": 20,
-        "fat": 5
+        "calories": 323,
+        "protein": 42,
+        "carbs": 22,
+        "fat": 9
         },
     "description": "Lovely breakfast with poached eggs and muffins.",
     "ingredients":
@@ -171,14 +171,14 @@
     "image": "eggs.png"
     },
     {
-    "recipeName": "Poached eggs surprise",
-    "mealType": "breakfast",
+    "recipeName": "Coconut and carrot-ginger soup",
+    "mealType": "lunch",
     "mealStats":
         {
-        "calories": 200,
-        "protein": 12,
-        "carbs": 20,
-        "fat": 5
+        "calories": 170,
+        "protein": 6,
+        "carbs": 21,
+        "fat": 7
         },
     "description": "Lovely breakfast with poached eggs and muffins.",
     "ingredients":
@@ -190,14 +190,14 @@
     "image": "eggs.png"
     },
     {
-    "recipeName": "Poached eggs surprise",
-    "mealType": "breakfast",
+    "recipeName": "Italian lentil soup with chicken",
+    "mealType": "lunch",
     "mealStats":
         {
-        "calories": 200,
-        "protein": 12,
-        "carbs": 20,
-        "fat": 5
+        "calories": 318,
+        "protein": 35,
+        "carbs": 39,
+        "fat": 2
         },
     "description": "Lovely breakfast with poached eggs and muffins.",
     "ingredients":
@@ -209,14 +209,14 @@
     "image": "eggs.png"
     },
     {
-    "recipeName": "Poached eggs surprise",
-    "mealType": "breakfast",
+    "recipeName": "Chicken salad sandwiches",
+    "mealType": "lunch",
     "mealStats":
         {
-        "calories": 200,
-        "protein": 12,
-        "carbs": 20,
-        "fat": 5
+        "calories": 283,
+        "protein": 28,
+        "carbs": 27,
+        "fat": 7
         },
     "description": "Lovely breakfast with poached eggs and muffins.",
     "ingredients":
@@ -228,14 +228,14 @@
     "image": "eggs.png"
     },
     {
-    "recipeName": "Poached eggs surprise",
-    "mealType": "breakfast",
+    "recipeName": "Turkey taco lettuce wraps",
+    "mealType": "lunch",
     "mealStats":
         {
-        "calories": 200,
-        "protein": 12,
-        "carbs": 20,
-        "fat": 5
+        "calories": 196,
+        "protein": 22,
+        "carbs": 4,
+        "fat": 8
         },
     "description": "Lovely breakfast with poached eggs and muffins.",
     "ingredients":
@@ -247,14 +247,14 @@
     "image": "eggs.png"
     },
     {
-    "recipeName": "Poached eggs surprise",
-    "mealType": "breakfast",
+    "recipeName": "Healthy avocado-egg salad sandwich",
+    "mealType": "lunch",
     "mealStats":
         {
-        "calories": 200,
-        "protein": 12,
-        "carbs": 20,
-        "fat": 5
+        "calories": 303,
+        "protein": 15,
+        "carbs": 29,
+        "fat": 15
         },
     "description": "Lovely breakfast with poached eggs and muffins.",
     "ingredients":
@@ -266,14 +266,14 @@
     "image": "eggs.png"
     },
     {
-    "recipeName": "Poached eggs surprise",
-    "mealType": "breakfast",
+    "recipeName": "Peanut butter protein swirl brownies",
+    "mealType": "snack",
     "mealStats":
         {
-        "calories": 200,
+        "calories": 234,
         "protein": 12,
-        "carbs": 20,
-        "fat": 5
+        "carbs": 25,
+        "fat": 11
         },
     "description": "Lovely breakfast with poached eggs and muffins.",
     "ingredients":
@@ -285,14 +285,14 @@
     "image": "eggs.png"
     },
     {
-    "recipeName": "Poached eggs surprise",
-    "mealType": "breakfast",
+    "recipeName": "No-bake chocolate protein bars with quinoa",
+    "mealType": "snack",
     "mealStats":
         {
-        "calories": 200,
-        "protein": 12,
-        "carbs": 20,
-        "fat": 5
+        "calories": 331,
+        "protein": 11,
+        "carbs": 49,
+        "fat": 13
         },
     "description": "Lovely breakfast with poached eggs and muffins.",
     "ingredients":
@@ -304,14 +304,14 @@
     "image": "eggs.png"
     },
     {
-    "recipeName": "Poached eggs surprise",
-    "mealType": "breakfast",
+    "recipeName": "No-bake matcha green tea fudge bars",
+    "mealType": "snack",
     "mealStats":
         {
-        "calories": 200,
-        "protein": 12,
-        "carbs": 20,
-        "fat": 5
+        "calories": 194,
+        "protein": 21,
+        "carbs": 12,
+        "fat": 7
         },
     "description": "Lovely breakfast with poached eggs and muffins.",
     "ingredients":
@@ -323,14 +323,14 @@
     "image": "eggs.png"
     },
     {
-    "recipeName": "Poached eggs surprise",
-    "mealType": "breakfast",
+    "recipeName": "Low-carb chocolate-espresso protein shake",
+    "mealType": "snack",
     "mealStats":
         {
-        "calories": 200,
-        "protein": 12,
-        "carbs": 20,
-        "fat": 5
+        "calories": 335,
+        "protein": 24,
+        "carbs": 11,
+        "fat": 23
         },
     "description": "Lovely breakfast with poached eggs and muffins.",
     "ingredients":
@@ -342,14 +342,14 @@
     "image": "eggs.png"
     },
     {
-    "recipeName": "Poached eggs surprise",
-    "mealType": "breakfast",
+    "recipeName": "Chai banana protein shake",
+    "mealType": "snack",
     "mealStats":
         {
-        "calories": 200,
-        "protein": 12,
-        "carbs": 20,
-        "fat": 5
+        "calories": 243,
+        "protein": 24,
+        "carbs": 30,
+        "fat": 3
         },
     "description": "Lovely breakfast with poached eggs and muffins.",
     "ingredients":
@@ -361,14 +361,14 @@
     "image": "eggs.png"
     },
     {
-    "recipeName": "Poached eggs surprise",
-    "mealType": "breakfast",
+    "recipeName": "Mango green smoothie",
+    "mealType": "snack",
     "mealStats":
         {
-        "calories": 200,
-        "protein": 12,
-        "carbs": 20,
-        "fat": 5
+        "calories": 271,
+        "protein": 13,
+        "carbs": 37,
+        "fat": 9
         },
     "description": "Lovely breakfast with poached eggs and muffins.",
     "ingredients":
@@ -380,14 +380,14 @@
     "image": "eggs.png"
     },
     {
-    "recipeName": "Poached eggs surprise",
-    "mealType": "breakfast",
+    "recipeName": "Beef stroganoff",
+    "mealType": "dinner",
     "mealStats":
         {
-        "calories": 200,
-        "protein": 12,
-        "carbs": 20,
-        "fat": 5
+        "calories": 519,
+        "protein": 37,
+        "carbs": 47,
+        "fat": 19
         },
     "description": "Lovely breakfast with poached eggs and muffins.",
     "ingredients":
@@ -399,14 +399,14 @@
     "image": "eggs.png"
     },
     {
-    "recipeName": "Poached eggs surprise",
-    "mealType": "breakfast",
+    "recipeName": "Beef lasgna",
+    "mealType": "dinner",
     "mealStats":
         {
-        "calories": 200,
-        "protein": 12,
-        "carbs": 20,
-        "fat": 5
+        "calories": 624,
+        "protein": 41,
+        "carbs": 65,
+        "fat": 19
         },
     "description": "Lovely breakfast with poached eggs and muffins.",
     "ingredients":
@@ -418,14 +418,128 @@
     "image": "eggs.png"
     },
     {
-    "recipeName": "Poached eggs surprise",
-    "mealType": "breakfast",
+    "recipeName": "Pork chops braised with oranges",
+    "mealType": "dinner",
     "mealStats":
         {
-        "calories": 200,
-        "protein": 12,
-        "carbs": 20,
-        "fat": 5
+        "calories": 247,
+        "protein": 38,
+        "carbs": 13,
+        "fat": 4
+        },
+    "description": "Lovely breakfast with poached eggs and muffins.",
+    "ingredients":
+        {
+        "Potatoes": 2,
+        "Carrots": 4,
+        "Peas": 50
+        },
+    "image": "eggs.png"
+    },
+    {
+    "recipeName": "Pollo fajitas",
+    "mealType": "dinner",
+    "mealStats":
+        {
+        "calories": 445,
+        "protein": 46,
+        "carbs": 44,
+        "fat": 9
+        },
+    "description": "Lovely breakfast with poached eggs and muffins.",
+    "ingredients":
+        {
+        "Potatoes": 2,
+        "Carrots": 4,
+        "Peas": 50
+        },
+    "image": "eggs.png"
+    },
+    {
+    "recipeName": "Chunky chicken quesadilla",
+    "mealType": "dinner",
+    "mealStats":
+        {
+        "calories": 315,
+        "protein": 30,
+        "carbs": 28,
+        "fat": 9
+        },
+    "description": "Lovely breakfast with poached eggs and muffins.",
+    "ingredients":
+        {
+        "Potatoes": 2,
+        "Carrots": 4,
+        "Peas": 50
+        },
+    "image": "eggs.png"
+    },
+    {
+    "recipeName": "Orange and honey glaze chicken",
+    "mealType": "dinner",
+    "mealStats":
+        {
+        "calories": 216,
+        "protein": 39,
+        "carbs": 10,
+        "fat": 2
+        },
+    "description": "Lovely breakfast with poached eggs and muffins.",
+    "ingredients":
+        {
+        "Potatoes": 2,
+        "Carrots": 4,
+        "Peas": 50
+        },
+    "image": "eggs.png"
+    },
+    {
+    "recipeName": "Lemon-garlic shrimp with asparagus",
+    "mealType": "dinner",
+    "mealStats":
+        {
+        "calories": 255,
+        "protein": 30,
+        "carbs": 17,
+        "fat": 8
+        },
+    "description": "Lovely breakfast with poached eggs and muffins.",
+    "ingredients":
+        {
+        "Potatoes": 2,
+        "Carrots": 4,
+        "Peas": 50
+        },
+    "image": "eggs.png"
+    },
+    {
+    "recipeName": "Butternut squash and mozarella bake",
+    "mealType": "dinner",
+    "mealStats":
+        {
+        "calories": 433,
+        "protein": 20,
+        "carbs": 59,
+        "fat": 18
+        },
+    "description": "Lovely breakfast with poached eggs and muffins.",
+    "ingredients":
+        {
+        "Potatoes": 2,
+        "Carrots": 4,
+        "Peas": 50
+        },
+    "image": "eggs.png"
+    },
+    {
+    "recipeName": "Black bean and corn quesadilla",
+    "mealType": "dinner",
+    "mealStats":
+        {
+        "calories": 347,
+        "protein": 19,
+        "carbs": 52,
+        "fat": 10
         },
     "description": "Lovely breakfast with poached eggs and muffins.",
     "ingredients":
