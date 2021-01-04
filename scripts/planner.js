@@ -76,14 +76,20 @@ function mealAddRemove(e){
 
 var allocStats = [0, 0, 0, 0];
 var allocPc = [0, 0, 0, 0];
-var meal = [
-    ['breakfast', 0, 0],
-    ['lunch', 0, 0],
-    ['dinner', 0, 0],
-    ['snack', 0, 0]
-];
+var recipeCardHTML = [];
 
 window.addEventListener('load', pcCalc, false);
+
+var fileReq = new XMLHttpRequest();
+fileReq.onload = function(){
+    if(fileReq.status === 200){
+        recipeData = JSON.parse(fileReq.responseText);
+        console.log(recipeData);
+    };
+};
+fileReq.open('GET', "data/recipes.JSON");
+fileReq.send(null);
+
 
 var manageMeal = document.getElementsByClassName('recipeBtn');
 for (i = 0; i < manageMeal.length; i++){
