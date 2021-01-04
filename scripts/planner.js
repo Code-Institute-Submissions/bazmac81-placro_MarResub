@@ -9,6 +9,50 @@ function pcCalc(){
     //mealPc();
 };
 
+function loadRecipeData(recipeData){
+    var recipeContainer = document.getElementById('recipe-card-container');
+    var recipeList = '';
+
+    for (i = 0; i < 4; i++){
+        recipeList += 
+        '<div class="recipe-card col-10 col-md-5 mx-auto '+recipeData[i].mealType+'">'+
+            '<div class="row no-gutters">'+
+                '<div class="col-9 col-sm-10">'+
+                    '<h3 class="heading">'+ recipeData[i].recipeName +'</h3>'+
+                '</div>'+
+                '<div class="col-3 col-sm-2">'+
+                    '<button class="btn recipeBtn add">Add</button>'+
+                '</div>'+
+            '</div>'+
+            '<div class="row no-gutters">'+
+                '<div class="col-5">'+
+                    '<div class="meal-img">'+
+                    '</div>'+
+                '</div>'+
+                '<div class="col-7">'+
+                    '<div class="row">'+
+                        '<div class="middle col-5 mx-auto">'+
+                            '<span class="meal-stat meal-cals">'+recipeData[i].mealStats.calories+'</span>g'+
+                        '</div>'+
+                        '<div class="middle col-5 mx-auto">'+
+                            '<span class="meal-stat meal-protein">'+recipeData[i].mealStats.protein+'</span>g'+
+                        '</div>'+
+                    '</div>'+
+                    '<div class="row">'+
+                        '<div class="middle col-5 mx-auto">'+
+                            '<span class="meal-stat meal-carb">'+recipeData[i].mealStats.carbs+'</span>g'+
+                        '</div>'+
+                        '<div class="middle col-5 mx-auto">'+
+                            '<span class="meal-stat meal-fat">'+recipeData[i].mealStats.fat+'</span>g'+
+                        '</div>'+
+                    '</div>'+
+                '</div>'+
+            '</div>'+
+        '</div>';
+    }
+    recipeContainer.innerHTML = recipeList;
+};
+
 function mealPc(){
     var m = 'breakfast';
 
@@ -74,26 +118,34 @@ function mealAddRemove(e){
     pcCalc();
 };
 
+function readRecipeFile(file, callback){
+    var fileReq = new XMLHttpRequest();
+    
+    fileReq.open('GET', file, true);
+    fileReq.onreadystatechange = function(){
+        if(fileReq.readyState === 4 && fileReq.status === 200){
+            callback(fileReq.responseText);
+        };
+    };
+    fileReq.send(null);
+};
+
+function manageMeal(){
+    var manageMeal = document.getElementsByClassName('recipeBtn');
+    for (i = 0; i < manageMeal.length; i++){
+        manageMeal[i].addEventListener('click', function(e){
+            mealAddRemove(e);
+        });
+    };
+};
+
 var allocStats = [0, 0, 0, 0];
 var allocPc = [0, 0, 0, 0];
-var recipeCardHTML = [];
 
 window.addEventListener('load', pcCalc, false);
 
-var fileReq = new XMLHttpRequest();
-fileReq.onload = function(){
-    if(fileReq.status === 200){
-        recipeData = JSON.parse(fileReq.responseText);
-        console.log(recipeData);
-    };
-};
-fileReq.open('GET', "data/recipes.JSON");
-fileReq.send(null);
-
-
-var manageMeal = document.getElementsByClassName('recipeBtn');
-for (i = 0; i < manageMeal.length; i++){
-    manageMeal[i].addEventListener('click', function(e){
-        mealAddRemove(e);
-    });
-};
+readRecipeFile("data/recipes.JSON", function(text){
+    var data = (JSON.parse(text));
+    loadRecipeData(data);
+    manageMeal();
+});
