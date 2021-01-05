@@ -1,6 +1,7 @@
 // Capture menu option selected and direct based on choice made
 function menuOption(e){
     var option = e.target;
+    var meals = document.querySelectorAll('.recipe-card');
 
     if (option.textContent === "Your stats"){
         changeStats();
@@ -8,6 +9,50 @@ function menuOption(e){
     else if (option.textContent === "Your goal"){
         changeGoal();
     }
+    else if (option.textContent === "Breakfast"){
+        for(i = 0; i < meals.length; i++){
+            if(meals[i].classList.contains('breakfast')){
+                meals[i].classList.remove('d-none');
+            }
+            else {
+                meals[i].classList.add('d-none');
+            };
+        };
+    }
+    else if (option.textContent === "Lunch"){
+        for(i = 0; i < meals.length; i++){
+            if(meals[i].classList.contains('lunch')){
+                meals[i].classList.remove('d-none');
+            }
+            else {
+                meals[i].classList.add('d-none');
+            };
+        };
+    }
+    else if (option.textContent === "Dinner"){
+        for(i = 0; i < meals.length; i++){
+            if(meals[i].classList.contains('dinner')){
+                meals[i].classList.remove('d-none');
+            }
+            else {
+                meals[i].classList.add('d-none');
+            };
+        };
+    }
+    else if (option.textContent === "Snacks"){
+        for(i = 0; i < meals.length; i++){
+            if(meals[i].classList.contains('snack')){
+                meals[i].classList.remove('d-none');
+            }
+            else {
+                meals[i].classList.add('d-none');
+            };
+        };
+    };
+};
+
+function filterRecipes(){
+
 };
 
 // Load Stats form with user entered data ready to change
