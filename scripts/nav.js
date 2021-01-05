@@ -18,6 +18,7 @@ function menuOption(e){
                 meals[i].classList.add('d-none');
             };
         };
+        document.getElementById('category').textContent = "Breakfast";
     }
     else if (option.textContent === "Lunch"){
         for(i = 0; i < meals.length; i++){
@@ -28,6 +29,7 @@ function menuOption(e){
                 meals[i].classList.add('d-none');
             };
         };
+        document.getElementById('category').textContent = "Lunch";
     }
     else if (option.textContent === "Dinner"){
         for(i = 0; i < meals.length; i++){
@@ -38,6 +40,7 @@ function menuOption(e){
                 meals[i].classList.add('d-none');
             };
         };
+        document.getElementById('category').textContent = "Dinner";
     }
     else if (option.textContent === "Snacks"){
         for(i = 0; i < meals.length; i++){
@@ -48,11 +51,8 @@ function menuOption(e){
                 meals[i].classList.add('d-none');
             };
         };
+        document.getElementById('category').textContent = "Snacks";
     };
-};
-
-function filterRecipes(){
-
 };
 
 // Load Stats form with user entered data ready to change
