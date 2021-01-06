@@ -53,11 +53,13 @@ function statsCapture(e){
         e.preventDefault();
     }
 
+    //Get user entered data from form
     n = document.getElementById('name');
     a = document.getElementById('age'); 
     h = document.getElementById('height');
     w = document.getElementById('weight');
 
+    //Assign data to variables and convert to numbers
     if (n.value != ""){
         inputs[0] = n.value;
     };
@@ -71,14 +73,16 @@ function statsCapture(e){
         inputs[3] = parseInt(h.value);
     };
 
+    //Make sure any imperial measures are converted back to metric to manage macro calculations
     if(modifiers[0] === "imperial"){
         inputs[2] = Math.round(inputs[2] / lbsMulti);
         inputs[3] = Math.round(inputs[3] * inchMulti);
     }
     
+    //Calculate the calories based on the user input
     stats[0] = tdeeCalc(bmrCalc(inputs[1], inputs[2], inputs[3]));
 
-    if (window.location.path === '/'){
+    if (window.location.pathname === '/'){
         document.getElementById('statSection').classList.toggle('d-none');
         document.getElementById('goalSection').classList.toggle('d-none');  
     };
