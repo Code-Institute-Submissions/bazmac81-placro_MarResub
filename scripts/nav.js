@@ -9,6 +9,10 @@ function menuOption(e){
     }
     else if((option === "Breakfast" || option === "Lunch" || option === "Dinner" || option === "Snacks") && window.location.pathname !== ('/planner.html')){
         window.sessionStorage.setItem("menu", option);
+        if(window.location.pathname === '/mealplan.html'){
+            completeMealPlan = JSON.stringify(mealPlan);
+            window.sessionStorage.setItem('mealPlan', completeMealPlan);
+        };
         window.location.assign('../planner.html');
     }
     else if((option === "Breakfast" || option === "Lunch" || option === "Dinner" || option === "Snacks") && window.location.pathname === ('/planner.html')){
