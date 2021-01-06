@@ -10,10 +10,6 @@ function retrieveData(){
     modifiers[0] = sessionStorage.getItem('measure');
     modifiers[1] = sessionStorage.getItem('goal');
     
-    console.log(inputs);
-    console.log(modifiers);
-    console.log(stats);
-    
     writeStats();
 };
 
