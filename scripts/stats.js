@@ -78,8 +78,10 @@ function statsCapture(e){
     
     stats[0] = tdeeCalc(bmrCalc(inputs[1], inputs[2], inputs[3]));
 
-    document.getElementById('statSection').classList.toggle('d-none');
-    document.getElementById('goalSection').classList.toggle('d-none');
+    if (window.location.path === '/'){
+        document.getElementById('statSection').classList.toggle('d-none');
+        document.getElementById('goalSection').classList.toggle('d-none');  
+    };
 };
 
 // Manage user choice for measurement and update any inputs to reflect.
