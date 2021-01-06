@@ -19,10 +19,11 @@ function pcCalc(){
 function loadRecipeData(recipeData){
     var recipeContainer = document.getElementById('recipe-card-container');
     var recipeList = '';
+    var menuChoice = window.sessionStorage.getItem('menu');
 
     for (i = 0; i < recipeData.length; i++){
         recipeList += 
-        '<div class="recipe-card col-10 col-md-5 mx-auto '+recipeData[i].mealType+'">'+
+        '<div class="recipe-card col-10 col-md-5 mx-auto d-none '+recipeData[i].mealType+'">'+
             '<div class="row no-gutters">'+
                 '<div class="col-9 col-sm-10">'+
                     '<h3 class="heading">'+ recipeData[i].recipeName +'</h3>'+
@@ -32,11 +33,11 @@ function loadRecipeData(recipeData){
                 '</div>'+
             '</div>'+
             '<div class="row no-gutters">'+
-                '<div class="col-5">'+
+                '<div class="d-sm-none col-md-5">'+
                     '<div class="meal-img">'+
                     '</div>'+
                 '</div>'+
-                '<div class="col-7">'+
+                '<div class="col-12 col-md-7">'+
                     '<div class="row">'+
                         '<div class="middle col-5 mx-auto">'+
                             '<span class="meal-stat meal-cals">'+recipeData[i].mealStats.calories+'</span>g'+
@@ -58,7 +59,28 @@ function loadRecipeData(recipeData){
         '</div>';
     }
     recipeContainer.innerHTML = recipeList;
+    console.log(menuChoice);
+    filterRecipes(menuChoice);
 };
+
+function filterRecipes(opt){
+    var meals = document.querySelectorAll('.recipe-card');
+    
+    document.getElementById('category').textContent = opt;
+
+    if (opt === 'Snacks') {
+        opt = 'snack';
+    }
+    for(i = 0; i < meals.length; i++){
+        if(meals[i].classList.contains(opt.toLowerCase()) && meals[i].classList.contains('d-none') === true){
+            meals[i].classList.remove('d-none');
+        }
+        else if(meals[i].classList.contains(opt.toLowerCase()) !== opt && meals[i].classList.contains('d-none') !== true){
+            meals[i].classList.add('d-none');
+        };
+    };
+    
+}
 
 function mealPcCalc(rs, mType, operator){
     mealPcGuage = document.getElementsByClassName('meal_pc');
@@ -202,6 +224,17 @@ var mealPc = {
     lunch: 0,
     dinner: 0,
     snack: 0,
+};
+var meals = {
+    name = '',
+    calories = '',
+    protein = '',
+    carbs = '',
+    fat = '',
+    ingredients = {
+        ingredient = [],
+        value = [],        
+    }
 };
 
 /*

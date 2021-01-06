@@ -49,7 +49,7 @@ function tdeeCalc(bmr){
 
 // Captures user input from first submission and amendments via navmenu forms
 function statsCapture(e){
-    if(window.location.pathname === "/"){
+    if(window.location.pathname === '/'){
         e.preventDefault();
     }
 
@@ -116,7 +116,7 @@ function getMeasure(e){
 };
 
 function submitStats(e){
-    // Only prevent defaul submit action when on the index page
+    // Only prevent default submit action when on the index page
     if (window.location.pathname === "/"){
         e.preventDefault();    
     }

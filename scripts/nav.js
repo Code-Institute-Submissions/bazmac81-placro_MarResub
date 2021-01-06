@@ -1,57 +1,20 @@
 // Capture menu option selected and direct based on choice made
 function menuOption(e){
-    var option = e.target;
-    var meals = document.querySelectorAll('.recipe-card');
-
-    if (option.textContent === "Your stats"){
+    var option = e.target.textContent;
+        
+    if (option === "Your stats" || option === "Your goal"){
         changeStats();
-    }
-    else if (option.textContent === "Your goal"){
         changeGoal();
     }
-    else if (option.textContent === "Breakfast"){
-        for(i = 0; i < meals.length; i++){
-            if(meals[i].classList.contains('breakfast')){
-                meals[i].classList.remove('d-none');
-            }
-            else {
-                meals[i].classList.add('d-none');
-            };
-        };
-        document.getElementById('category').textContent = "Breakfast";
+    else if((option === "Breakfast" || option === "Lunch" || option === "Dinner" || option === "Snacks") && window.location.pathname !== ('/planner.html')){
+        window.sessionStorage.setItem("menu", option);
+        window.location.assign('../planner.html');
     }
-    else if (option.textContent === "Lunch"){
-        for(i = 0; i < meals.length; i++){
-            if(meals[i].classList.contains('lunch')){
-                meals[i].classList.remove('d-none');
-            }
-            else {
-                meals[i].classList.add('d-none');
-            };
-        };
-        document.getElementById('category').textContent = "Lunch";
+    else if((option === "Breakfast" || option === "Lunch" || option === "Dinner" || option === "Snacks") && window.location.pathname === ('/planner.html')){
+        filterRecipes(option);
     }
-    else if (option.textContent === "Dinner"){
-        for(i = 0; i < meals.length; i++){
-            if(meals[i].classList.contains('dinner')){
-                meals[i].classList.remove('d-none');
-            }
-            else {
-                meals[i].classList.add('d-none');
-            };
-        };
-        document.getElementById('category').textContent = "Dinner";
-    }
-    else if (option.textContent === "Snacks"){
-        for(i = 0; i < meals.length; i++){
-            if(meals[i].classList.contains('snack')){
-                meals[i].classList.remove('d-none');
-            }
-            else {
-                meals[i].classList.add('d-none');
-            };
-        };
-        document.getElementById('category').textContent = "Snacks";
+    else if(option === "Meal plan"){
+        window.location.assign('../mealplan.html');
     };
 };
 
