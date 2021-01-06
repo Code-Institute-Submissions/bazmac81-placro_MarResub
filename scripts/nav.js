@@ -14,6 +14,11 @@ function menuOption(e){
         filterRecipes(option);
     }
     else if(option === "Meal plan"){
+        if(window.location.pathname === ('/planner.html')){
+            completeMealPlan = JSON.stringify(mealPlan);
+            console.log(completeMealPlan);
+            window.sessionStorage.setItem('mealPlan', completeMealPlan);
+        }
         window.location.assign('../mealplan.html');
     };
 };
