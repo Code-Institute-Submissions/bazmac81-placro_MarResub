@@ -1,7 +1,8 @@
 // Capture menu option selected and direct based on choice made
 function menuOption(e){
     var option = e.target.textContent;
-        
+    e.preventDefault();
+
     if (option === "Your stats" || option === "Your goal"){
         changeStats();
         changeGoal();
@@ -16,7 +17,6 @@ function menuOption(e){
     else if(option === "Meal plan"){
         if(window.location.pathname === ('/planner.html')){
             completeMealPlan = JSON.stringify(mealPlan);
-            console.log(completeMealPlan);
             window.sessionStorage.setItem('mealPlan', completeMealPlan);
         }
         window.location.assign('../mealplan.html');
