@@ -93,10 +93,13 @@ a, a:visited, a:not([href]) {
     background-color: #f46036ff;
     color: #082649ff;
     border: 2px solid #495d63ff;
+}
+
+.recipeBtn {
     width: 90px;
 }
 
-.rem {
+.rem{
     background-color: #495d63ff;
     color: #f46036ff;
 }
