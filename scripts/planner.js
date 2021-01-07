@@ -33,11 +33,11 @@ function loadRecipeData(recipeData){
                 '</div>'+
             '</div>'+
             '<div class="row no-gutters">'+
-                '<div class="d-sm-none col-md-5">'+
+                '<div class="d-none d-sm-block col-sm-5">'+
                     '<div class="meal-img">'+
                     '</div>'+
                 '</div>'+
-                '<div class="col-sm-12 col-md-7">'+
+                '<div class="col-xs-12 col-sm-7">'+
                     '<div class="row">'+
                         '<div class="middle col-5 mx-auto">'+
                             '<span class="meal-stat meal-cals">'+recipeData[i].mealStats.calories+'</span>g'+
@@ -269,6 +269,8 @@ function resetMeal(){
     var mealStatsAdjust = [0, 0, 0, 0];
     var remMealType = [];
 
+    console.log('Reset pressed');
+
     // Get the macro stats for each recipe added to the meal plan
     for (i = 0; i < selMeals.length; i++){
         selMealStats[i] = selMeals[i].parentNode.parentNode.parentNode.getElementsByClassName('meal-stat');
@@ -297,7 +299,7 @@ var planPc = [0, 0, 0, 0];
 //Meals refer to Breakfast, Lunch, Dinner, Snacks
 var mealStats = [0, 0, 0, 0];
 var mealPc = [0, 0, 0, 0, 0];
-function  meal (name, type, cals, prot, carb, fat, ing, desc){
+function meal (name, type, cals, prot, carb, fat, ing, desc){
     this.name = name;
     this.type = type;
     this.calories = cals;
@@ -309,7 +311,7 @@ function  meal (name, type, cals, prot, carb, fat, ing, desc){
 };
 var mealPlan = [];
 
-if (window.location.pathname === "../planner.html"){
+if (window.location.pathname === "/planner.html"){
     var resetCat = document.getElementById('resetBtn');
     resetCat.addEventListener('click', resetMeal, false);
 };
