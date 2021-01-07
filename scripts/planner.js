@@ -1,20 +1,4 @@
-function pcCalc(){
-    var statsPc = document.getElementsByClassName('stat_pc');
 
-    if(planStats[0] > 0){
-        for (i = 0; i < stats.length; i++){
-            planPc[i] = Math.round((planStats[i] / stats[i]) * 100);
-            statsPc[i].firstChild.textContent = planPc[i] + '%';
-        }
-    }
-    else {
-       for (i = 0; i < stats.length; i++){
-            planPc[i] = 0;
-            statsPc[i].firstChild.textContent = planPc[i] + '%';
-        } 
-    }
-    //mealPc();
-};
 
 function loadRecipeData(recipeData){
     var recipeContainer = document.getElementById('recipe-card-container');
@@ -25,10 +9,10 @@ function loadRecipeData(recipeData){
         recipeList += 
         '<div class="recipe-card col-10 col-md-5 mx-auto d-none '+recipeData[i].mealType+'">'+
             '<div class="row no-gutters">'+
-                '<div class="col-9 col-sm-10">'+
-                    '<h3 class="heading">'+ recipeData[i].recipeName +'</h3>'+
+                '<div class="col-8 col-sm-9">'+
+                    '<h3 class="heading recipe-name">'+ recipeData[i].recipeName +'</h3>'+
                 '</div>'+
-                '<div class="col-3 col-sm-2">'+
+                '<div class="col-4 col-sm-3">'+
                     '<button class="btn recipeBtn add">Add</button>'+
                 '</div>'+
             '</div>'+

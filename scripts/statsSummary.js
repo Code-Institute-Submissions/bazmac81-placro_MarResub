@@ -1,28 +1,22 @@
 function retrieveData(){
-    inputs[0] = sessionStorage.getItem('name');
-    inputs[1] = sessionStorage.getItem('age');
-    inputs[2] = sessionStorage.getItem('weight');
-    inputs[3] = sessionStorage.getItem('height');
-    stats[0] = sessionStorage.getItem('calories');
-    stats[1] = sessionStorage.getItem('protein');
-    stats[2] = sessionStorage.getItem('carbs');
-    stats[3] = sessionStorage.getItem('fat');
-    modifiers[0] = sessionStorage.getItem('measure');
-    modifiers[1] = sessionStorage.getItem('goal');
-    
+    userStats = JSON.parse(window.sessionStorage.getItem('userStats'));
+    modifiers = JSON.parse(window.sessionStorage.getItem('modifiers'));
+    macros = JSON.parse(window.sessionStorage.getItem('macros'));
+    mealPlan = JSON.parse(window.sessionStorage.getItem('mealPlan'));
+
+    console.log(userStats, modifiers, macros);
+    console.log(mealPlan);
     writeStats();
 };
 
 function writeStats(){
-    macros = document.getElementsByClassName('stat');
+    macrosHTML = document.getElementsByClassName('stat');
 
-    for (i = 0; i < macros.length; i++){
-        macros[i].firstChild.textContent = stats[i];
+    let keys = Object.values(macros);
+    console.log(keys);
+    for (i = 0; i < macrosHTML.length; i++){
+        macrosHTML[i].firstChild.textContent = keys[i];
     };
 };
-
-var inputs = [];
-var modifiers = [];
-var stats = [];
 
 window.addEventListener('load', retrieveData, false);

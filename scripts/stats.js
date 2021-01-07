@@ -18,11 +18,9 @@ function macrosCalc(cals, g) {
         carbMulti = 0.45;
         fatMulti = 0.25;
     };
-    protein = Math.round((cals * protMulti) / 4);
-    carbs = Math.round((cals * carbMulti) / 4);
-    fat = Math.round((cals * fatMulti) / 9);
-
-    return [cals, protein, carbs, fat];
+    macros.protein = Math.round((cals * protMulti) / 4);
+    macros.carbs = Math.round((cals * carbMulti) / 4);
+    macros.fat = Math.round((cals * fatMulti) / 9);
 };
 
 // Using user stats calculate Base Metabolic Rate
@@ -61,26 +59,26 @@ function statsCapture(e){
 
     //Assign data to variables and convert to numbers
     if (n.value != ""){
-        inputs[0] = n.value;
+        userStats.name = n.value;
     };
     if (a.value != "") {
-        inputs[1] = parseInt(a.value);
+        userStats.age = parseInt(a.value);
     };
     if (h.value != "") {
-        inputs[2] = parseInt(w.value);
+        userStats.weight = parseInt(w.value);
     };
     if (w.value != "") {
-        inputs[3] = parseInt(h.value);
+        userStats.height = parseInt(h.value);
     };
 
     //Make sure any imperial measures are converted back to metric to manage macro calculations
     if(modifiers[0] === "imperial"){
-        inputs[2] = Math.round(inputs[2] / lbsMulti);
-        inputs[3] = Math.round(inputs[3] * inchMulti);
+        userStats.weight = Math.round(userStats.weight / lbsMulti);
+        userStats.height = Math.round(userStats.height * inchMulti);
     }
     
     //Calculate the calories based on the user input
-    stats[0] = tdeeCalc(bmrCalc(inputs[1], inputs[2], inputs[3]));
+    macros.calories = tdeeCalc(bmrCalc(userStats.age, userStats.weight, userStats.height));
 
     if (window.location.pathname === '/'){
         document.getElementById('statSection').classList.toggle('d-none');
@@ -94,9 +92,9 @@ function getMeasure(e){
     var h = document.getElementById('height');
     var w = document.getElementById('weight');
 
-    modifiers[0] = m.getAttribute('value');
+    modifier.measure = m.getAttribute('value');
 
-    if(modifiers[0] === "metric"){
+    if(modifier.measure === "metric"){
         if(w.value != "") {
             w.value = Math.round(w.value / lbsMulti);
         };
@@ -128,20 +126,20 @@ function submitStats(e){
     // Capture the selected goals option
     for (i = 0; i < goalForm.length; i++) {
         if (goalForm[i].checked === true) {
-            modifiers[1] = goalForm[i].value;
+            modifiers.goal = goalForm[i].value;
         }
     };
 
     // Capture the selected measures option
     for (i = 0; i < measureType.length; i++) {
         if (measureType[i].checked === true) {
-            modifiers[0] = measureType[i].value;
+            modifiers.measure = measureType[i].value;
         }
     }
     
     // Calculate the macros and store them to memory for the next page
-    stats = macrosCalc(stats[0], modifiers[1]);
-    storeStats(inputs, modifiers, stats);
+    macrosCalc(macros.calories, modifiers.goal);
+    storeStats();
 
     // Load the stats.html page only if currently on the index page
     if (window.location.pathname === "/"){
@@ -150,23 +148,31 @@ function submitStats(e){
 };
 
 // Store all stats into session storage for site pages to access
-function storeStats(i, m, s){
-    sessionStorage.setItem('name', i[0]);
-    sessionStorage.setItem('age', i[1]);
-    sessionStorage.setItem('weight', i[2]);
-    sessionStorage.setItem('height', i[3]);
-    sessionStorage.setItem('measure', m[0]);
-    sessionStorage.setItem('goal', m[1]);
-    sessionStorage.setItem('calories', s[0]);
-    sessionStorage.setItem('protein', s[1]);
-    sessionStorage.setItem('carbs', s[2]);
-    sessionStorage.setItem('fat', s[3]);
+function storeStats(){
+    window.sessionStorage.setItem('userStats', JSON.stringify(userStats));
+    window.sessionStorage.setItem('modifiers', JSON.stringify(modifiers));
+    window.sessionStorage.setItem('macros', JSON.stringify(macros));
 };
 
 const lbsMulti = 2.20462;
 const inchMulti = 2.54;
-var inputs = [], modifiers = [], stats = [];
 var calories = 0;
+var userStats = {
+    name:'',
+    age:0,
+    weight:0,
+    height:0,
+};
+var modifiers = {
+    measure:'',
+    goal:'',
+};
+var macros = {
+    calories:0,
+    protein:0,
+    carbs:0,
+    fat:0,
+};
 
 // Capture form and listen for submit action
 var statsForm = document.getElementById('stats');

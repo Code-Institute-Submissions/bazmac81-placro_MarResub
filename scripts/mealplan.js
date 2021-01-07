@@ -1,10 +1,3 @@
-function retrieveData(){
-    var storedPlan = window.sessionStorage.getItem('mealPlan');
-    mealPlan = JSON.parse(storedPlan);
-
-    postPlan();
-};
-
 function postPlan(){
     var meals = ['Breakfast', 'Lunch', 'Dinner', 'Snack'];
     var planList = document.getElementById('complete-plan');
@@ -34,4 +27,4 @@ function postPlan(){
 
 var ingredients = [];
 
-window.addEventListener('load', retrieveData, false);
+window.addEventListener('load', postPlan, false);

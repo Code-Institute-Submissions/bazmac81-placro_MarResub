@@ -32,8 +32,9 @@ function changeStats(){
     var statsForm = document.getElementById('stats');
     var fields = statsForm.getElementsByClassName('form-control');
 
+    let keys = Object.keys(userStats);
     for(i = 0; i < fields.length; i++){
-        fields[i].value = inputs[i];
+        fields[i].value = userStats[keys[i]];
     };
 };
 
@@ -42,9 +43,9 @@ function changeGoal(){
     var goalForm = document.getElementsByName('goals');
 
     for(i = 0; i < goalForm.length; i++){
-        if(goalForm[i].value === modifiers[1] && goalForm[i].checked === false){
+        if(goalForm[i].value === modifiers.goal && goalForm[i].checked === false){
             goalForm[i].checked = true;
-        } else if (goalForm[i].value !== modifiers[1] && goalForm[i].checked === true){
+        } else if (goalForm[i].value !== modifiers.goal && goalForm[i].checked === true){
             goalForm[i].checked = false;
         };
     };
@@ -57,7 +58,7 @@ function updateStats(e){
         
     //Re-calculate the numbers and write them to memory
     statsCapture();
-    submitStats(inputs, modifiers, stats);
+    submitStats();
 
     //Write the numbers to the page
     writeStats();
