@@ -260,7 +260,7 @@ Reference Books I have used when building this site:
 
 Reference sites to build knowledge on technologies covered in the first 3 modules of the course; HTML Fundamentals, CSS Fundamentals, and User Centric Frontend Development:
 - [stackoverflow](https://www.stackoverflow.com) - used for general trouble shooting and answers to questions for issues.
-
+- https://zellwk.com/blog/looping-through-js-objects/ - used to understand how to loop through object content
 _[Back to Contents](#Contents)_
 
 -------------

@@ -2,6 +2,12 @@ function postPlan(){
     var meals = ['Breakfast', 'Lunch', 'Dinner', 'Snack'];
     var planList = document.getElementById('complete-plan');
     var section = '';
+ 
+    retrieveData();
+    pcCalc();
+    mealPcCalc();
+
+    document.getElementById('planHeader').textContent = userStats.name + "'s Meal Plan";
 
     for (i = 0; i < meals.length; i++){
         section += 
@@ -24,7 +30,5 @@ function postPlan(){
 
     planList.innerHTML = section;
 };
-
-var ingredients = [];
 
 window.addEventListener('load', postPlan, false);

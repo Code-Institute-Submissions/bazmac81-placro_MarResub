@@ -1,4 +1,18 @@
+//Plans refer to cals, prot, carbs, fat stats
+var planStats = [0, 0, 0, 0];
+var planPc = [0, 0, 0, 0];
 
+//Meals refer to Breakfast, Lunch, Dinner, Snacks
+var mealStats = {
+    breakfast: 0,
+    lunch: 0,
+    dinner: 0,
+    snacks: 0,
+};
+var mealPc = [0, 0, 0, 0];
+
+//Array to store users selected recipes
+var mealPlan = [];
 
 function loadRecipeData(recipeData){
     var recipeContainer = document.getElementById('recipe-card-container');
@@ -56,11 +70,8 @@ function loadRecipeData(recipeData){
     
     //check to see if mealPlan has data - update 
     var mealPlanRec = document.querySelectorAll('.heading');
-    console.log(mealPlanRec);
     if(window.sessionStorage.getItem('mealPlan')){
         mealPlan = JSON.parse(window.sessionStorage.getItem('mealPlan'));
-            console.log(mealPlan);
-
         for (i = 0; i < mealPlanRec.length; i++){
             for(j = 0; j < mealPlan.length; j++){
                 if(mealPlanRec[i].textContent === mealPlan[j].name){
@@ -82,8 +93,6 @@ function filterRecipes(opt){
 
     document.getElementById('category').textContent = opt; //Set the page header to match the menu option selected
 
-    console.log(opt);
-
     if (opt === 'Snacks') {
         opt = 'snack'; // De-plural menu option to allow class search
     }
@@ -100,65 +109,36 @@ function filterRecipes(opt){
 }
 
 // Calculate % of calories allocated to each meal type
-function mealPcCalc(rs, mType, operator){
+function mealPcCalc(){
     mealPcGuage = document.getElementsByClassName('meal_pc');
 
-    // Perform operation based on adding or removing meal
-    if (operator === 'add'){
-        mealStats[mType] += parseInt(rs.textContent, 10);
-    }
-    else if (operator === "sub" && mealStats[mType] > 0) {
-        mealStats[mType] -= parseInt(rs.textContent, 10);
-    }
-    else {
-        mealStats[mType] = 0;
-    }
-
-    // Write meal % to HTML
+    // Check value of mealStats then calc and write meal % to HTML 
+    let mSVals = Object.values(mealStats);
+    console.log(mSVals);
     for (i = 0; i < mealPcGuage.length; i++){
-        mealPc[i] = Math.round((mealStats[i] / planStats[0]) * 100);
+        if(mSVals[i]>0){
+            console.log(mealStats[i]);
+            mealPc[i] = Math.round((mSVals[i] / planStats[0]) * 100);
+        }
+        else {
+            mealPc[i] = 0;
+        };
         mealPcGuage[i].textContent = mealPc[i];
     };
 };
 
-function mealCalc(operator, rStats, rType){
-    for(i = 0; i < rStats.length; i++){
-        if(operator === "add"){
-            planStats[i] += parseInt(rStats[i].textContent,10) || rStats[i];
-        }
-        else {
-            planStats[i] -= parseInt(rStats[i].textContent,10) || rStats[i];
-        };
+function mealCalc(operator, rStats){
+    var mealType = document.getElementById('category').textContent.toLowerCase();
+    var mealCals = parseInt(rStats[0].textContent,10);
+    
+    if (operator === 'add'){
+        mealStats[mealType] += mealCals;
+    }
+    else {
+        mealStats[mealType] -= mealCals;
     };
 
-    switch (true){
-        case rType.classList.contains('breakfast') && operator === "add":
-            mealPcCalc(rStats[0], 0, 'add');
-            break;
-        case rType.classList.contains('lunch') && operator === "add":
-            mealPcCalc(rStats[0], 1, 'add');
-            break;
-        case rType.classList.contains('dinner') && operator === "add":
-            mealPcCalc(rStats[0], 2, 'add');
-            break;
-        case rType.classList.contains('snack') && operator === "add":
-            mealPcCalc(rStats[0], 3, 'add');
-            break;
-        case rType.classList.contains('breakfast') && operator === "sub":
-            mealPcCalc(rStats[0], 0, 'sub');
-            break;
-        case rType.classList.contains('lunch') && operator === "sub":
-            mealPcCalc(rStats[0], 1, 'sub');
-            break;
-        case rType.classList.contains('dinner') && operator === "sub":
-            mealPcCalc(rStats[0], 2, 'sub');
-            break;
-        case rType.classList.contains('snack') && operator === "sub":
-            mealPcCalc(rStats[0], 3, 'sub');
-            break;
-        default :
-            break;
-    }
+    mealPcCalc();
 };
 
 function toggleRecipeBtn(btn, currentBtnClass, newBtnClass, btnText){
@@ -169,59 +149,72 @@ function toggleRecipeBtn(btn, currentBtnClass, newBtnClass, btnText){
 
 //Add recipe details to meal plan to carry over into Meal Plan page
 function addToPlan(rCard, s){
+    var meal = {};
+
+    meal.name = rCard.querySelector('.heading').textContent;
+    meal.cals = rCard.querySelector('.meal-cals').textContent;
+    meal.prot = rCard.querySelector('.meal-protein').textContent;
+    meal.carb = rCard.querySelector('.meal-carb').textContent;
+    meal.fat = rCard.querySelector('.meal-fat').textContent;
+    meal.ing = rCard.querySelector('.meal-ings').textContent;
+    meal.desc = rCard.querySelector('.meal-desc').textContent;
     
-    var name = rCard.querySelector('.heading').textContent;
-    var type = '';
-    var cals = rCard.querySelector('.meal-cals').textContent;
-    var prot = rCard.querySelector('.meal-protein').textContent;
-    var carb = rCard.querySelector('.meal-carb').textContent;
-    var fat = rCard.querySelector('.meal-fat').textContent;
-    var ing = rCard.querySelector('.meal-ings').textContent;
-    var desc = rCard.querySelector('.meal-desc').textContent;
-    
+    if(rCard.classList.contains('breakfast')){
+        meal.type = 'breakfast';
+    } else if (rCard.classList.contains('lunch')) {
+        meal.type = 'lunch';
+    } else if (rCard.classList.contains('dinner')) {
+        meal.type = 'dinner';
+    } else if (rCard.classList.contains('snack')) {
+        meal.type = 'snack';
+    };
+
     if(s === 'add'){
-        if(rCard.classList.contains('breakfast')){
-            type = 'breakfast';
-        } else if (rCard.classList.contains('lunch')) {
-            type = 'lunch';
-        } else if (rCard.classList.contains('dinner')) {
-            type = 'dinner';
-        } else if (rCard.classList.contains('snack')) {
-            type = 'snack';
-        };
-        mealPlan.push(new meal(name, type, cals, prot, carb, fat, ing, desc)); 
-        console.log(mealPlan);
+        mealPlan.push(meal); 
     }
-    else {
+    else if(mealPlan.length > 0){
         for(i = 0; i <= mealPlan.length; i++){
-            if(mealPlan[i].name === name){
+            if(mealPlan[i].name === meal.name){
                 mealPlan.splice(i, 1);
             }
         };
-        console.log(mealPlan);
     };
-}
+};
 
+function recCalc(operator, rStats){
+    for(i = 0; i < rStats.length; i++){
+        if(operator === "add"){
+            planStats[i] += parseInt(rStats[i].textContent,10) || rStats[i];
+        }
+        else {
+            planStats[i] -= parseInt(rStats[i].textContent,10) || rStats[i];
+        };
+    };
+    pcCalc();
+};
+
+// Capture recipe btn actived and update trackers and btn state
 function mealAddRemove(e){
     var recipeBtn = e.target;
     var recipeCard = recipeBtn.parentNode.parentNode.parentNode;
     var recipeStats = recipeBtn.parentNode.parentNode.parentNode.getElementsByClassName('meal-stat');
     var state;
 
-    // Toggle button status and add / remove meal based on current state
+    // Toggle button status and calculate new %'s
     if(recipeBtn.classList.contains('add')){
-        mealCalc('add', recipeStats, recipeCard);
+        recCalc('add', recipeStats); // increase macro %'s based on recipe attributes
+        mealCalc('add', recipeStats); // update relevant meal type %'s as a % of calories spent
         toggleRecipeBtn(recipeBtn, 'add', 'rem', 'Remove');
         state = 'add';
     }
     else if(recipeBtn.classList.contains('rem')){    
-        mealCalc('sub', recipeStats, recipeCard);
+        recCalc('sub', recipeStats);
+        mealCalc('sub', recipeStats); // update relevant meal type %'s as a % of calories spent
         toggleRecipeBtn(recipeBtn, 'rem', 'add', 'Add');
         state = 'rem';
     };
-    
+
     addToPlan(recipeCard, state);
-    pcCalc();
 };
 
 function readRecipeFile(file, callback){
@@ -243,17 +236,14 @@ function manageMeal(){
             mealAddRemove(e);
         });
     };
-    pcCalc();
 };
 
 //Reset the plan category and update the trackers % values back to zero
-function resetMeal(){
+function resetAll(){
     var selMeals = document.querySelectorAll('.rem');
     var selMealStats = [];
     var mealStatsAdjust = [0, 0, 0, 0];
     var remMealType = [];
-
-    console.log('Reset pressed');
 
     // Get the macro stats for each recipe added to the meal plan
     for (i = 0; i < selMeals.length; i++){
@@ -266,43 +256,28 @@ function resetMeal(){
             mealStatsAdjust[x] += parseInt(selMealStats[y][x].textContent, 10);
         };
     };
-
+    
     // Reset recipe button states back to Add
     for (i = 0; i < selMeals.length; i++){
         toggleRecipeBtn(selMeals[i], 'rem', 'add', 'Add');
+        mealPlan.pop();
     };
 
-    mealCalc('sub', mealStatsAdjust, remMealType);
-    pcCalc();
+    recCalc('sub', mealStatsAdjust, remMealType);
+    mealPcCalc();
 }
-
-//Plans refer to cals, prot, carbs, fat stats
-var planStats = [0, 0, 0, 0];
-var planPc = [0, 0, 0, 0];
-
-//Meals refer to Breakfast, Lunch, Dinner, Snacks
-var mealStats = [0, 0, 0, 0];
-var mealPc = [0, 0, 0, 0, 0];
-function meal (name, type, cals, prot, carb, fat, ing, desc){
-    this.name = name;
-    this.type = type;
-    this.calories = cals;
-    this.protein = prot;
-    this.carbs = carb;
-    this.fat = fat;
-    this.ingredients = ing;
-    this.desc = desc;     
-};
-var mealPlan = [];
 
 if (window.location.pathname === "/planner.html"){
     var resetCat = document.getElementById('resetBtn');
-    resetCat.addEventListener('click', resetMeal, false);
+    resetCat.addEventListener('click', resetAll, false);
 };
 
 if(window.location.pathname === "/planner.html"){
     window.addEventListener('load', readRecipeFile("data/recipes.JSON", function(text){
         var data = (JSON.parse(text));
+        retrieveData();
+        pcCalc();
+        mealPcCalc();
         loadRecipeData(data);
         manageMeal();
     }));

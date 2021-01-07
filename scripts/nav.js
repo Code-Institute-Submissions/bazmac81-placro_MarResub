@@ -1,28 +1,27 @@
+var menu = document.getElementById('navbarMenu');
+var statsChangeSubmit = document.getElementById('update-stats');
+var goalsChangeSubmit = document.getElementById('update-goal');
+
 // Capture menu option selected and direct based on choice made
 function menuOption(e){
     var option = e.target.textContent;
     e.preventDefault();
+
+    window.sessionStorage.setItem("menu", option);
 
     if (option === "Your stats" || option === "Your goal"){
         changeStats();
         changeGoal();
     }
     else if((option === "Breakfast" || option === "Lunch" || option === "Dinner" || option === "Snacks") && window.location.pathname !== ('/planner.html')){
-        window.sessionStorage.setItem("menu", option);
-        if(window.location.pathname === '/mealplan.html'){
-            completeMealPlan = JSON.stringify(mealPlan);
-            window.sessionStorage.setItem('mealPlan', completeMealPlan);
-        };
+        storeStats();
         window.location.assign('../planner.html');
     }
     else if((option === "Breakfast" || option === "Lunch" || option === "Dinner" || option === "Snacks") && window.location.pathname === ('/planner.html')){
         filterRecipes(option);
     }
     else if(option === "Meal plan"){
-        if(window.location.pathname === ('/planner.html')){
-            completeMealPlan = JSON.stringify(mealPlan);
-            window.sessionStorage.setItem('mealPlan', completeMealPlan);
-        }
+        storeStats();
         window.location.assign('../mealplan.html');
     };
 };
@@ -66,15 +65,12 @@ function updateStats(e){
     //Update % sections if the relevant page is being used
     if(window.location.pathname === "/mealplan.html" || window.location.pathname === "/planner.html"){
         pcCalc();
+        mealPcCalc();
     };
 
     //Close the BS Modal window
     $(closemodal).modal('toggle')
 };
-
-var menu = document.getElementById('navbarMenu');
-var statsChangeSubmit = document.getElementById('update-stats');
-var goalsChangeSubmit = document.getElementById('update-goal');
 
 menu.addEventListener('click', function(e){
     menuOption(e);

@@ -18,6 +18,7 @@ function macrosCalc(cals, g) {
         carbMulti = 0.45;
         fatMulti = 0.25;
     };
+    macros.calories = cals;
     macros.protein = Math.round((cals * protMulti) / 4);
     macros.carbs = Math.round((cals * carbMulti) / 4);
     macros.fat = Math.round((cals * fatMulti) / 9);
@@ -79,7 +80,7 @@ function statsCapture(e){
     
     //Calculate the calories based on the user input
     macros.calories = tdeeCalc(bmrCalc(userStats.age, userStats.weight, userStats.height));
-
+    console.log(macros.calories);
     if (window.location.pathname === '/'){
         document.getElementById('statSection').classList.toggle('d-none');
         document.getElementById('goalSection').classList.toggle('d-none');  
@@ -136,7 +137,7 @@ function submitStats(e){
             modifiers.measure = measureType[i].value;
         }
     }
-    
+    console.log(macros.calories);
     // Calculate the macros and store them to memory for the next page
     macrosCalc(macros.calories, modifiers.goal);
     storeStats();
@@ -152,6 +153,12 @@ function storeStats(){
     window.sessionStorage.setItem('userStats', JSON.stringify(userStats));
     window.sessionStorage.setItem('modifiers', JSON.stringify(modifiers));
     window.sessionStorage.setItem('macros', JSON.stringify(macros));
+
+    if(window.location.pathname === "/planner.html" || window.location.pathname === "/mealplan.html"){
+        window.sessionStorage.setItem('mealPlan', JSON.stringify(mealPlan));
+        window.sessionStorage.setItem('planStats', JSON.stringify(planStats));
+        window.sessionStorage.setItem('mealStats', JSON.stringify(mealStats));
+    };
 };
 
 const lbsMulti = 2.20462;
@@ -174,6 +181,12 @@ var macros = {
     fat:0,
 };
 
+if(window.location.pathname === "/"){
+    window.addEventListener('load', function(){
+        sessionStorage.clear();
+    });
+};
+
 // Capture form and listen for submit action
 var statsForm = document.getElementById('stats');
 statsForm.addEventListener('submit', statsCapture, false);
@@ -191,3 +204,5 @@ var goalForm = document.getElementById('goals');
 goalForm.addEventListener('submit', function(e){
     submitStats(e);
 });
+
+var mealPlan = [];
