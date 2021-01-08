@@ -15,14 +15,14 @@ function menuOption(e){
     }
     else if((option === "Breakfast" || option === "Lunch" || option === "Dinner" || option === "Snacks") && window.location.pathname !== ('/planner.html')){
         storeStats();
-        window.location.assign('../planner.html');
+        window.location.assign('./planner.html');
     }
     else if((option === "Breakfast" || option === "Lunch" || option === "Dinner" || option === "Snacks") && window.location.pathname === ('/planner.html')){
         filterRecipes(option);
     }
     else if(option === "Meal plan"){
         storeStats();
-        window.location.assign('../mealplan.html');
+        window.location.assign('./mealplan.html');
     };
 };
 
