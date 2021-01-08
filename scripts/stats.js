@@ -205,4 +205,6 @@ goalForm.addEventListener('submit', function(e){
     submitStats(e);
 });
 
+console.log(window.location.pathname);
+
 var mealPlan = [];
