@@ -144,7 +144,7 @@ function submitStats(e){
 
     // Load the stats.html page only if currently on the index page
     if (window.location.pathname === "/" || window.location.pathname === "/placro/"){
-        window.location.assign("../stats.html");
+        window.location.assign("./stats.html");
     };
 };
 
