@@ -4,7 +4,7 @@ function retrieveData(){
     macros = JSON.parse(window.sessionStorage.getItem('macros'));
     
     if(JSON.parse(window.sessionStorage.getItem('planStats')) !== null){
-        if(window.location.pathname === "/planner.html" || window.location.pathname === "/mealplan.html"){
+        if(window.location.pathname === "/planner.html" || window.location.pathname === "/mealplan.html" || window.location.pathname === "/placro/planner.html" || window.location.pathname === "/placro/mealplan.html"){
             mealPlan = JSON.parse(window.sessionStorage.getItem('mealPlan'));
             planStats = JSON.parse(window.sessionStorage.getItem('planStats'));
             mealStats = JSON.parse(window.sessionStorage.getItem('mealStats'));

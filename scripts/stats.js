@@ -48,7 +48,7 @@ function tdeeCalc(bmr){
 
 // Captures user input from first submission and amendments via navmenu forms
 function statsCapture(e){
-    if(window.location.pathname === '/'){
+    if(window.location.pathname === '/' || window.location.pathname === "/placro/"){
         e.preventDefault();
     }
 
@@ -81,7 +81,7 @@ function statsCapture(e){
     //Calculate the calories based on the user input
     macros.calories = tdeeCalc(bmrCalc(userStats.age, userStats.weight, userStats.height));
     console.log(macros.calories);
-    if (window.location.pathname === '/'){
+    if (window.location.pathname === '/' || window.location.pathname === "/placro/"){
         document.getElementById('statSection').classList.toggle('d-none');
         document.getElementById('goalSection').classList.toggle('d-none');  
     };
@@ -120,7 +120,7 @@ function getMeasure(e){
 
 function submitStats(e){
     // Only prevent default submit action when on the index page
-    if (window.location.pathname === "/"){
+    if (window.location.pathname === "/" || window.location.pathname === "/placro/"){
         e.preventDefault();    
     }
 
@@ -143,7 +143,7 @@ function submitStats(e){
     storeStats();
 
     // Load the stats.html page only if currently on the index page
-    if (window.location.pathname === "/"){
+    if (window.location.pathname === "/" || window.location.pathname === "/placro/"){
         window.location.assign("../stats.html");
     };
 };
@@ -154,7 +154,7 @@ function storeStats(){
     window.sessionStorage.setItem('modifiers', JSON.stringify(modifiers));
     window.sessionStorage.setItem('macros', JSON.stringify(macros));
 
-    if(window.location.pathname === "/planner.html" || window.location.pathname === "/mealplan.html"){
+    if(window.location.pathname === "/planner.html" || window.location.pathname === "/mealplan.html" || window.location.pathname === "/placro/planner.html" || window.location.pathname === "/placro/mealplan.html"){
         window.sessionStorage.setItem('mealPlan', JSON.stringify(mealPlan));
         window.sessionStorage.setItem('planStats', JSON.stringify(planStats));
         window.sessionStorage.setItem('mealStats', JSON.stringify(mealStats));
@@ -181,7 +181,7 @@ var macros = {
     fat:0,
 };
 
-if(window.location.pathname === "/"){
+if(window.location.pathname === "/" || window.location.pathname === "/placro/"){
     window.addEventListener('load', function(){
         sessionStorage.clear();
     });
@@ -204,7 +204,5 @@ var goalForm = document.getElementById('goals');
 goalForm.addEventListener('submit', function(e){
     submitStats(e);
 });
-
-console.log(window.location.pathname);
 
 var mealPlan = [];

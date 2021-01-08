@@ -63,7 +63,7 @@ function updateStats(e){
     writeStats();
 
     //Update % sections if the relevant page is being used
-    if(window.location.pathname === "/mealplan.html" || window.location.pathname === "/planner.html"){
+    if(window.location.pathname === "/mealplan.html" || window.location.pathname === "/planner.html" || window.location.pathname === "/placro/planner.html" || window.location.pathname === "/placro/mealplan.html"){
         pcCalc();
         mealPcCalc();
     };
