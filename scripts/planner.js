@@ -242,7 +242,7 @@ function manageMeal(button){
 
     for(i = 0; i < recipeHeaders.length; i++){
         recipeHeaders[i].addEventListener('click', function(e){
-            showDetail(e)
+            showDetail(e);
         });
     };
 };
@@ -287,12 +287,12 @@ function showDetail(e){
     };   
 };
 
-if (window.location.pathname === "/planner.html"){
+if (window.location.pathname === "/planner.html" || window.location.pathname === "/placro/planner.html"){
     var resetCat = document.getElementById('resetBtn');
     resetCat.addEventListener('click', resetAll, false);
 };
 
-if(window.location.pathname === "/planner.html"){
+if(window.location.pathname === "/planner.html" || window.location.pathname === "/placro/planner.html"){
     window.addEventListener('load', readRecipeFile("data/recipes.JSON", function(text){
         var data = (JSON.parse(text));
         retrieveData();
