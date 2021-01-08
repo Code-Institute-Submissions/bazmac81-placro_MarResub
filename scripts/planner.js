@@ -33,6 +33,7 @@ function loadRecipeData(recipeData){
             '<div class="row no-gutters">'+
                 '<div class="d-none d-sm-block col-sm-5">'+
                     '<div class="meal-img">'+
+                        '<img src="assets/images/'+recipeData[i].mealType+'/'+recipeData[i].image+'" alt="'+recipeData[i].recipeName+'">'+
                     '</div>'+
                 '</div>'+
                 '<div class="col-xs-12 col-sm-7">'+
@@ -54,18 +55,18 @@ function loadRecipeData(recipeData){
                     '</div>'+
                 '</div>'+
             '</div>'+
-            '<div class="row no-gutters d-none">'+
+            '<div class="row no-gutters d-none details">'+
                 '<div class="col-10 mx-auto meal-desc">'+
                     recipeData[i].description+
                 '</div>'+
             '</div>'+
-            '<div class="row no-gutters d-none">'+
+            '<div class="row no-gutters d-none details">'+
                 '<div class="col-10 mx-auto meal-ings">'+
                     recipeData[i].ingredients+
                 '</div>'+
             '</div>'+
         '</div>';
-    }
+    };
     recipeContainer.innerHTML = recipeList;
     
     //check to see if mealPlan has data - update 
@@ -106,7 +107,7 @@ function filterRecipes(opt){
             meals[i].classList.add('d-none');
         };
     };
-}
+};
 
 // Calculate % of calories allocated to each meal type
 function mealPcCalc(){
@@ -229,11 +230,19 @@ function readRecipeFile(file, callback){
     fileReq.send(null);
 };
 
-function manageMeal(){
+function manageMeal(button){
     var manageMeal = document.getElementsByClassName('recipeBtn');
+    var recipeHeaders = document.getElementsByClassName('recipe-name');
+
     for (i = 0; i < manageMeal.length; i++){
         manageMeal[i].addEventListener('click', function(e){
             mealAddRemove(e);
+        });
+    };
+
+    for(i = 0; i < recipeHeaders.length; i++){
+        recipeHeaders[i].addEventListener('click', function(e){
+            showDetail(e)
         });
     };
 };
@@ -265,7 +274,18 @@ function resetAll(){
 
     recCalc('sub', mealStatsAdjust, remMealType);
     mealPcCalc();
-}
+};
+
+function showDetail(e){
+    var rName = e.target;
+    var rCard = rName.parentNode.parentNode.parentNode;
+    var rDetails = rCard.getElementsByClassName('details');
+    
+    console.log(rName);
+    for (i = 0; i < rDetails.length; i++){
+        rDetails[i].classList.toggle('d-none');
+    };   
+};
 
 if (window.location.pathname === "/planner.html"){
     var resetCat = document.getElementById('resetBtn');
