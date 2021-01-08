@@ -104,7 +104,6 @@ Using coolors I have selected a selection of simple, high contrast colours.
 #### Icons
 In addition to the fonts and colourway, there are a few icons to be used through the site. These are sourced from Font Awesome and will be used to help direct users and sign post relevant sections using expected conventions. 
 
-
 ### Site Map and Wireframes
 To help ensure that the site contains all of the required information I have created simple wireframes as a framework, using the User Stories and Site Owner Goals to ensure that all of the required features for this release are present.
 
@@ -168,14 +167,19 @@ _[Back to Contents](#Contents)_
    - All html, CSS, and Javascript files were validated using the W3C validation tools. This did highlight some errors and warnings in relation to the use of some tags and the nesting of tags:  
 
 ### User story review
-To validate that the site achieves the goals set out in the planning stage, below are the user stories and the relevant screen shots that satisfy each requirement in this release.
+To validate that the site achieves the goals set out in the planning stage, below are the user stories that satisfy each requirement in this release.
 
+- As a **user**, I want to be able to **calculate my daily calorie and macros targets** to build a meal plan that **meets my goals**
+- As a **user**, I want to be able to **view recipes for various meals** for any part of the day to **create a varied meal plan**
+- As a  **user** I want to be able to **select meals to build a meal plan** and see how **each meal added impacts on my daily targets**
 
-### Peer Code Review
-_Details of peer code review posting in Slack with CI group to be listed here_
-
-### User testing
-_User testing details and results to be listed here_
+Due to known issues the following user stories have not been satisfied in this release:
+- As a **user**, I want to **understand more about macros** and how they **help with meal planning**
+- As a **user**, I want to be able to **save my selections** and **revisit them later**
+- As a **user** I want to be able to **easily create a shopping list** so that I can **purchase the ingredients that I need** to make my chosen meals
+- As a **user** I want to be able to highlight **particular recipes as favourites** so they are **easy to find when I revisit the site**
+- As a **user** I want to be able to **export ingredients lists** to my **favourite to do list app**
+- As a **user** I want to be able to **research more into the source material** to see the **detail behind the programme**
 
 _[Back to Contents](#Contents)_
 
@@ -189,8 +193,29 @@ Below are the bugs identified through the various stages of testing and how they
 ### Known Issues
 Below is a list of known bugs that are either not able to be resolved at this time due or are outside the scope of this project. They will be factored into the development of future releases to have them resolved.
 
+- recipe.JSON
+    - ingredients are in the wrong data format
+    - images not assigned to all recipes
+    - Recipe description is placeholder text
+    - Recipe ingredients is placeholder text
+
+- Index.html
+    - About section isn't accessible due to lack of functional button
+
+- Planner.html
+    - meal stats % does not reset correctly
+    - Recipe header incorrect colour, should be orange to denote link / interactive inline with site design
+
 - Mealplan.html
--- Remove button does not work as intended.
+    - Recipe remove button does not function as intended.
+    - Page does not show user friendly messaging when the meal plan is empty
+    - Shopping list button does not load live ingredient data
+    - Copy to clipboard does is not live
+    - Print is not live
+    - No function to save meal plan for later review
+
+- Menu navigation
+    - Your stats section does not show labels to correcly identify content to signpost meaning to user
 
 _[Back to Contents](#Contents)_
 
