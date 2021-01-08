@@ -189,7 +189,8 @@ Below are the bugs identified through the various stages of testing and how they
 ### Known Issues
 Below is a list of known bugs that are either not able to be resolved at this time due or are outside the scope of this project. They will be factored into the development of future releases to have them resolved.
 
-- _Any known issues to be detailed here_ 
+- Mealplan.html
+-- Remove button does not work as intended.
 
 _[Back to Contents](#Contents)_
 
