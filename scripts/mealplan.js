@@ -19,7 +19,7 @@ function postPlan(){
             if(mealPlan[j].type === meals[i].toLowerCase()){  
                 section+=
                     '<li class="mealplan-item">'+
-                        '<button class="btn remove"><i class="fa fa-times-circle remove"></i></button><span class="recipe-name">'+ mealPlan[j].name +'</span>'+
+                        '<button class="btn remove"><i class="fa fa-times-circle"></i></button><span class="recipe-name">'+ mealPlan[j].name +'</span>'+
                     '</li>';
             };
         };
@@ -31,4 +31,21 @@ function postPlan(){
     planList.innerHTML = section;
 };
 
-window.addEventListener('load', postPlan, false);
+function removeMeal(e){   
+    var remMeal = document.getElementsByClassName('remove');
+    console.log(remMeal);
+    for (i = 0; i < remMeal.length; i++){
+        remMeal[i].addEventListener('click', function(e){
+            delFromPlan(e);
+        });
+    };
+};
+
+function delFromPlan(){
+    console.log("this will delete the recipe");
+};
+
+window.addEventListener('load', function(){
+    postPlan();
+    removeMeal();
+});
