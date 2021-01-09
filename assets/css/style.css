@@ -80,7 +80,7 @@ h1, h2 {
 
 /*---------- Links and buttons -----*/
 
-a, a:visited, a:not([href]) {
+a, a:visited, a:not([href]), .meal {
     color: #f46036ff;
 }
 
@@ -104,7 +104,7 @@ a, a:visited, a:not([href]) {
     color: #f46036ff;
 }
 
-.btn:hover, .remove:hover, .cancel:hover{
+.btn:hover, .remove:hover, .cancel:hover, .meal:hover{
     color: #30bcedff;
 }
 
@@ -187,11 +187,15 @@ a, a:visited, a:not([href]) {
     align-items: center;
 }
 
+.meal {
+    text-shadow: 1px 1px 0px #082649ff, -1px 1px 0px #082649ff, 1px -1px 0px #082649ff, -1px -1px 0px #082649ff;
+}
+
 #breakfast:before {
     content: ' ';
     display: block;
     position: absolute;
-    z-index: 1;
+    z-index: -1;
     left: 0;
     top: 0;
     width: 100%;
@@ -205,7 +209,7 @@ a, a:visited, a:not([href]) {
     content: ' ';
     display: block;
     position: absolute;
-    z-index: 1;
+    z-index: -1;
     left: 0;
     top: 0;
     width: 100%;
@@ -219,7 +223,7 @@ a, a:visited, a:not([href]) {
     content: ' ';
     display: block;
     position: absolute;
-    z-index: 1;
+    z-index: -1;
     left: 0;
     top: 0;
     width: 100%;
@@ -233,7 +237,7 @@ a, a:visited, a:not([href]) {
     content: ' ';
     display: block;
     position: absolute;
-    z-index: 1;
+    z-index: -1;
     left: 0;
     top: 0;
     width: 100%;

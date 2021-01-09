@@ -41,3 +41,10 @@ function pcCalc(){
 };
 
 window.addEventListener('load', retrieveData, false);
+
+var mealOpts = document.getElementsByClassName('meal');
+for(opts in mealOpts){
+    addEventListener('click', function(e){
+        menuOption(e);
+    });
+}
