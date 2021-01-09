@@ -104,7 +104,7 @@ a, a:visited, a:not([href]) {
     color: #f46036ff;
 }
 
-.btn:hover, .btn.remove:hover .cancel:hover{
+.btn:hover, .remove:hover, .cancel:hover{
     color: #30bcedff;
 }
 
@@ -119,6 +119,10 @@ a, a:visited, a:not([href]) {
     background-clip: border-box;
     background-size: cover;
     padding: 0px;
+}
+/*---------- About Section -----*/
+#about {
+    margin-top: 40px;
 }
 
 /*---------- Stats and Planner numbers -----*/
@@ -314,7 +318,7 @@ footer div{
     align-items: center;
 }
 
-.btn.remove {
+.remove{
     padding: 0px 5px;
     background: none;
     color: #f46036ff;

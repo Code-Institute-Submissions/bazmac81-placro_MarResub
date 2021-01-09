@@ -19,7 +19,7 @@ function postPlan(){
             if(mealPlan[j].type === meals[i].toLowerCase()){  
                 section+=
                     '<li class="mealplan-item">'+
-                        '<button class="btn remove"><i class="fa fa-times-circle"></i></button><span class="recipe-name">'+ mealPlan[j].name +'</span>'+
+                        '<button class="remove"><i class="fa fa-times-circle"></i></button><span class="recipe-name">'+ mealPlan[j].name +'</span>'+
                     '</li>';
             };
         };
