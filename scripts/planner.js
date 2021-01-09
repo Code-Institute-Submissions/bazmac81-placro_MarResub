@@ -16,12 +16,12 @@ var mealPlan = [];
 
 function loadRecipeData(recipeData){
     var recipeContainer = document.getElementById('recipe-card-container');
-    var recipeList = '';
+    var recipeListHTML = '';
     var menuChoice = window.sessionStorage.getItem('menu');
 
     for (let i = 0; i < recipeData.length; i++){
-        recipeList += 
-        '<div class="recipe-card col-10 col-md-5 mx-auto d-none '+recipeData[i].mealType+'">'+
+        recipeListHTML += 
+        '<div class="recipe-card col-12 col-md-5 mx-auto d-none '+recipeData[i].mealType+'">'+
             '<div class="row no-gutters">'+
                 '<div class="col-8 col-sm-9">'+
                     '<h3 class="heading recipe-name">'+ recipeData[i].recipeName +'</h3>'+
@@ -56,18 +56,22 @@ function loadRecipeData(recipeData){
                 '</div>'+
             '</div>'+
             '<div class="row no-gutters d-none details">'+
-                '<div class="col-10 mx-auto meal-desc">'+
+                '<div class="col-11 mx-auto meal-desc">'+
                     recipeData[i].description+
                 '</div>'+
             '</div>'+
             '<div class="row no-gutters d-none details">'+
-                '<div class="col-10 mx-auto meal-ings">'+
-                    recipeData[i].ingredients+
+                '<div class="col-11 mx-auto meal-ings">';
+        /*console.log(recipeData[i].ingredients);
+        for(let i = 0; i < recipeData[i].ingredients[i].length; i++){
+            recipeData[i].ingredients;
+        };*/
+        recipeListHTML +=
                 '</div>'+
             '</div>'+
         '</div>';
     };
-    recipeContainer.innerHTML = recipeList;
+    recipeContainer.innerHTML = recipeListHTML;
     
     //check to see if mealPlan has data - update 
     var mealPlanRec = document.querySelectorAll('.heading');
@@ -207,7 +211,7 @@ function addToPlan(rCard, s){
         mealPlan.push(meal); 
     }
     else if(mealPlan.length > 0){
-        for(i = 0; i <= mealPlan.length; i++){
+        for(let i = 0; i < mealPlan.length; i++){
             if(mealPlan[i].name === meal.name){
                 mealPlan.splice(i, 1);
             }
@@ -314,7 +318,6 @@ function showDetail(e){
     var rCard = rName.parentNode.parentNode.parentNode;
     var rDetails = rCard.getElementsByClassName('details');
     
-    console.log(rName);
     for (let i = 0; i < rDetails.length; i++){
         rDetails[i].classList.toggle('d-none');
     };   
@@ -328,8 +331,8 @@ if (window.location.pathname === "/planner.html" || window.location.pathname ===
 if(window.location.pathname === "/planner.html" || window.location.pathname === "/placro/planner.html"){
     window.addEventListener('load', readRecipeFile("data/recipes.JSON", function(text){
         var data = (JSON.parse(text));
-        retrieveData();
-        pcCalc();
+        retrieveData(); //function in statsSummary.js that retrieves sessionStorage data
+        pcCalc(); // function in statsSummary.js that calculates % of macros allocated
         mealPcCalc();
         loadRecipeData(data);
         manageMeal();
