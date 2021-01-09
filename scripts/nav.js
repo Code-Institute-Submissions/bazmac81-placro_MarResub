@@ -4,20 +4,29 @@ var goalsChangeSubmit = document.getElementById('update-goal');
 
 // Capture menu option selected and direct based on choice made
 function menuOption(e){
-    var option = e.target.textContent;
+    var option = '';
     e.preventDefault();
 
+    if(window.location.pathname === "/planner.html" || window.location.pathname === "/placro//planner.html"){
+        o = e.target.getAttribute('id');
+        o = o.substring(0, o.indexOf('_'));
+        option = o.charAt(0).toUpperCase() + o.slice(1);
+        console.log(option);
+    }
+    else {
+        option = e.target.textContent;
+    }
     window.sessionStorage.setItem("menu", option);
 
     if (option === "Your stats" || option === "Your goal"){
         changeStats();
         changeGoal();
     }
-    else if((option === "Breakfast" || option === "Lunch" || option === "Dinner" || option === "Snacks") && window.location.pathname !== ('/planner.html')){
+    else if((option === "Breakfast" || option === "Lunch" || option === "Dinner" || option === "Snacks") && (window.location.pathname !== ('/planner.html') || window.location.pathname !== ('/placro/planner.html'))){
         storeStats();
         window.location.assign('./planner.html');
     }
-    else if((option === "Breakfast" || option === "Lunch" || option === "Dinner" || option === "Snacks") && window.location.pathname === ('/planner.html')){
+    else if((option === "Breakfast" || option === "Lunch" || option === "Dinner" || option === "Snacks") && (window.location.pathname !== ('/planner.html') || window.location.pathname !== ('/placro/planner.html'))){
         filterRecipes(option);
     }
     else if(option === "Meal plan"){

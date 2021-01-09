@@ -40,11 +40,15 @@ function pcCalc(){
     }
 };
 
-window.addEventListener('load', retrieveData, false);
+function mOpts(){
+    var mealOpts = document.getElementsByClassName('meal');
+    console.log(mealOpts);
+    for(i = 0; i < mealOpts.length; i++){
+        addEventListener('click', function(e){
+            menuOption(e);
+        });
+    }; 
+};
 
-var mealOpts = document.getElementsByClassName('meal');
-for(opts in mealOpts){
-    addEventListener('click', function(e){
-        menuOption(e);
-    });
-}
+window.addEventListener('load', retrieveData, false);
+mOpts();

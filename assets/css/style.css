@@ -175,6 +175,10 @@ a, a:visited, a:not([href]), .meal {
     font-size: 1.75rem;
 }
 
+.meal_pc {
+    color: #f46036ff
+}
+
 .big {
     font-size: 3rem;
 }
@@ -188,7 +192,6 @@ a, a:visited, a:not([href]), .meal {
 }
 
 .meal {
-    cursor: pointer;
     text-shadow: 1px 1px 0px #082649ff, -1px 1px 0px #082649ff, 1px -1px 0px #082649ff, -1px -1px 0px #082649ff;
 }
 
@@ -264,8 +267,6 @@ a, a:visited, a:not([href]), .meal {
     margin: 0;
 }
 
-/*---------- Meal recipe cards -----*/
-
 .meal {
     border-radius: 10%;
     border: 0px;
@@ -276,7 +277,9 @@ a, a:visited, a:not([href]), .meal {
     justify-content: center;
 }
 
-.recipe-name {
+/*---------- Meal recipe cards -----*/
+
+.recipe-name, .meal {
     cursor: pointer;
 }
 
