@@ -40,12 +40,28 @@ function pcCalc(){
     }
 };
 
+function getOption(e){
+    var opt = e.target;
+    var o = '';
+
+    //if has class 'meal' send textContent
+    if(opt.parentNode.classList.contains('meal')){
+        opt = opt.textContent;
+    }//else manipulate the id 
+    else {
+        o = e.target.getAttribute('id');
+        opt = o.charAt(0).toUpperCase() + o.substring(1, o.indexOf('_'));
+    };
+
+    console.log(opt);
+    menuOption(opt);
+};
+
 function mOpts(){
     var mealOpts = document.getElementsByClassName('meal');
-    console.log(mealOpts);
     for(i = 0; i < mealOpts.length; i++){
-        addEventListener('click', function(e){
-            menuOption(e);
+        mealOpts[i].addEventListener('click', function(e){
+            getOption(e);
         });
     }; 
 };

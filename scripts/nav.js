@@ -4,18 +4,15 @@ var goalsChangeSubmit = document.getElementById('update-goal');
 
 // Capture menu option selected and direct based on choice made
 function menuOption(e){
-    var option = '';
-    e.preventDefault();
-
-    if(window.location.pathname === "/planner.html" || window.location.pathname === "/placro//planner.html"){
-        o = e.target.getAttribute('id');
-        o = o.substring(0, o.indexOf('_'));
-        option = o.charAt(0).toUpperCase() + o.slice(1);
-        console.log(option);
-    }
-    else {
+    var option = ''
+    
+    if (e.target){
         option = e.target.textContent;
     }
+    else{
+        option = e;
+    };
+
     window.sessionStorage.setItem("menu", option);
 
     if (option === "Your stats" || option === "Your goal"){
