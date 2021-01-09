@@ -159,6 +159,13 @@ function storeStats(){
     };
 };
 
+function aboutToggle(){
+    var getAbout = document.getElementById('about');
+
+    getAbout.classList.toggle('d-none');
+    window.location.assign('/#about' || '/placro/#about');
+}
+
 const lbsMulti = 2.20462;
 const inchMulti = 2.54;
 var calories = 0;
@@ -188,6 +195,11 @@ if(window.location.pathname === "/" || window.location.pathname === "/placro/"){
 // Capture form and listen for submit action
 var statsForm = document.getElementById('stats');
 statsForm.addEventListener('submit', statsCapture, false);
+
+var about = document.getElementsByClassName('aboutBtn');
+for (i = 0; i < about.length; i++){
+    about[i].addEventListener('click', aboutToggle, false);
+}
 
 // Capture measurement options in form and listen for and react to changes in choice
 var measureType = document.getElementsByName("measures");
