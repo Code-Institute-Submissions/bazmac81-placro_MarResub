@@ -4,19 +4,23 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     
-    <!---------- Add in Bootstrap and local CSS content -->
+    <!-- -------- Add in Bootstrap and local CSS content -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
     <link rel="stylesheet" href="assets/css/style.css" type="text/css">
-
+    <!-- -------- Add in Fontawesome kit-->
+    <script src="https://kit.fontawesome.com/dd053466e8.js" crossorigin="anonymous"></script>
     <title>Placro - Plan your meals to hit your macros!</title>
 </head>
 
 <body>
-    <!---------- Header content including Nav -->
-    <header class="container">
-        <nav class="row no-gutters">
+    <!-- -------- Header content including Nav -->
+    <header class="container-fluid">
+        <nav class="row no-gutters d-flex justify-content-between">
             <div class="navbar-brand">
                 <h1 id="logo">PLACRO</h1>
+            </div>
+            <div class="my-auto">
+                <button class="btn aboutBtn">About</button>
             </div>
         </nav>
     </header>
@@ -115,8 +119,11 @@
     <!---------- About section -->   
         <div class="container-fluid px-0 d-none" id="about">
             <div class="row no-gutters">
+                <div class="col-11 col-sm-10 col-lg-9 mx-auto d-flex justify-content-between">    
+                    <h2 class="heading">About Placro</h2>
+                    <button class="remove aboutBtn"><i class="fa fa-times-circle"></i></button>
+                </div>
                 <div class="col-11 col-sm-10 col-lg-9 mx-auto">    
-                    <h2 class="heading">About</h2>
                     <h3 class="heading">What's behind Placro</h3>
                     <p>
                         The science behind the numbers in Placro are based on the programme developed in Bigger Leaner Stronger by Mike Matthews. The principle is based on building muscle by giving the body the right fuel. By planning your meals using macro nutrients you are building a plan that maximises your daily calorie allowance to hit your goals. 
