@@ -202,9 +202,11 @@ if(window.location.pathname === "/" || window.location.pathname === "/placro/"){
 var statsForm = document.getElementById('stats');
 statsForm.addEventListener('submit', statsCapture, false);
 
-// Capture form and listen for submit action
-var prev = document.getElementById('prev');
-prev.addEventListener('click', goBack, false);
+if(window.location.pathname === '/' || window.location.pathname === '/placro/'){
+    // Capture form and listen for submit action
+    var prev = document.getElementById('prev');
+    prev.addEventListener('click', goBack, false);
+};
 
 var about = document.getElementsByClassName('aboutBtn');
 for (i = 0; i < about.length; i++){

@@ -126,18 +126,22 @@ a, a:visited, a:not([href]) {
 }
 
 /*---------- Stats and Planner numbers -----*/
+.page-section {
+    margin-top: 30px;
+}
 
 .macro {
     border-radius: 50%;
     border: #495d63ff 5px solid;
-    width: 150px;
-    height: 150px;
+    width: 140px;
+    height: 140px;
     background-color: #30bcedff;
     display: flex;
     align-items: center;
     justify-content: center;
     flex-direction: column;
     margin-top: 20px;
+    line-height: 1;
 }
 
 .macro_pc {
