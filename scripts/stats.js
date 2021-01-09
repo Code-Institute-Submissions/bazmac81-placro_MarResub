@@ -146,6 +146,12 @@ function submitStats(e){
     };
 };
 
+function goBack(){
+    document.getElementById('statSection').classList.toggle('d-none');
+    document.getElementById('goalSection').classList.toggle('d-none');
+    window.location.assign('/#stats' || '/placro/#stats');
+};
+
 // Store all stats into session storage for site pages to access
 function storeStats(){
     window.sessionStorage.setItem('userStats', JSON.stringify(userStats));
@@ -164,7 +170,7 @@ function aboutToggle(){
 
     getAbout.classList.toggle('d-none');
     window.location.assign('/#about' || '/placro/#about');
-}
+};
 
 const lbsMulti = 2.20462;
 const inchMulti = 2.54;
@@ -195,6 +201,10 @@ if(window.location.pathname === "/" || window.location.pathname === "/placro/"){
 // Capture form and listen for submit action
 var statsForm = document.getElementById('stats');
 statsForm.addEventListener('submit', statsCapture, false);
+
+// Capture form and listen for submit action
+var prev = document.getElementById('prev');
+prev.addEventListener('click', goBack, false);
 
 var about = document.getElementsByClassName('aboutBtn');
 for (i = 0; i < about.length; i++){

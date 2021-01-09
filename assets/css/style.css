@@ -345,6 +345,10 @@ input {
     margin-top: 20px;
 }
 
+fieldset {
+    margin: 20px 0px;
+}
+
 /* colour pallette: 
 --magnolia: #f8f0fbff;
 --cyan-process: #30bcedff;
