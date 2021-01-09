@@ -19,7 +19,7 @@ function loadRecipeData(recipeData){
     var recipeList = '';
     var menuChoice = window.sessionStorage.getItem('menu');
 
-    for (i = 0; i < recipeData.length; i++){
+    for (let i = 0; i < recipeData.length; i++){
         recipeList += 
         '<div class="recipe-card col-10 col-md-5 mx-auto d-none '+recipeData[i].mealType+'">'+
             '<div class="row no-gutters">'+
@@ -73,13 +73,13 @@ function loadRecipeData(recipeData){
     var mealPlanRec = document.querySelectorAll('.heading');
     if(window.sessionStorage.getItem('mealPlan')){
         mealPlan = JSON.parse(window.sessionStorage.getItem('mealPlan'));
-        for (i = 0; i < mealPlanRec.length; i++){
-            for(j = 0; j < mealPlan.length; j++){
+        for (let i = 0; i < mealPlanRec.length; i++){
+            for(let j = 0; j < mealPlan.length; j++){
                 if(mealPlanRec[i].textContent === mealPlan[j].name){
                     mealPlanRec[i].parentNode.nextSibling.firstChild.classList.remove('add');
                     mealPlanRec[i].parentNode.nextSibling.firstChild.classList.add('rem');
                     mealPlanRec[i].parentNode.nextSibling.firstChild.textContent = 'Remove';
-                }
+                };
             };
         };
     }
@@ -99,7 +99,7 @@ function filterRecipes(opt){
     }
 
     // Check recipes and remove d-none from selected category, hide remaining. If already active do nothing
-    for(i = 0; i < meals.length; i++){
+    for(let i = 0; i < meals.length; i++){
         if(meals[i].classList.contains(opt.toLowerCase()) === true && meals[i].classList.contains('d-none') === true){
             meals[i].classList.remove('d-none');
         }
@@ -115,7 +115,7 @@ function mealPcCalc(){
 
     // Check value of mealStats then calc and write meal % to HTML 
     let mSVals = Object.values(mealStats);
-    for (i = 0; i < mealPcGuage.length; i++){
+    for (let i = 0; i < mealPcGuage.length; i++){
         if(mSVals[i]>0){
             mealPc[i] = Math.round((mSVals[i] / planStats[0]) * 100);
         }
@@ -126,15 +126,50 @@ function mealPcCalc(){
     };
 };
 
-function mealCalc(operator, rStats){
-    var mealType = document.getElementById('category').textContent.toLowerCase();
-    var mealCals = parseInt(rStats[0].textContent,10);
+function mealCalc(operator, rCard){
+    var mt = rCard.classList;
+    var mc = rCard.getElementsByClassName('meal-stat')
+    var mealCals = parseInt(mc[0].textContent,10);
     
-    if (operator === 'add'){
-        mealStats[mealType] += mealCals;
+    if(mt.contains('breakfast')){
+        switch (operator){
+            case 'add':
+                mealStats.breakfast += mealCals;
+                break;
+            case 'sub':
+                mealStats.breakfast -= mealCals;
+                break;
+        }
     }
-    else {
-        mealStats[mealType] -= mealCals;
+    else if(mt.contains('lunch')){
+        switch (operator){
+            case 'add':
+                mealStats.breakfast += mealCals;
+                break;
+            case 'sub':
+                mealStats.breakfast -= mealCals;
+                break;
+        }
+    }
+    else if(mt.contains('dinner')){
+        switch (operator){
+            case 'add':
+                mealStats.breakfast += mealCals;
+                break;
+            case 'sub':
+                mealStats.breakfast -= mealCals;
+                break;
+        }
+    }
+    else if(mt.contains('snack')){
+        switch (operator){
+            case 'add':
+                mealStats.breakfast += mealCals;
+                break;
+            case 'sub':
+                mealStats.breakfast -= mealCals;
+                break;
+        }
     };
 
     mealPcCalc();
@@ -202,13 +237,13 @@ function mealAddRemove(e){
     // Toggle button status and calculate new %'s
     if(recipeBtn.classList.contains('add')){
         recCalc('add', recipeStats); // increase macro %'s based on recipe attributes
-        mealCalc('add', recipeStats); // update relevant meal type %'s as a % of calories spent
+        mealCalc('add', recipeCard); // update relevant meal type %'s as a % of calories spent
         toggleRecipeBtn(recipeBtn, 'add', 'rem', 'Remove');
         state = 'add';
     }
     else if(recipeBtn.classList.contains('rem')){    
         recCalc('sub', recipeStats);
-        mealCalc('sub', recipeStats); // update relevant meal type %'s as a % of calories spent
+        mealCalc('sub', recipeCard); // update relevant meal type %'s as a % of calories spent
         toggleRecipeBtn(recipeBtn, 'rem', 'add', 'Add');
         state = 'rem';
     };
@@ -232,46 +267,46 @@ function manageMeal(button){
     var manageMeal = document.getElementsByClassName('recipeBtn');
     var recipeHeaders = document.getElementsByClassName('recipe-name');
 
-    for (i = 0; i < manageMeal.length; i++){
+    for (let i = 0; i < manageMeal.length; i++){
         manageMeal[i].addEventListener('click', function(e){
             mealAddRemove(e);
         });
     };
 
-    for(i = 0; i < recipeHeaders.length; i++){
+    for(let i = 0; i < recipeHeaders.length; i++){
         recipeHeaders[i].addEventListener('click', function(e){
             showDetail(e);
         });
     };
 };
 
-//Reset the plan category and update the trackers % values back to zero
+//Reset the plan and update the trackers % values back to zero
 function resetAll(){
     var selMeals = document.querySelectorAll('.rem');
     var selMealStats = [];
-    var mealStatsAdjust = [0, 0, 0, 0];
+    var planStatsAdjust = [0, 0, 0, 0];
     var remMealType = [];
 
     // Get the macro stats for each recipe added to the meal plan
-    for (i = 0; i < selMeals.length; i++){
+    for (let i = 0; i < selMeals.length; i++){
         selMealStats[i] = selMeals[i].parentNode.parentNode.parentNode.getElementsByClassName('meal-stat');
+        mealCalc('sub', selMeals[i].parentNode.parentNode.parentNode);
     };
 
     // Get total macros of all selected recipes
-    for(x = 0; x < 4; x++){
-        for (y = 0; y < selMealStats.length; y++){
-            mealStatsAdjust[x] += parseInt(selMealStats[y][x].textContent, 10);
+    for(let x = 0; x < 4; x++){
+        for (let y = 0; y < selMealStats.length; y++){
+            planStatsAdjust[x] += parseInt(selMealStats[y][x].textContent, 10);
         };
     };
     
     // Reset recipe button states back to Add
-    for (i = 0; i < selMeals.length; i++){
+    for (let i = 0; i < selMeals.length; i++){
         toggleRecipeBtn(selMeals[i], 'rem', 'add', 'Add');
         mealPlan.pop();
     };
 
-    recCalc('sub', mealStatsAdjust, remMealType);
-    mealPcCalc();
+    recCalc('sub', planStatsAdjust);
 };
 
 function showDetail(e){
@@ -280,7 +315,7 @@ function showDetail(e){
     var rDetails = rCard.getElementsByClassName('details');
     
     console.log(rName);
-    for (i = 0; i < rDetails.length; i++){
+    for (let i = 0; i < rDetails.length; i++){
         rDetails[i].classList.toggle('d-none');
     };   
 };
