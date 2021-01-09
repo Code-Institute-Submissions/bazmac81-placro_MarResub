@@ -114,12 +114,19 @@
         <!---------- Meal Plan Header with Shopping List button -->
         <div class="row no-gutters">
             <div class="col-12 col-md-11 col-lg-10 mx-auto">
-                <div class="row meal-banner">
-                    <div class="col-12 col-md-8 mx-auto pr-0">
+                <div class="row no-gutters meal-banner my-sm-3 px-2" id="paired-banner">
+                    <div class="col-12 col-sm-7 col-md-8 mx-auto pr-0">
                         <h2 class="heading" id="planHeader"></h2>
                     </div>
-                    <div class="col-12 col-md-4 mx-auto px-0 justify-content-right">
+                    <div class="d-none d-sm-block col-sm-5 col-md-4 mx-auto px-0">
                         <button class="btn mx-auto" type="button" data-toggle="modal" data-target="#shopping-list">Shopping List</button> 
+                        <button class="btn mx-auto">Save</button>  
+                    </div>
+                </div>
+                <div class="row no-gutters meal-banner sub-banner d-sm-none py-1 px-2">
+                    <div class="col-12 mx-auto px-0">
+                        <button class="btn mx-auto" type="button" data-toggle="modal" data-target="#shopping-list">Shopping List</button> 
+                        <button class="btn mx-auto">Save</button>  
                     </div>
                 </div>
             </div>
