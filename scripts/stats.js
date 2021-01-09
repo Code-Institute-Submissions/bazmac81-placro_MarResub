@@ -80,7 +80,6 @@ function statsCapture(e){
     
     //Calculate the calories based on the user input
     macros.calories = tdeeCalc(bmrCalc(userStats.age, userStats.weight, userStats.height));
-    console.log(macros.calories);
     if (window.location.pathname === '/' || window.location.pathname === "/placro/"){
         document.getElementById('statSection').classList.toggle('d-none');
         document.getElementById('goalSection').classList.toggle('d-none');  
@@ -137,7 +136,6 @@ function submitStats(e){
             modifiers.measure = measureType[i].value;
         }
     }
-    console.log(macros.calories);
     // Calculate the macros and store them to memory for the next page
     macrosCalc(macros.calories, modifiers.goal);
     storeStats();

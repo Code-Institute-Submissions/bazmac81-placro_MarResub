@@ -11,11 +11,11 @@
         },
     "description": "Lovely breakfast with poached eggs and muffins.",
     "ingredients":
-        {
-        "Potatoes": 2,
-        "Carrots": 4,
-        "Peas": 50
-        },
+        [
+            ["Potatoes", "Carrots", "Eggs"],
+            [2, 4],
+            ["whole", "g", "cups", "cup"]
+        ],
     "image": "blteggs.jpg"
     },
     {

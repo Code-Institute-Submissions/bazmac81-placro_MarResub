@@ -115,10 +115,8 @@ function mealPcCalc(){
 
     // Check value of mealStats then calc and write meal % to HTML 
     let mSVals = Object.values(mealStats);
-    console.log(mSVals);
     for (i = 0; i < mealPcGuage.length; i++){
         if(mSVals[i]>0){
-            console.log(mealStats[i]);
             mealPc[i] = Math.round((mSVals[i] / planStats[0]) * 100);
         }
         else {
