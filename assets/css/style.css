@@ -188,6 +188,7 @@ a, a:visited, a:not([href]), .meal {
 }
 
 .meal {
+    cursor: pointer;
     text-shadow: 1px 1px 0px #082649ff, -1px 1px 0px #082649ff, 1px -1px 0px #082649ff, -1px -1px 0px #082649ff;
 }
 
