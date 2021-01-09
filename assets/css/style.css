@@ -262,6 +262,15 @@ a, a:visited, a:not([href]), .meal {
     height: 50px;
 }
 
+#paired-banner {
+    margin: 15px 0px 0px 0px;
+}
+
+.sub-banner {
+    background-color: #495d63ff;
+    margin: 0px 0px 15px 0px;
+}
+
 .meal-banner h2 {
     font-size: 1.5rem;
     margin: 0;
