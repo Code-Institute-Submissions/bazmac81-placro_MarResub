@@ -121,9 +121,9 @@ function getMeasure(e){
     var h = document.getElementById('height');
     var w = document.getElementById('weight');
 
-    modifier.measure = m.getAttribute('value');
+    modifiers.measure = m.getAttribute('value');
 
-    if(modifier.measure === "metric"){
+    if(modifiers.measure === "metric"){
         if(w.value != "") {
             w.value = Math.round(w.value / lbsMulti);
         };
