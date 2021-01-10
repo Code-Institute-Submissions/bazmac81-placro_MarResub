@@ -28,20 +28,32 @@ function loadRecipeData(recipeData){
                     '</div>'+
                 '</div>'+
                 '<div class="col-xs-12 col-sm-7">'+
-                    '<div class="row">'+
+                    '<div class="row no-gutters">'+
                         '<div class="middle col-5 mx-auto">'+
                             '<span class="meal-stat meal-cals">'+recipeData[i].mealStats.calories+'</span>g'+
                         '</div>'+
                         '<div class="middle col-5 mx-auto">'+
                             '<span class="meal-stat meal-protein">'+recipeData[i].mealStats.protein+'</span>g'+
                         '</div>'+
+                        '<div class="middle col-5 mx-auto">'+
+                            '<span class="small">Calories</span>'+
+                        '</div>'+
+                        '<div class="middle col-5 mx-auto">'+
+                            '<span class="small">Protein</span>'+
+                        '</div>'+
                     '</div>'+
-                    '<div class="row">'+
+                    '<div class="row no-gutters">'+
                         '<div class="middle col-5 mx-auto">'+
                             '<span class="meal-stat meal-carb">'+recipeData[i].mealStats.carbs+'</span>g'+
                         '</div>'+
                         '<div class="middle col-5 mx-auto">'+
                             '<span class="meal-stat meal-fat">'+recipeData[i].mealStats.fat+'</span>g'+
+                        '</div>'+
+                        '<div class="middle col-5 mx-auto">'+
+                            '<span class="small">Carbs</span>'+
+                        '</div>'+
+                        '<div class="middle col-5 mx-auto">'+
+                            '<span class="small">Fat</span>'+
                         '</div>'+
                     '</div>'+
                 '</div>'+
@@ -52,12 +64,15 @@ function loadRecipeData(recipeData){
                 '</div>'+
             '</div>'+
             '<div class="row no-gutters d-none details">'+
-                '<div class="col-11 mx-auto meal-ings">';
-        /*console.log(recipeData[i].ingredients);
-        for(let i = 0; i < recipeData[i].ingredients[i].length; i++){
-            recipeData[i].ingredients;
-        };*/
+                '<div class="col-11 mx-auto">'+
+                    '<ul>';
+
+        for(let k = 0; k < recipeData[i].ingredients[0].length; k++){
+            recipeListHTML +=
+            '<li class="meal-ings">'+recipeData[i].ingredients[0][k]+' '+recipeData[i].ingredients[1][k]+' - '+recipeData[i].ingredients[2][k]+'</li>';
+        };
         recipeListHTML +=
+                    '</ul>'+
                 '</div>'+
             '</div>'+
         '</div>';
@@ -185,9 +200,14 @@ function addToPlan(rCard, s){
     meal.prot = rCard.querySelector('.meal-protein').textContent;
     meal.carb = rCard.querySelector('.meal-carb').textContent;
     meal.fat = rCard.querySelector('.meal-fat').textContent;
-    meal.ing = rCard.querySelector('.meal-ings').textContent;
+    meal.ing = [];
+    ings = rCard.querySelectorAll('.meal-ings');
     meal.desc = rCard.querySelector('.meal-desc').textContent;
-    
+    console.log(ings);
+    for (let i = 0; i < ings.length; i++){
+        meal.ing[i] = ings[i].textContent;
+    };
+
     if(rCard.classList.contains('breakfast')){
         meal.type = 'breakfast';
     } else if (rCard.classList.contains('lunch')) {
@@ -317,6 +337,7 @@ function showDetail(e){
 if (window.location.pathname === "/planner.html" || window.location.pathname === "/placro/planner.html"){
     var resetCat = document.getElementById('resetBtn');
     resetCat.addEventListener('click', resetAll, false);
+
 };
 
 if(window.location.pathname === "/planner.html" || window.location.pathname === "/placro/planner.html"){
