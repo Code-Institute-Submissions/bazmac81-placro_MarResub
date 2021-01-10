@@ -26,7 +26,6 @@ var mealStats = {
     snacks: 0,
 };
 var planStats = [0, 0, 0, 0];
-var returned = false;
 
 // Calculate Calories and macros using user stats and goal choice
 function macrosCalc(cals, g) {
@@ -231,13 +230,13 @@ if(window.location.pathname === '/' || window.location.pathname === '/placro/'){
 };
 
 var about = document.getElementsByClassName('aboutBtn');
-for (i = 0; i < about.length; i++){
+for (let i = 0; i < about.length; i++){
     about[i].addEventListener('click', aboutToggle, false);
 }
 
 // Capture measurement options in form and listen for and react to changes in choice
 var measureType = document.getElementsByName("measures");
-for (i = 0; i < measureType.length; i++){
+for (let i = 0; i < measureType.length; i++){
     measureType[i].addEventListener('change', function(e){
         getMeasure(e);
     });        
