@@ -41,7 +41,6 @@ function postPlan(){
 
 function removeMeal(e){   
     var remMeal = document.getElementsByClassName('remove');
-    console.log(remMeal);
     for (i = 0; i < remMeal.length; i++){
         remMeal[i].addEventListener('click', function(e){
             delFromPlan(e);
@@ -53,7 +52,19 @@ function delFromPlan(){
     console.log("this will delete the recipe");
 };
 
+function saveData(){
+    window.localStorage.setItem('userStats', JSON.stringify(userStats));
+    window.localStorage.setItem('modifiers', JSON.stringify(modifiers));
+    window.localStorage.setItem('macros', JSON.stringify(macros));
+    window.localStorage.setItem('mealPlan', JSON.stringify(mealPlan));
+    window.localStorage.setItem('planStats', JSON.stringify(planStats));
+    window.localStorage.setItem('mealStats', JSON.stringify(mealStats));
+};
+
 window.addEventListener('load', function(){
     postPlan();
     removeMeal();
 });
+
+var savePlan = document.getElementById('save');
+savePlan.addEventListener('click', saveData, false);
