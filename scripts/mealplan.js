@@ -10,37 +10,61 @@ function postPlan(){
     document.getElementById('planHeader').textContent = userStats.name + "'s Meal Plan";
     if(mealPlan.length === 0){
         section += 
-            '<div>'+
+            '<div class="page-section">'+
                 '<h3 class="heading">Your meal plan is empty</h3>'+
                 '<p>Choose a meal option from the menu or click the meal icon above and start selecting recipes to add to your plan.</p>'+
             '</div>';
     }
     else {
         section += 
-            '<div>'+
+            '<div class="page-section">'+
                 '<h3 class="heading">Here\'s your meal plan</h3>'+
-                '<p>Make any final amendments here or skip back to the meal pages to make further changes. You can also save your meal for when you next come back to Placro or if you change your mind you can clear it from memory.</p>'+
+                '<p>If you want to make any changes, skip back to the relevant meal page. You can also save your plan for when you next come back to Placro or if you change your mind you can clear it from memory.</p>'+
+            '</div>'+
+            '<div class="row no-gutters d-none d-sm-flex">'+
+                '<div class="col-8"></div>'+
+                '<div class="d-none d-sm-inline col-sm-4">'+
+                    '<div class="row no-gutters">'+
+                        '<div class="col-3"><h3 class="heading">Cals</h3></div>'+
+                        '<div class="col-3"><h3 class="heading">Prot</h3></div>'+
+                        '<div class="col-3"><h3 class="heading">Carbs</h3></div>'+
+                        '<div class="col-3"><h3 class="heading">Fat</h3></div>'+
+                    '</div>'+
+                '</div>'+
             '</div>';
         for (i = 0; i < meals.length; i++){
             section += 
                 '<div>'+
-                    '<h3 class="heading">'+meals[i]+'</h3>'+
-                    '<ul class="mealplan-list">';
-            
+                    '<h3 class="heading page-section"">'+meals[i]+'</h3>';
             for(j = 0; j < mealPlan.length; j++){
                 if(mealPlan[j].type === meals[i].toLowerCase()){  
                     section+=
-                        '<li class="mealplan-item">'+
-                            '<button class="remove"><i class="fa fa-times-circle"></i></button><span class="recipe-name">'+ mealPlan[j].name +'</span>'+
-                        '</li>';
+                        '<div class="row no-gutters">'+
+                            '<div class="col-1"><button class="remove"><i class="fa fa-times-circle"></i></button></div>'+
+                            '<div class="col-10 col-sm-7 recipe-name">'+ mealPlan[j].name +'</div>'+
+                            '<div class="d-none d-sm-inline col-sm-4">'+
+                                '<div class="row no-gutters">'+
+                                    '<div class="col-3">'+ mealPlan[j].cals +'</div>'+
+                                    '<div class="col-3">'+ mealPlan[j].prot +'g</div>'+
+                                    '<div class="col-3">'+ mealPlan[j].carb +'g</div>'+
+                                    '<div class="col-3">'+ mealPlan[j].fat +'g</div>'+
+                                '</div>'+
+                            '</div>'+
+                            '<div class="row no-gutters details">'+
+                                '<div class="col-11 d-none">'+
+                                    +mealPlan[j].desc+
+                                '</div>'+
+                                '<div class="col-11 d-none">'+
+                                    +mealPlan[j].ing+
+                                '</div>'+
+                            '</div>'+
+                        '</div>';
                 };
             };
             section+= 
-                    '</ul>'+
                 '</div>';
         };
     };
-
     planList.innerHTML = section;
 };
 
