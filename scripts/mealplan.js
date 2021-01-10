@@ -16,6 +16,11 @@ function postPlan(){
             '</div>';
     }
     else {
+        section += 
+            '<div>'+
+                '<h3 class="heading">Here\'s your meal plan</h3>'+
+                '<p>Make any final amendments here or skip back to the meal pages to make further changes. You can also save your meal for when you next come back to Placro or if you change your mind you can clear it from memory.</p>'+
+            '</div>';
         for (i = 0; i < meals.length; i++){
             section += 
                 '<div>'+

@@ -1,3 +1,33 @@
+//Declare global key variables
+const lbsMulti = 2.20462;
+const inchMulti = 2.54;
+var calories = 0;
+var userStats = {
+    name:'',
+    age:0,
+    weight:0,
+    height:0,
+};
+var modifiers = {
+    measure:'',
+    goal:'',
+};
+var macros = {
+    calories:0,
+    protein:0,
+    carbs:0,
+    fat:0,
+};
+var mealPlan = [];
+var mealStats = {
+    breakfast: 0,
+    lunch: 0,
+    dinner: 0,
+    snacks: 0,
+};
+var planStats = [0, 0, 0, 0];
+var returned = false;
+
 // Calculate Calories and macros using user stats and goal choice
 function macrosCalc(cals, g) {
     var protMulti, carbMulti, fatMulti, protein, carbs, fat = 0;
@@ -159,10 +189,14 @@ function storeStats(){
     window.sessionStorage.setItem('macros', JSON.stringify(macros));
 
     if(window.location.pathname === "/planner.html" || window.location.pathname === "/mealplan.html" || window.location.pathname === "/placro/planner.html" || window.location.pathname === "/placro/mealplan.html"){
-        window.sessionStorage.setItem('mealPlan', JSON.stringify(mealPlan));
-        window.sessionStorage.setItem('planStats', JSON.stringify(planStats));
-        window.sessionStorage.setItem('mealStats', JSON.stringify(mealStats));
+        storePlan();
     };
+};
+
+function storePlan(){
+    window.sessionStorage.setItem('mealPlan', JSON.stringify(mealPlan));
+    window.sessionStorage.setItem('planStats', JSON.stringify(planStats));
+    window.sessionStorage.setItem('mealStats', JSON.stringify(mealStats));
 };
 
 function aboutToggle(){
@@ -172,29 +206,17 @@ function aboutToggle(){
     window.location.assign('/#about' || '/placro/#about');
 };
 
-const lbsMulti = 2.20462;
-const inchMulti = 2.54;
-var calories = 0;
-var userStats = {
-    name:'',
-    age:0,
-    weight:0,
-    height:0,
-};
-var modifiers = {
-    measure:'',
-    goal:'',
-};
-var macros = {
-    calories:0,
-    protein:0,
-    carbs:0,
-    fat:0,
+function redirectReturn() {
+    let check = JSON.parse(window.localStorage.getItem('mealPlan')) || [];
+    if(check.length !== 0){
+        window.location.assign('./stats.html');
+    };
 };
 
 if(window.location.pathname === "/" || window.location.pathname === "/placro/"){
     window.addEventListener('load', function(){
         sessionStorage.clear();
+        redirectReturn();
     });
 };
 
@@ -227,4 +249,4 @@ goalForm.addEventListener('submit', function(e){
     submitStats(e);
 });
 
-var mealPlan = [];
+

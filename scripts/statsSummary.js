@@ -5,12 +5,16 @@ function retrieveData(){
     
     if(JSON.parse(window.sessionStorage.getItem('planStats')) !== null){
         if(window.location.pathname === "/planner.html" || window.location.pathname === "/mealplan.html" || window.location.pathname === "/placro/planner.html" || window.location.pathname === "/placro/mealplan.html"){
-            mealPlan = JSON.parse(window.sessionStorage.getItem('mealPlan'));
-            planStats = JSON.parse(window.sessionStorage.getItem('planStats'));
-            mealStats = JSON.parse(window.sessionStorage.getItem('mealStats'));
+            retrievePlan();
         };
     };
     writeStats();
+};
+
+function retrievePlan(){
+    mealPlan = JSON.parse(window.sessionStorage.getItem('mealPlan'));
+    planStats = JSON.parse(window.sessionStorage.getItem('planStats'));
+    mealStats = JSON.parse(window.sessionStorage.getItem('mealStats'));
 };
 
 function writeStats(){
@@ -27,13 +31,13 @@ function pcCalc(){
     let pcValues = Object.values(macros);
 
     if(planStats[0] > 0){
-        for (i = 0; i < statsPc.length; i++){
+        for (let i = 0; i < statsPc.length; i++){
             planPc[i] = Math.round((planStats[i] / pcValues[i]) * 100);
             statsPc[i].firstChild.textContent = planPc[i] + '%';
         }
     }
     else {
-       for (i = 0; i < statsPc.length; i++){
+       for (let i = 0; i < statsPc.length; i++){
             planPc[i] = 0;
             statsPc[i].firstChild.textContent = planPc[i] + '%';
         } 
@@ -59,12 +63,47 @@ function getOption(e){
 
 function mOpts(){
     var mealOpts = document.getElementsByClassName('meal');
-    for(i = 0; i < mealOpts.length; i++){
+    for(let i = 0; i < mealOpts.length; i++){
         mealOpts[i].addEventListener('click', function(e){
             getOption(e);
         });
     }; 
 };
 
-window.addEventListener('load', retrieveData, false);
+function welcomMsg(){
+    let header = document.getElementById('header');
+    let message = document.getElementById('message');
+
+    header.textContent = "Welcome back to Placro!"
+    message.textContent = "Placro is ready with your meal plan that you saved last time you visited. Update your plan either by adjusting your stats or goals, or by changing the meals in your plan. Remember to save the full plan so your changes are here for next time you come back."
+};
+
+function getPrevData(){
+    userStats = JSON.parse(window.localStorage.getItem('userStats'));
+    modifiers = JSON.parse(window.localStorage.getItem('modifiers'));
+    macros = JSON.parse(window.localStorage.getItem('macros'));
+    mealPlan = JSON.parse(window.localStorage.getItem('mealPlan'));
+    planStats = JSON.parse(window.localStorage.getItem('planStats'));
+    mealStats = JSON.parse(window.localStorage.getItem('mealStats'));
+    storeStats();
+    storePlan();
+    retrievePlan();
+};
+
+function checkReturn(){
+    let check = JSON.parse(window.localStorage.getItem('mealPlan')) || [];
+    if(check.length !== 0){
+        getPrevData();
+    };
+    if(window.location.pathname === "/stats.html" || window.location.pathname === "/placro/stats.html"){
+        welcomMsg();
+    };
+};
+
+window.addEventListener('load', function(){ 
+    if(window.location.pathname === "/stats.html" || window.location.pathname === "/placro/stats.html"){
+        checkReturn();
+    };
+    retrieveData();
+});
 mOpts();
