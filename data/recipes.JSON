@@ -12,9 +12,17 @@
     "description": "Lovely breakfast with poached eggs and muffins.",
     "ingredients":
         [
-            ["Potatoes", "Carrots", "Eggs"],
-            [2, 4],
-            ["whole", "g", "cups", "cup"]
+            "Sauce",[
+                [1, 0.5, 1, 0.5],
+                ["tbs", "tbs", "tsp", "tsp"],
+                ["Light mayonnaise", "Water", "Whole-grain mustard", "Lemon juice"]
+            ],
+            "Meal", [
+                [1, 0.5, 1, 0.5, 4, 1, 2, 2],
+                ["tbs", "tbs", "oz", "small", "cups", "", "slices", "large"],
+                ["White vinegar", "Extra-virgin olive oil", "Bacon", "Onion", "Kale", "Whole grain English muffin", "Tomato", "Eggs"]
+
+            ]
         ],
     "image": "blteggs.jpg"
     },
@@ -30,12 +38,12 @@
         },
     "description": "Lovely breakfast with poached eggs and muffins.",
     "ingredients":
-        {
-        "Potatoes": 2,
-        "Carrots": 4,
-        "Peas": 50
-        },
-    "image": "eggs.png"
+        [
+            [3, 2, 2, 1.75, 3, 2, 1],
+            ["cups", "cups", "tsp", "cups", "scoops", "cups", "tbs"],
+            ["Water", "Semi-skimmed Milk", "Salt", "Cornmeal", "Vanilla protien powder", "Blueberries", "Tomato", "Eggs", "Honey"]
+        ],
+    "image": "blteggs.jpg"
     },
     {
     "recipeName": "Salmon and Asparagus omelet",
@@ -49,12 +57,12 @@
         },
     "description": "Lovely breakfast with poached eggs and muffins.",
     "ingredients":
-        {
-        "Potatoes": 2,
-        "Carrots": 4,
-        "Peas": 50
-        },
-    "image": "eggs.png"
+        [
+            [2, 0.5, 2, 1, 1, 3, 1, 1, 2, 4],
+            ["tsp", "small", "", "fillet", "clove", "", "tsp", "", "whole", ""],
+            ["Extra-virgin olive oil", "Onion", "Asparagus spears", "Wild Pacific salmon", "Garlic", "Olives", "Capers", "Tomato", "Eggs", "Egg whites"]  
+        ],
+    "image": "blteggs.jpg"
     },
     {
     "recipeName": "Advocado and egg breakfast sandwiches",
@@ -68,12 +76,12 @@
         },
     "description": "Lovely breakfast with poached eggs and muffins.",
     "ingredients":
-        {
-        "Potatoes": 2,
-        "Carrots": 4,
-        "Peas": 50
-        },
-    "image": "eggs.png"
+        [
+            [8, 1, 0.25, 0.25, 0.25, 8, 1],
+            ["", "tbs", "cup", "cup", "cup", "slices", "medium"],
+            ["Egg whites", "Extra-virgin olive oil", "Red bell pepper", "Scallions", "Tomatoes", "Whole-grain bread", "Avacado"]  
+        ],
+    "image": "blteggs.jpg"
     },
     {
     "recipeName": "Eggs and tomato breakfast melts",
@@ -87,12 +95,12 @@
         },
     "description": "Lovely breakfast with poached eggs and muffins.",
     "ingredients":
-        {
-        "Potatoes": 2,
-        "Carrots": 4,
-        "Peas": 50
-        },
-    "image": "eggs.png"
+        [
+            [1, 0.5, 2, 4, 0.25, 0.25],
+            ["", "tsp", "", "", "cup", "cup"],
+            ["Whole-grain English muffin", "Extra-virgin olive oil", "Scallions", "Egg whites", "Cherry tomatoes", "Mexican cheese"]  
+        ],
+    "image": "blteggs.jpg"
     },
     {
     "recipeName": "Classic cobb salad",
@@ -106,12 +114,19 @@
         },
     "description": "Lovely breakfast with poached eggs and muffins.",
     "ingredients":
-        {
-        "Potatoes": 2,
-        "Carrots": 4,
-        "Peas": 50
-        },
-    "image": "eggs.png"
+        [
+            "Sauce",[
+                [1, 0.5, 1, 0.5],
+                ["tbs", "tbs", "tsp", "tsp"],
+                ["Light mayonnaise", "Water", "Whole-grain mustard", "Lemon juice"]
+            ],
+            "Meal", [
+                ["White vinegar", "Extra-virgin olive oil", "Bacon", "Onion", "Kale", "Whole grain English muffin", "Tomato", "Eggs"],
+                [1, 0.5, 1, 0.5, 4, 1, 2, 2],
+                ["tbs", "tbs", "oz", "small", "cups", "", "slices", "large"]
+            ]
+        ],
+    "image": "cobbsalad.jpg"
     },
     {
     "recipeName": "Coconut crusted chicken salad",
@@ -125,12 +140,12 @@
         },
     "description": "Lovely breakfast with poached eggs and muffins.",
     "ingredients":
-        {
-        "Potatoes": 2,
-        "Carrots": 4,
-        "Peas": 50
-        },
-    "image": "eggs.png"
+        [
+            [1, 0.5, 2, 4, 0.25, 0.25],
+            ["", "tsp", "", "", "cup", "cup"],
+            ["Whole-grain English muffin", "Extra-virgin olive oil", "Scallions", "Egg whites", "Cherry tomatoes", "Mexican cheese"]  
+        ],
+    "image": "cobbsalad.jpg"
     },
     {
     "recipeName": "Spicy santa fe taco salad",
@@ -144,12 +159,12 @@
         },
     "description": "Lovely breakfast with poached eggs and muffins.",
     "ingredients":
-        {
-        "Potatoes": 2,
-        "Carrots": 4,
-        "Peas": 50
-        },
-    "image": "eggs.png"
+        [
+            [1, 0.5, 2, 4, 0.25, 0.25],
+            ["", "tsp", "", "", "cup", "cup"],
+            ["Whole-grain English muffin", "Extra-virgin olive oil", "Scallions", "Egg whites", "Cherry tomatoes", "Mexican cheese"]  
+        ],
+    "image": "cobbsalad.jpg"
     },
     {
     "recipeName": "Tropical chicken salad with pineapple and pecans",
@@ -163,12 +178,12 @@
         },
     "description": "Lovely breakfast with poached eggs and muffins.",
     "ingredients":
-        {
-        "Potatoes": 2,
-        "Carrots": 4,
-        "Peas": 50
-        },
-    "image": "eggs.png"
+        [
+            [1, 0.5, 2, 4, 0.25, 0.25],
+            ["", "tsp", "", "", "cup", "cup"],
+            ["Whole-grain English muffin", "Extra-virgin olive oil", "Scallions", "Egg whites", "Cherry tomatoes", "Mexican cheese"]  
+        ],
+    "image": "cobbsalad.jpg"
     },
     {
     "recipeName": "Coconut and carrot-ginger soup",
@@ -182,12 +197,12 @@
         },
     "description": "Lovely breakfast with poached eggs and muffins.",
     "ingredients":
-        {
-        "Potatoes": 2,
-        "Carrots": 4,
-        "Peas": 50
-        },
-    "image": "eggs.png"
+        [
+            [1, 0.5, 2, 4, 0.25, 0.25],
+            ["", "tsp", "", "", "cup", "cup"],
+            ["Whole-grain English muffin", "Extra-virgin olive oil", "Scallions", "Egg whites", "Cherry tomatoes", "Mexican cheese"]  
+        ],
+    "image": "cobbsalad.jpg"
     },
     {
     "recipeName": "Italian lentil soup with chicken",
@@ -201,12 +216,12 @@
         },
     "description": "Lovely breakfast with poached eggs and muffins.",
     "ingredients":
-        {
-        "Potatoes": 2,
-        "Carrots": 4,
-        "Peas": 50
-        },
-    "image": "eggs.png"
+        [
+            [1, 0.5, 2, 4, 0.25, 0.25],
+            ["", "tsp", "", "", "cup", "cup"],
+            ["Whole-grain English muffin", "Extra-virgin olive oil", "Scallions", "Egg whites", "Cherry tomatoes", "Mexican cheese"]  
+        ],
+    "image": "cobbsalad.jpg"
     },
     {
     "recipeName": "Chicken salad sandwiches",
@@ -220,12 +235,12 @@
         },
     "description": "Lovely breakfast with poached eggs and muffins.",
     "ingredients":
-        {
-        "Potatoes": 2,
-        "Carrots": 4,
-        "Peas": 50
-        },
-    "image": "eggs.png"
+        [
+            [1, 0.5, 2, 4, 0.25, 0.25],
+            ["", "tsp", "", "", "cup", "cup"],
+            ["Whole-grain English muffin", "Extra-virgin olive oil", "Scallions", "Egg whites", "Cherry tomatoes", "Mexican cheese"]  
+        ],
+    "image": "cobbsalad.jpg"
     },
     {
     "recipeName": "Turkey taco lettuce wraps",
@@ -239,12 +254,12 @@
         },
     "description": "Lovely breakfast with poached eggs and muffins.",
     "ingredients":
-        {
-        "Potatoes": 2,
-        "Carrots": 4,
-        "Peas": 50
-        },
-    "image": "eggs.png"
+        [
+            [1, 0.5, 2, 4, 0.25, 0.25],
+            ["", "tsp", "", "", "cup", "cup"],
+            ["Whole-grain English muffin", "Extra-virgin olive oil", "Scallions", "Egg whites", "Cherry tomatoes", "Mexican cheese"]  
+        ],
+    "image": "cobbsalad.jpg"
     },
     {
     "recipeName": "Healthy avocado-egg salad sandwich",
@@ -258,12 +273,12 @@
         },
     "description": "Lovely breakfast with poached eggs and muffins.",
     "ingredients":
-        {
-        "Potatoes": 2,
-        "Carrots": 4,
-        "Peas": 50
-        },
-    "image": "eggs.png"
+        [
+            [1, 0.5, 2, 4, 0.25, 0.25],
+            ["", "tsp", "", "", "cup", "cup"],
+            ["Whole-grain English muffin", "Extra-virgin olive oil", "Scallions", "Egg whites", "Cherry tomatoes", "Mexican cheese"]  
+        ],
+    "image": "cobbsalad.jpg"
     },
     {
     "recipeName": "Peanut butter protein swirl brownies",
@@ -277,12 +292,12 @@
         },
     "description": "Lovely breakfast with poached eggs and muffins.",
     "ingredients":
-        {
-        "Potatoes": 2,
-        "Carrots": 4,
-        "Peas": 50
-        },
-    "image": "eggs.png"
+        [
+            [1, 0.5, 2, 4, 0.25, 0.25],
+            ["", "tsp", "", "", "cup", "cup"],
+            ["Whole-grain English muffin", "Extra-virgin olive oil", "Scallions", "Egg whites", "Cherry tomatoes", "Mexican cheese"]  
+        ],
+    "image": "peanutbutterbrownie.jpg"
     },
     {
     "recipeName": "No-bake chocolate protein bars with quinoa",
@@ -296,12 +311,12 @@
         },
     "description": "Lovely breakfast with poached eggs and muffins.",
     "ingredients":
-        {
-        "Potatoes": 2,
-        "Carrots": 4,
-        "Peas": 50
-        },
-    "image": "eggs.png"
+        [
+            [1, 0.5, 2, 4, 0.25, 0.25],
+            ["", "tsp", "", "", "cup", "cup"],
+            ["Whole-grain English muffin", "Extra-virgin olive oil", "Scallions", "Egg whites", "Cherry tomatoes", "Mexican cheese"]  
+        ],
+    "image": "peanutbutterbrownie.jpg"
     },
     {
     "recipeName": "No-bake matcha green tea fudge bars",
@@ -315,12 +330,12 @@
         },
     "description": "Lovely breakfast with poached eggs and muffins.",
     "ingredients":
-        {
-        "Potatoes": 2,
-        "Carrots": 4,
-        "Peas": 50
-        },
-    "image": "eggs.png"
+        [
+            [1, 0.5, 2, 4, 0.25, 0.25],
+            ["", "tsp", "", "", "cup", "cup"],
+            ["Whole-grain English muffin", "Extra-virgin olive oil", "Scallions", "Egg whites", "Cherry tomatoes", "Mexican cheese"]  
+        ],
+    "image": "peanutbutterbrownie.jpg"
     },
     {
     "recipeName": "Low-carb chocolate-espresso protein shake",
@@ -334,12 +349,12 @@
         },
     "description": "Lovely breakfast with poached eggs and muffins.",
     "ingredients":
-        {
-        "Potatoes": 2,
-        "Carrots": 4,
-        "Peas": 50
-        },
-    "image": "eggs.png"
+        [
+            [1, 0.5, 2, 4, 0.25, 0.25],
+            ["", "tsp", "", "", "cup", "cup"],
+            ["Whole-grain English muffin", "Extra-virgin olive oil", "Scallions", "Egg whites", "Cherry tomatoes", "Mexican cheese"]  
+        ],
+    "image": "peanutbutterbrownie.jpg"
     },
     {
     "recipeName": "Chai banana protein shake",
@@ -353,12 +368,12 @@
         },
     "description": "Lovely breakfast with poached eggs and muffins.",
     "ingredients":
-        {
-        "Potatoes": 2,
-        "Carrots": 4,
-        "Peas": 50
-        },
-    "image": "eggs.png"
+        [
+            [1, 0.5, 2, 4, 0.25, 0.25],
+            ["", "tsp", "", "", "cup", "cup"],
+            ["Whole-grain English muffin", "Extra-virgin olive oil", "Scallions", "Egg whites", "Cherry tomatoes", "Mexican cheese"]  
+        ],
+    "image": "peanutbutterbrownie.jpg"
     },
     {
     "recipeName": "Mango green smoothie",
@@ -372,12 +387,12 @@
         },
     "description": "Lovely breakfast with poached eggs and muffins.",
     "ingredients":
-        {
-        "Potatoes": 2,
-        "Carrots": 4,
-        "Peas": 50
-        },
-    "image": "eggs.png"
+        [
+            [1, 0.5, 2, 4, 0.25, 0.25],
+            ["", "tsp", "", "", "cup", "cup"],
+            ["Whole-grain English muffin", "Extra-virgin olive oil", "Scallions", "Egg whites", "Cherry tomatoes", "Mexican cheese"]  
+        ],
+    "image": "peanutbutterbrownie.jpg"
     },
     {
     "recipeName": "Beef stroganoff",
@@ -391,12 +406,12 @@
         },
     "description": "Lovely breakfast with poached eggs and muffins.",
     "ingredients":
-        {
-        "Potatoes": 2,
-        "Carrots": 4,
-        "Peas": 50
-        },
-    "image": "eggs.png"
+        [
+            [1, 0.5, 2, 4, 0.25, 0.25],
+            ["", "tsp", "", "", "cup", "cup"],
+            ["Whole-grain English muffin", "Extra-virgin olive oil", "Scallions", "Egg whites", "Cherry tomatoes", "Mexican cheese"]  
+        ],
+    "image": "beefstrogganoff.jpg"
     },
     {
     "recipeName": "Beef lasgna",
@@ -410,12 +425,12 @@
         },
     "description": "Lovely breakfast with poached eggs and muffins.",
     "ingredients":
-        {
-        "Potatoes": 2,
-        "Carrots": 4,
-        "Peas": 50
-        },
-    "image": "eggs.png"
+        [
+            [1, 0.5, 2, 4, 0.25, 0.25],
+            ["", "tsp", "", "", "cup", "cup"],
+            ["Whole-grain English muffin", "Extra-virgin olive oil", "Scallions", "Egg whites", "Cherry tomatoes", "Mexican cheese"]  
+        ],
+    "image": "beefstrogganoff.jpg"
     },
     {
     "recipeName": "Pork chops braised with oranges",
@@ -429,12 +444,12 @@
         },
     "description": "Lovely breakfast with poached eggs and muffins.",
     "ingredients":
-        {
-        "Potatoes": 2,
-        "Carrots": 4,
-        "Peas": 50
-        },
-    "image": "eggs.png"
+        [
+            [1, 0.5, 2, 4, 0.25, 0.25],
+            ["", "tsp", "", "", "cup", "cup"],
+            ["Whole-grain English muffin", "Extra-virgin olive oil", "Scallions", "Egg whites", "Cherry tomatoes", "Mexican cheese"]  
+        ],
+    "image": "beefstrogganoff.jpg"
     },
     {
     "recipeName": "Pollo fajitas",
@@ -448,12 +463,12 @@
         },
     "description": "Lovely breakfast with poached eggs and muffins.",
     "ingredients":
-        {
-        "Potatoes": 2,
-        "Carrots": 4,
-        "Peas": 50
-        },
-    "image": "eggs.png"
+        [
+            [1, 0.5, 2, 4, 0.25, 0.25],
+            ["", "tsp", "", "", "cup", "cup"],
+            ["Whole-grain English muffin", "Extra-virgin olive oil", "Scallions", "Egg whites", "Cherry tomatoes", "Mexican cheese"]  
+        ],
+    "image": "beefstrogganoff.jpg"
     },
     {
     "recipeName": "Chunky chicken quesadilla",
@@ -467,12 +482,12 @@
         },
     "description": "Lovely breakfast with poached eggs and muffins.",
     "ingredients":
-        {
-        "Potatoes": 2,
-        "Carrots": 4,
-        "Peas": 50
-        },
-    "image": "eggs.png"
+        [
+            [1, 0.5, 2, 4, 0.25, 0.25],
+            ["", "tsp", "", "", "cup", "cup"],
+            ["Whole-grain English muffin", "Extra-virgin olive oil", "Scallions", "Egg whites", "Cherry tomatoes", "Mexican cheese"]  
+        ],
+    "image": "beefstrogganoff.jpg"
     },
     {
     "recipeName": "Orange and honey glaze chicken",
@@ -486,12 +501,12 @@
         },
     "description": "Lovely breakfast with poached eggs and muffins.",
     "ingredients":
-        {
-        "Potatoes": 2,
-        "Carrots": 4,
-        "Peas": 50
-        },
-    "image": "eggs.png"
+        [
+            [1, 0.5, 2, 4, 0.25, 0.25],
+            ["", "tsp", "", "", "cup", "cup"],
+            ["Whole-grain English muffin", "Extra-virgin olive oil", "Scallions", "Egg whites", "Cherry tomatoes", "Mexican cheese"]  
+        ],
+    "image": "beefstrogganoff.jpg"
     },
     {
     "recipeName": "Lemon-garlic shrimp with asparagus",
@@ -505,12 +520,12 @@
         },
     "description": "Lovely breakfast with poached eggs and muffins.",
     "ingredients":
-        {
-        "Potatoes": 2,
-        "Carrots": 4,
-        "Peas": 50
-        },
-    "image": "eggs.png"
+        [
+            [1, 0.5, 2, 4, 0.25, 0.25],
+            ["", "tsp", "", "", "cup", "cup"],
+            ["Whole-grain English muffin", "Extra-virgin olive oil", "Scallions", "Egg whites", "Cherry tomatoes", "Mexican cheese"]  
+        ],
+    "image": "beefstrogganoff.jpg"
     },
     {
     "recipeName": "Butternut squash and mozarella bake",
@@ -524,12 +539,12 @@
         },
     "description": "Lovely breakfast with poached eggs and muffins.",
     "ingredients":
-        {
-        "Potatoes": 2,
-        "Carrots": 4,
-        "Peas": 50
-        },
-    "image": "eggs.png"
+        [
+            [1, 0.5, 2, 4, 0.25, 0.25],
+            ["", "tsp", "", "", "cup", "cup"],
+            ["Whole-grain English muffin", "Extra-virgin olive oil", "Scallions", "Egg whites", "Cherry tomatoes", "Mexican cheese"]  
+        ],
+    "image": "beefstrogganoff.jpg"
     },
     {
     "recipeName": "Black bean and corn quesadilla",
@@ -543,11 +558,11 @@
         },
     "description": "Lovely breakfast with poached eggs and muffins.",
     "ingredients":
-        {
-        "Potatoes": 2,
-        "Carrots": 4,
-        "Peas": 50
-        },
-    "image": "eggs.png"
+        [
+            [1, 0.5, 2, 4, 0.25, 0.25],
+            ["", "tsp", "", "", "cup", "cup"],
+            ["Whole-grain English muffin", "Extra-virgin olive oil", "Scallions", "Egg whites", "Cherry tomatoes", "Mexican cheese"]  
+        ],
+    "image": "beefstrogganoff.jpg"
     }
 ]
