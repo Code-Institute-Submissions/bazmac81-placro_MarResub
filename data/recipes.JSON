@@ -39,9 +39,9 @@
     "description": "Lovely breakfast with poached eggs and muffins.",
     "ingredients":
         [
-            [3, 2, 2, 1.75, 3, 2, 1],
-            ["cups", "cups", "tsp", "cups", "scoops", "cups", "tbs"],
-            ["Water", "Semi-skimmed Milk", "Salt", "Cornmeal", "Vanilla protien powder", "Blueberries", "Tomato", "Eggs", "Honey"]
+            [3, 2, 2, 1.75, 3, 2, 1, 2, 1],
+            ["cups", "cups", "tsp", "cups", "scoops", "cups", "tbs", "tsp", ""],
+            ["Water", "Semi-skimmed Milk", "Salt", "Cornmeal", "Vanilla protien powder", "Blueberries", "Honey", "Extra-virgin olive oil","Banana"]
         ],
     "image": "blteggs.jpg"
     },
