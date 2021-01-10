@@ -34,7 +34,7 @@ function postPlan(){
             '</div>';
         for (i = 0; i < meals.length; i++){
             section += 
-                '<div>'+
+                '<div class="meal-section">'+
                     '<h3 class="heading page-section"">'+meals[i]+'</h3>';
             for(j = 0; j < mealPlan.length; j++){
                 if(mealPlan[j].type === meals[i].toLowerCase()){  
@@ -77,8 +77,30 @@ function removeMeal(e){
     };
 };
 
-function delFromPlan(){
-    console.log("this will delete the recipe");
+function delFromPlan(e){
+    var selected = e.target;
+    var mealToRem = selected.parentNode.parentNode.nextSibling.textContent;
+    var rowToRem = selected.parentNode.parentNode.parentNode;
+    var mealType = rowToRem.parentNode.firstChild.textContent;
+    var m = ['cals', 'prot', 'carb', 'fat'];
+
+    for(let i = 0; i < mealPlan.length; i++){
+        if(mealPlan[i].name === mealToRem){
+            mealStats[mealType.toLowerCase()] -= mealPlan[i].cals;
+            for(let j = 0; j < m.length; j++){
+                planStats[j] -= mealPlan[i][m[j]];
+            };
+            mealPlan.splice(i, 1);
+        };
+    };
+
+    rowToRem.classList.add('d-none');
+    storeStats();
+    pcCalc();
+    mealPcCalc();
+    if(mealPlan.length === 0){
+        postPlan();
+    }
 };
 
 function saveData(e){
