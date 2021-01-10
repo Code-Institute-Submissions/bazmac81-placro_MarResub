@@ -1,18 +1,9 @@
 //Plans refer to cals, prot, carbs, fat stats
-var planStats = [0, 0, 0, 0];
 var planPc = [0, 0, 0, 0];
-
-//Meals refer to Breakfast, Lunch, Dinner, Snacks
-var mealStats = {
-    breakfast: 0,
-    lunch: 0,
-    dinner: 0,
-    snacks: 0,
-};
 var mealPc = [0, 0, 0, 0];
 
 //Array to store users selected recipes
-var mealPlan = [];
+//var mealPlan = [];
 
 function loadRecipeData(recipeData){
     var recipeContainer = document.getElementById('recipe-card-container');
@@ -21,7 +12,7 @@ function loadRecipeData(recipeData){
 
     for (let i = 0; i < recipeData.length; i++){
         recipeListHTML += 
-        '<div class="recipe-card col-12 col-md-5 mx-auto d-none '+recipeData[i].mealType+'">'+
+        '<div class="recipe-card col-11 col-md-5 mx-auto d-none '+recipeData[i].mealType+'">'+
             '<div class="row no-gutters">'+
                 '<div class="col-8 col-sm-9">'+
                     '<h3 class="heading recipe-name">'+ recipeData[i].recipeName +'</h3>'+
@@ -148,30 +139,30 @@ function mealCalc(operator, rCard){
     else if(mt.contains('lunch')){
         switch (operator){
             case 'add':
-                mealStats.breakfast += mealCals;
+                mealStats.lunch += mealCals;
                 break;
             case 'sub':
-                mealStats.breakfast -= mealCals;
+                mealStats.lunch -= mealCals;
                 break;
         }
     }
     else if(mt.contains('dinner')){
         switch (operator){
             case 'add':
-                mealStats.breakfast += mealCals;
+                mealStats.dinner += mealCals;
                 break;
             case 'sub':
-                mealStats.breakfast -= mealCals;
+                mealStats.dinner -= mealCals;
                 break;
         }
     }
     else if(mt.contains('snack')){
         switch (operator){
             case 'add':
-                mealStats.breakfast += mealCals;
+                mealStats.snacks += mealCals;
                 break;
             case 'sub':
-                mealStats.breakfast -= mealCals;
+                mealStats.snacks -= mealCals;
                 break;
         }
     };
