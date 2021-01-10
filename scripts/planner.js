@@ -337,7 +337,11 @@ function showDetail(e){
 if (window.location.pathname === "/planner.html" || window.location.pathname === "/placro/planner.html"){
     var resetCat = document.getElementById('resetBtn');
     resetCat.addEventListener('click', resetAll, false);
-
+    
+    var mpBtn = document.getElementById('mealPlan');
+    mpBtn.addEventListener('click', function(e){
+        menuOption(e);
+    });
 };
 
 if(window.location.pathname === "/planner.html" || window.location.pathname === "/placro/planner.html"){
