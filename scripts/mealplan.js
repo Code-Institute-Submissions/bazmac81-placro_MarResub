@@ -52,13 +52,24 @@ function delFromPlan(){
     console.log("this will delete the recipe");
 };
 
-function saveData(){
-    window.localStorage.setItem('userStats', JSON.stringify(userStats));
-    window.localStorage.setItem('modifiers', JSON.stringify(modifiers));
-    window.localStorage.setItem('macros', JSON.stringify(macros));
-    window.localStorage.setItem('mealPlan', JSON.stringify(mealPlan));
-    window.localStorage.setItem('planStats', JSON.stringify(planStats));
-    window.localStorage.setItem('mealStats', JSON.stringify(mealStats));
+function saveData(e){
+    let sd = e.target;
+
+    if(!sd.classList.contains('rem')){
+        window.localStorage.setItem('userStats', JSON.stringify(userStats));
+        window.localStorage.setItem('modifiers', JSON.stringify(modifiers));
+        window.localStorage.setItem('macros', JSON.stringify(macros));
+        window.localStorage.setItem('mealPlan', JSON.stringify(mealPlan));
+        window.localStorage.setItem('planStats', JSON.stringify(planStats));
+        window.localStorage.setItem('mealStats', JSON.stringify(mealStats));
+        sd.classList.toggle('rem');
+        sd.textContent = 'Clear';
+    }
+    else {
+        window.localStorage.clear();
+        sd.classList.toggle('rem');
+        sd.textContent = 'Save';
+    }
 };
 
 window.addEventListener('load', function(){
@@ -67,4 +78,6 @@ window.addEventListener('load', function(){
 });
 
 var savePlan = document.getElementById('save');
-savePlan.addEventListener('click', saveData, false);
+savePlan.addEventListener('click', function(e){
+    saveData(e);
+});
