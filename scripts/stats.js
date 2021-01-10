@@ -202,7 +202,7 @@ function aboutToggle(){
     var getAbout = document.getElementById('about');
 
     getAbout.classList.toggle('d-none');
-    window.location.assign('/#about' || '/placro/#about');
+    window.location.assign('./#about' || './placro/#about');
 };
 
 function redirectReturn() {
