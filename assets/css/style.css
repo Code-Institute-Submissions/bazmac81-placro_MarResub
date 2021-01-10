@@ -292,7 +292,7 @@ a, a:visited, a:not([href]), .meal {
     cursor: pointer;
 }
 
-.meal-img {
+.meal-img img{
     width: 100%;
     background-color: #495d63ff;
     content: ' ' ;
@@ -301,7 +301,7 @@ a, a:visited, a:not([href]), .meal {
 img {
     object-fit: cover;
     object-position: center center;
-    max-height: 100px;
+    overflow: hidden;
 }
 
 .meal p {
