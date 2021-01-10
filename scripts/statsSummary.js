@@ -94,9 +94,9 @@ function checkReturn(){
     let check = JSON.parse(window.localStorage.getItem('mealPlan')) || [];
     if(check.length !== 0){
         getPrevData();
-    };
-    if(window.location.pathname === "/stats.html" || window.location.pathname === "/placro/stats.html"){
-        welcomMsg();
+        if(window.location.pathname === "/stats.html" || window.location.pathname === "/placro/stats.html"){
+            welcomMsg();
+        };
     };
 };
 
