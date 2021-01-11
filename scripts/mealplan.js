@@ -169,7 +169,9 @@ window.addEventListener('load', function(){
 var shopListBtn = document.getElementById('list');
 window.addEventListener('click', shoppingList, false);
 
-var savePlan = document.getElementById('save');
-savePlan.addEventListener('click', function(e){
-    saveData(e);
-});
+var savePlan = document.getElementsByClassName('save');
+for (let i = 0; i < savePlan.length; i++){
+    savePlan[i].addEventListener('click', function(e){
+        saveData(e);
+    });
+};
