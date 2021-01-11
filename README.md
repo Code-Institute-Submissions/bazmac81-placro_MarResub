@@ -1,4 +1,3 @@
-![logo](assets/images/*.png*)
 # PLACRO
 
 #### Code Institute Full Stack Development Diploma: Milestone Project 2 - Interactive Frontend Development
@@ -23,6 +22,7 @@
    - User stories
    - User testing
 3. [Bugs and De-bugging](#bugs)
+ 
    - Known Issues
 4. [Technologies Used](#tech)
    - Languages Used
@@ -95,11 +95,12 @@ To work around this, various different front end tools will be used to provide t
 - Using JSON data format files to store required data in place of a backend database.
 
 #### Fonts 
-Rubik & Karla google fonts.
-Rubik will be used for headers while Karla will be used for body text.
+To ensure that the site presents information well. I have chosen the Rubik & Karla google fonts with Rubik to be used for headers while Karla will be used for body text.
 
 #### Colours
 Using coolors I have selected a selection of simple, high contrast colours.
+- Links and interactivity are denoted with the orange colour throughout the site
+- the cyan/blue is used to help highligh an interactive element on hover
 
 #### Icons
 In addition to the fonts and colourway, there are a few icons to be used through the site. These are sourced from Font Awesome and will be used to help direct users and sign post relevant sections using expected conventions. 
@@ -172,47 +173,67 @@ To validate that the site achieves the goals set out in the planning stage, belo
 - As a **user**, I want to be able to **calculate my daily calorie and macros targets** to build a meal plan that **meets my goals**
 - As a **user**, I want to be able to **view recipes for various meals** for any part of the day to **create a varied meal plan**
 - As a  **user** I want to be able to **select meals to build a meal plan** and see how **each meal added impacts on my daily targets**
-
-Due to known issues the following user stories have not been satisfied in this release:
 - As a **user**, I want to **understand more about macros** and how they **help with meal planning**
 - As a **user**, I want to be able to **save my selections** and **revisit them later**
 - As a **user** I want to be able to **easily create a shopping list** so that I can **purchase the ingredients that I need** to make my chosen meals
+- As a **user** I want to be able to **research more into the source material** to see the **detail behind the programme**
+
+
+The below user stories have not been satisfied in this release:
 - As a **user** I want to be able to highlight **particular recipes as favourites** so they are **easy to find when I revisit the site**
 - As a **user** I want to be able to **export ingredients lists** to my **favourite to do list app**
-- As a **user** I want to be able to **research more into the source material** to see the **detail behind the programme**
+
+### Development led testing - Jasmine
+As part of the building the site, Jasmine was used to start the development in a test driven manor. As the the app developed my lack of experience with Javascript made utilising Jasmine to its full potential difficult.
+
+Jasmine was used to test the calcualation logic of the stats that underpin the site at the beginning of development. This helped to build the functions that took the various user provided stats and output the desired results. As the app developed the data structures changed which now makes the Jasmine tests in place redundant.
+
+### User testing
+The web app was share with various users along with the test user stories. In general users were happy with the site and how it handled their journey noting the ease of use. The functionality of the user stories included in this version worked as expected. Bugs and issues are noted in the following section.
+
+### Peer code review
+Placro was share with my student peers at Code Institute via Slack.A handful of bugs were identified and listed as part of the below section content.
 
 _[Back to Contents](#Contents)_
 
 -------------
 ## Bugs and De-bugging <a name="bugs"></a>
 
-Below are the bugs identified through the various stages of testing and how they have been managed:
 
-- _Bugs and fixes to be listed here_
+- Form measurements switch failed to work
+    - **Issue**: Web app captures event when user switches between imperial and metric. This was failing when deployed.
+    - **Fix**: Correct a variable was incorrectly names causing the event to fail in completing.
+
+- Lack of direction on meal plan builing page
+    - **Issue**: Users found that once they finished selecting their meals, they were unclear where to go next.
+    - **Fix**: On mobile screen formats where the menu is collapsed, added a `Meal plan` button which takes user forward to the meal plan summary page. 
+
+- Header copy crashing with buttons on mobile screens
+    - **Issue**: On mobile screens, any buttons used to aid navigation broke their containers and impacted on header copy making the site difficult to read.
+    - **Fix**: Added a new sub-header to hold any buttons when on mobile screens. When the screen crosses a particular size this is hidden and the buttons return to the header bar.
+
+- New header buttons not reacting to events
+    - **Issue**: The new header buttons were not reacting to their associated events due to the event targeting IDs. As the buttons were duplicated in the HTML the second button was getting missed.
+    - **Fix**: Changed elements to have a class identifier vs id and amended the event to react to Class IDs instead.
+
+- Spelling mistakes
+    - **Issue**: Various spellings and typos as well as inconsistent formatting of Placro name
+    - **Fix**: Corrected typos and wrapped relevant 'Placro' in stylised  `<span>` tags and redeployed.
+
+- Initial stats form not returning
+    - **Issue**: The 'Go Back' button returned a 404 error when used to go back and re-enter / amend any stats. This same issue affected any code that made a page reference for checking the current page or loading the next page in a number of areas.
+    - **Fix**: Correct the `window.location.assign` function to ensure it copes with various types of deployment.
 
 ### Known Issues
 Below is a list of known bugs that are either not able to be resolved at this time due or are outside the scope of this project. They will be factored into the development of future releases to have them resolved.
 
 - recipe.JSON
-    - ingredients are in the wrong data format
-    - images not assigned to all recipes
-    - Recipe description is placeholder text
+    - Placeholder images assigned to each recipe type
+    - Recipe description not currently included, data contains placeholder text
     - Recipe ingredients is placeholder text
 
-- Index.html
-    - About section isn't accessible due to lack of functional button
-
 - Planner.html
-    - meal stats % does not reset correctly
     - Recipe header incorrect colour, should be orange to denote link / interactive inline with site design
-
-- Mealplan.html
-    - Recipe remove button does not function as intended.
-    - Page does not show user friendly messaging when the meal plan is empty
-    - Shopping list button does not load live ingredient data
-    - Copy to clipboard does is not live
-    - Print is not live
-    - No function to save meal plan for later review
 
 - Menu navigation
     - Your stats section does not show labels to correcly identify content to signpost meaning to user
