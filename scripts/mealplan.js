@@ -123,10 +123,51 @@ function saveData(e){
     }
 };
 
+// Create shopping list items using meal plan ingredients
+function shoppingList(){
+    let listItems = [];
+    let list = document.getElementById('list-items');
+    let listHTML, item = ''
+
+    for(let i = 0; i < mealPlan.length; i++){
+        for(let j = 0; j < mealPlan[i].ing.length; j++){
+            item = mealPlan[i].ing[j].substring(mealPlan[i].ing[j].indexOf('-')+2, mealPlan[i].ing[j].length);
+            if(item.length != 0){
+                let check = 0;
+                for(let k = 0; k <= listItems.length; k++){
+                    //Remove duplicates and water from shopping list
+                    if (item === listItems[k] || item === 'Water'){
+                        check += 1;
+                    };
+                };
+                if (check === 0){
+                    listItems.push(item);
+                };
+            };
+        };
+    };
+    
+    listHTML = 
+            '<ul>';
+
+    for(let i = 0; i < listItems.length; i++){
+        listHTML += 
+            '<li>'+listItems[i]+'</li>';
+    };
+    
+    listHTML += 
+        '</ul>'; 
+        
+    list.innerHTML = listHTML;
+};
+
 window.addEventListener('load', function(){
     postPlan();
     removeMeal();
 });
+
+var shopListBtn = document.getElementById('list');
+window.addEventListener('click', shoppingList, false);
 
 var savePlan = document.getElementById('save');
 savePlan.addEventListener('click', function(e){
