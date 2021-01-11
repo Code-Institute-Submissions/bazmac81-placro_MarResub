@@ -198,7 +198,6 @@ function addToPlan(rCard, s){
     meal.fat = rCard.querySelector('.meal-fat').textContent;
     meal.ing = [];
     ings = rCard.querySelectorAll('.meal-ings');
-    meal.desc = rCard.querySelector('.meal-desc').textContent;
     for (let i = 0; i < ings.length; i++){
         meal.ing[i] = ings[i].textContent;
     };
