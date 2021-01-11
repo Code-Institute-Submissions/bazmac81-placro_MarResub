@@ -57,7 +57,6 @@ function getOption(e){
         opt = o.charAt(0).toUpperCase() + o.substring(1, o.indexOf('_'));
     };
 
-    console.log(opt);
     menuOption(opt);
 };
 

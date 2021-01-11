@@ -203,7 +203,6 @@ function addToPlan(rCard, s){
     meal.ing = [];
     ings = rCard.querySelectorAll('.meal-ings');
     meal.desc = rCard.querySelector('.meal-desc').textContent;
-    console.log(ings);
     for (let i = 0; i < ings.length; i++){
         meal.ing[i] = ings[i].textContent;
     };

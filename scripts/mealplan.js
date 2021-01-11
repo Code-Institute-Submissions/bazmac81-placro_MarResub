@@ -19,7 +19,7 @@ function postPlan(){
         section += 
             '<div class="page-section">'+
                 '<h3 class="heading">Here\'s your meal plan</h3>'+
-                '<p>If you want to make any changes, skip back to the relevant meal page. You can also save your plan for when you next come back to Placro or if you change your mind you can clear it from memory.</p>'+
+                '<p>If you want to make any changes, skip back to the relevant meal page. You can also save your plan for when you next come back to <span class="brand">Placro</span> or if you change your mind you can clear it from memory.</p>'+
             '</div>'+
             '<div class="row no-gutters d-none d-sm-flex">'+
                 '<div class="col-8"></div>'+
