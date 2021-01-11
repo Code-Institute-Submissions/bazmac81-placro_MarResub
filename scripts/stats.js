@@ -178,7 +178,7 @@ function submitStats(e){
 function goBack(){
     document.getElementById('statSection').classList.toggle('d-none');
     document.getElementById('goalSection').classList.toggle('d-none');
-    window.location.assign('/#stats' || '/placro/#stats');
+    window.location.assign('./#stats' || './placro/#stats');
 };
 
 // Store all stats into session storage for site pages to access
