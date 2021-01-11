@@ -114,13 +114,19 @@
         <!---------- Meal Header with reset button -->
         <div class="row no-gutters">
             <div class="col-12 col-md-11 col-lg-10 mx-auto">
-                <div class="row meal-banner">
-                    <div class="col-4 col-sm-7 col-md-10 mx-auto">
+                <div class="row no-gutters meal-banner my-sm-3 px-2" id="paired-banner">
+                    <div class="col-12 col-sm-7 col-md-10 mx-auto">
                         <h2 class="heading" id="category"></h2>
                     </div>
-                    <div class="col-8 col-sm-5 col-md-2 mx-auto justify-content-right">
+                    <div class="d-none d-sm-inline col-sm-5 col-md-2 mx-auto justify-content-right">
                         <button class="btn mx-auto" id="resetBtn">Reset</button> 
                         <button class="btn mx-auto d-md-none" id="mealPlan">Meal plan</button> 
+                    </div>
+                </div>
+                <div class="row no-gutters meal-banner sub-banner d-sm-none py-1 px-2">
+                    <div class="col-12 mx-auto px-0">
+                        <button class="btn mx-auto resetBtn">Reset</button> 
+                        <button class="btn mx-auto d-md-none mealPlan">Meal plan</button>   
                     </div>
                 </div>
             </div>
