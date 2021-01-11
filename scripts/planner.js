@@ -335,13 +335,15 @@ function showDetail(e){
 };
 
 if (window.location.pathname === "/planner.html" || window.location.pathname === "/placro/planner.html"){
-    var resetCat = document.getElementById('resetBtn');
-    resetCat.addEventListener('click', resetAll, false);
+    var resetCat = document.getElementsByClassName('resetBtn');
+    var mpBtn = document.getElementsByClassName('mealPlan');
     
-    var mpBtn = document.getElementById('mealPlan');
-    mpBtn.addEventListener('click', function(e){
-        menuOption(e);
-    });
+    for(i = 0; i < resetCat.length; i++){
+        resetCat[i].addEventListener('click', resetAll, false);
+        mpBtn[i].addEventListener('click', function(e){
+            menuOption(e);
+        });
+    };
 };
 
 if(window.location.pathname === "/planner.html" || window.location.pathname === "/placro/planner.html"){
