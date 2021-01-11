@@ -58,13 +58,9 @@ function loadRecipeData(recipeData){
                     '</div>'+
                 '</div>'+
             '</div>'+
-            '<div class="row no-gutters d-none details">'+
-                '<div class="col-11 mx-auto meal-desc">'+
-                    recipeData[i].description+
-                '</div>'+
-            '</div>'+
-            '<div class="row no-gutters d-none details">'+
+            '<div class="row no-gutters d-none details mt-2">'+
                 '<div class="col-11 mx-auto">'+
+                    '<h3 class="heading">Ingredients:</h3>'
                     '<ul>';
 
         for(let k = 0; k < recipeData[i].ingredients[0].length; k++){
