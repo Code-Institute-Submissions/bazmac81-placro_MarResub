@@ -108,22 +108,18 @@ In addition to the fonts and colourway, there are a few icons to be used through
 ### Site Map and Wireframes
 To help ensure that the site contains all of the required information I have created simple wireframes as a framework, using the User Stories and Site Owner Goals to ensure that all of the required features for this release are present.
 
-The site is made up of 5 pages, which are shown in the below sitemap:
-
-![Sitemap](design/wireframe/sitemap.png)
-
-All of the wireframes were created mobile first, with subsequent wireframes showing the view on a tablet and desktop.
+The site is made up of 5 pages. All of the wireframes were created mobile first, with subsequent wireframes showing the view on a tablet and desktop.
 Below is the wireframe for the Home page in mobile view.
 
 ![homepagemobileview](design/wireframe/homemobileview.png)
 
 - Home page: [Tablet](design/wireframe/hometabletview.png) | [Desktop](design/wireframe/homedesktopview.png)
-- Goals page: [Mobile](design/wireframe/goalmobileview.png) | [Tablet](design/wireframe/treatmentstabletview.png) | [Desktop](design/wireframe/treatmentsdesktopview.png)
-- Targets page: [Mobile](design/wireframe/targetmobilview.png) | [Tablet](design/wireframe/) | [Desktop](design/wireframe/)
-- Return page: [Mobile](design/wireframe/returnmobileview.png) | [Tablet](design/wireframe/covidtabletview.png) | [Desktop](design/wireframe/coviddesktopview.png)
-- Recipe page: [Mobile](design/wireframe/recipemobileview.png) | [Tablet](design/wireframe/abouttabletview.png) | [Desktop](design/wireframe/aboutdesktopview.png)
-- Meal plan page: [Mobile](design/wireframe/mealplanmobileview.png) | [Tablet](design/wireframe/contacttabletview.png) | [Desktop](design/wireframe/contactdesktopview.png)
-- Shopping list page: [Mobile](design/wireframe/listmobileview.png) | [Tablet](design/wireframe/contacttabletview.png) | [Desktop](design/wireframe/contactdesktopview.png)
+- Goals page: [Mobile](design/wireframe/goalmobileview.png) | [Tablet](design/wireframe/goaltabletview.png) | [Desktop](design/wireframe/goaldesktopview.png)
+- Targets page: [Mobile](design/wireframe/targetmobileview.png) | [Tablet](design/wireframe/targettabletview.png) | [Desktop](design/wireframe/targetdesktopview.png)
+- Return page: [Mobile](design/wireframe/returnmobileview.png) | [Tablet](design/wireframe/returntabletview.png) | [Desktop](design/wireframe/returndesktopview.png)
+- Recipe page: [Mobile](design/wireframe/recipemobileview.png) | [Tablet](design/wireframe/recipetabletview.png) | [Desktop](design/wireframe/recipedesktopview.png)
+- Meal plan page: [Mobile](design/wireframe/mealplanmobileview.png) | [Tablet](design/wireframe/mealplantabletview.png) | [Desktop](design/wireframe/mealplandesktopview.png)
+- Shopping list page: [Mobile](design/wireframe/listmobileview.png) | [Tablet](design/wireframe/listtabletview.png) | [Desktop](design/wireframe/listdesktopview.png)
 - Shopping list page: [Mobile](design/wireframe/aboutmobileview.png) | [Tablet](design/wireframe/abouttabletview.png) | [Desktop](design/wireframe/aboutdesktopview.png)
 
 ### **Features & Future Releases**
@@ -171,13 +167,20 @@ _[Back to Contents](#Contents)_
 To validate that the site achieves the goals set out in the planning stage, below are the user stories that satisfy each requirement in this release.
 
 - As a **user**, I want to be able to **calculate my daily calorie and macros targets** to build a meal plan that **meets my goals**
+![enterstats](design/screenshots/enterstats.png) ![homepagemobileview](design/screenshots/stats.png) 
 - As a **user**, I want to be able to **view recipes for various meals** for any part of the day to **create a varied meal plan**
+![selectmeals](design/screenshots/choosemeal.png)
 - As a  **user** I want to be able to **select meals to build a meal plan** and see how **each meal added impacts on my daily targets**
+![homepagemobileview](design/screenshots/selectmeals.png)
 - As a **user**, I want to **understand more about macros** and how they **help with meal planning**
+![homepagemobileview](design/screenshots/aboutplacro.png)
 - As a **user**, I want to be able to **save my selections** and **revisit them later**
-- As a **user** I want to be able to **easily create a shopping list** so that I can **purchase the ingredients that I need** to make my chosen meals
-- As a **user** I want to be able to **research more into the source material** to see the **detail behind the programme**
+![homepagemobileview](design/screenshots/saveplan.png) ![homepagemobileview](design/screenshots/savedplan.png) ![homepagemobileview](design/screenshots/welcomeback.png) 
 
+- As a **user** I want to be able to **easily create a shopping list** so that I can **purchase the ingredients that I need** to make my chosen meals
+![homepagemobileview](design/screenshots/shoppinglist.png)
+- As a **user** I want to be able to **research more into the source material** to see the **detail behind the programme**
+![homepagemobileview](design/screenshots/moreinfo.png)
 
 The below user stories have not been satisfied in this release:
 - As a **user** I want to be able to highlight **particular recipes as favourites** so they are **easy to find when I revisit the site**
