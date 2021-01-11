@@ -3,16 +3,16 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <!---------- Add in Bootstrap and local CSS content -->
+    <!-- -------- Add in Bootstrap and local CSS content -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
     <link rel="stylesheet" href="assets/css/style.css" type="text/css">
-    <!---------- Add in Fontawesome kit-->
+    <!-- -------- Add in Fontawesome kit-->
     <script src="https://kit.fontawesome.com/dd053466e8.js" crossorigin="anonymous"></script>
     <title>Placro - Plan your meals to hit your macros!</title>
 </head>
 
 <body class="container-fluid px-0">
-    <!---------- Header content including Nav -->
+    <!-- -------- Header content including Nav -->
     <header class="row no-gutters">
         <nav class="navbar navbar-expand-md navbar-light col-12 col-md-11 col-lg-10 mx-auto">
             <div class="navbar-brand">
@@ -48,10 +48,10 @@
 
     <hr class="nav-break d-md-none">
 
-    <!---------- Main body content -->
+    <!-- -------- Main body content -->
     <main class="container-fluid px-0">
     
-    <!---------- Macro tracker bar -->
+    <!-- -------- Macro tracker bar -->
         <div class="row no-gutters"> 
             <div class="col-12 col-md-11 col-lg-10 mx-auto">
                 <div class="row no-gutters">
@@ -83,7 +83,7 @@
             </div>
         </div>
 
-    <!---------- Meal stats tracker bar -->
+    <!-- -------- Meal stats tracker bar -->
         <div class="row no-gutters">
             <div class="col-12 col-md-11 col-lg-10 mx-auto">
                 <div class="row no-gutters">
@@ -111,7 +111,7 @@
             </div>
         </div>
 
-        <!---------- Meal Plan Header with Shopping List button -->
+        <!-- -------- Meal Plan Header with Shopping List button -->
         <div class="row no-gutters">
             <div class="col-12 col-md-11 col-lg-10 mx-auto">
                 <div class="row no-gutters meal-banner my-sm-3 px-2" id="paired-banner">
@@ -132,7 +132,7 @@
             </div>
         </div>
 
-        <!---------- Meal Plan Summary display -->
+        <!-- -------- Meal Plan Summary display -->
         <div class="row no-gutters">
             <div class="col-11 col-md-10 col-lg-9 mx-auto">
 
@@ -143,17 +143,17 @@
         </div>
     </main>
 
-    <!---------- Footer content -->
+    <!-- -------- Footer content -->
     <footer class="row no-gutters container-fluid">
         <div class="col-12 col-md-11 col-lg-10 mx-auto align-items-center justify-content-around">
             <i></i>
             <i></i>
-            <span>About</span>
+            <a href="#" type="button" data-toggle="modal" data-target="#about">About</a>
             <span>Spiro Web Development 2020</span>
         </div>
     </footer>
 
-    <!---------- Stats Modal -->
+    <!-- -------- Stats Modal -->
     <div class="modal fade" id="amend-stats" tabindex="-1" role="dialog" aria-labelledby="Amend Stats" aria-hidden="true">
         <div class="modal-dialog modal-dialog-scrollable" role="document">
             <div class="modal-content">
@@ -193,7 +193,7 @@
         </div>
     </div>
 
-    <!---------- Goals Modal -->
+    <!-- -------- Goals Modal -->
     <div class="modal fade" id="amend-goal" tabindex="-1" role="dialog" aria-labelledby="Amend Goals" aria-hidden="true">
         <div class="modal-dialog modal-dialog-scrollable" role="document">
             <div class="modal-content">
@@ -230,8 +230,62 @@
             </div>
         </div>
     </div>
+    <!-- -------- About Modal -->
+    <div class="modal fade" id="about" tabindex="-1" role="dialog" aria-labelledby="Amend Goals" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-scrollable" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="heading">About Placro</h5>
+                    <button class="close" data-dismiss="modal" aria-label="close">
+                        <span>&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <div class="col-12 mx-auto">    
+                        <h3 class="heading">What's behind Placro</h3>
+                        <p>
+                            The science behind the numbers in Placro are based on the programme developed in Bigger Leaner Stronger by Mike Matthews. The principle is based on building muscle by giving the body the right fuel. By planning your meals using macro nutrients you are building a plan that maximises your daily calorie allowance to hit your goals. 
+                        </p>
+                        <h3 class="heading">What are Macros anyway?</h3>
+                        <p>Macro nutrients are listed below:</p>
+                        <ul>
+                            <li>Protein</li>
+                            <li>Carbohydrate</li>
+                            <li>Fat</li>
+                        </ul>
+                        <p>
+                            The key thing to note is this isn't designed to be a fad style diet overly emphasising or exluding any particular group. In fact its the opposite and designed to help you eat right based on your goals.
+                        </p>
+                        <h3 class="heading">What Goals does this actually help with?</h3>
+                        <p>
+                            Typically in body building you would aim to achieve one of 3 goals with your diet:
+                        </p>
+                        <ul>
+                            <li>Bulk - Eat to gain body / muscle mass to support your training plan</li>
+                            <li>Maintain - Your meal plan is built to help you maintain your current body weight</li>
+                            <li>Cut - For when you want to move towards a more lean body mass, cutting your body fat</li>
+                        </ul>
+                        <p>
+                            By selecting your goal as part of your stats using Plecro, your target daily calorie intake and macro nutrient mix, are adjusted to deliver on your goal. 
+                        </p>
+                        <h3 class="heading">Where do I found out more?</h3>
+                        <p>Below you will find a link to Bigger Leaner Stronger which will cover the philosophy in much great detail. Also you will find a link to the Shredded Chef, which contains great recipes to help you plan your macros, some of which you will find on Placro.</p>
+                    </div>
+                    <div class="col-5 col-md-4 col-lg-3 mx-auto">
+                        <a href="https://www.amazon.co.uk/gp/product/B006XF5BTG/ref=series_rw_dp_sw" target="_blank"><img class="book_cover" src="assets/images/BLScover.jpg" alt="Bigger Leaner Stronger book cover" /></a>
+                    </div>
+                    <div class="col-5 col-md-4 col-lg-3 mx-auto">
+                        <a href="https://www.amazon.co.uk/Shredded-Chef-Recipes-Building-Getting-ebook/dp/B007FW0PI8" target="_blank"><img class="book_cover" src="assets/images/shredchefcover.jpg" alt="The Shredded Chef book cover" /></a>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button class="btn cancel" data-dismiss="modal" aria-label="close">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
 
-    <!---------- Shopping List Modal -->
+    <!-- -------- Shopping List Modal -->
     <div class="modal fade" id="shopping-list" tabindex="-1" role="dialog" aria-labelledby="Shopping List" aria-hidden="true">
         <div class="modal-dialog modal-dialog-scrollable" role="document">
             <div class="modal-content">
