@@ -12,17 +12,9 @@
     "description": "Lovely breakfast with poached eggs and muffins.",
     "ingredients":
         [
-            "Sauce",[
-                [1, 0.5, 1, 0.5],
-                ["tbs", "tbs", "tsp", "tsp"],
-                ["Light mayonnaise", "Water", "Whole-grain mustard", "Lemon juice"]
-            ],
-            "Meal", [
-                [1, 0.5, 1, 0.5, 4, 1, 2, 2],
-                ["tbs", "tbs", "oz", "small", "cups", "", "slices", "large"],
-                ["White vinegar", "Extra-virgin olive oil", "Bacon", "Onion", "Kale", "Whole grain English muffin", "Tomato", "Eggs"]
-
-            ]
+            [3, 1, 0.5, 1, 0.5, 4, 1, 2, 2],
+            ["tbs", "tbs", "tbs", "oz", "small", "cups", "", "slices", "large"],
+            ["Hollandaise Sauce", "White vinegar", "Extra-virgin olive oil", "Bacon", "Onion", "Kale", "Whole grain English muffin", "Tomato", "Eggs"]
         ],
     "image": "blteggs.jpg"
     },
