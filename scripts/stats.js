@@ -81,6 +81,8 @@ function statsCapture(e){
         e.preventDefault();
     }
 
+    let error = 0;
+
     //Get user entered data from form
     n = document.getElementById('name');
     a = document.getElementById('age'); 
@@ -90,15 +92,31 @@ function statsCapture(e){
     //Assign data to variables and convert to numbers
     if (n.value != ""){
         userStats.name = n.value;
+    }
+    else{
+        n.setAttribute('placeholder', 'Please enter your name');
+        error += 1;
     };
     if (a.value != "") {
         userStats.age = parseInt(a.value);
+    }
+    else{
+        a.setAttribute('placeholder', 'Please enter your age');
+        error += 1;
     };
     if (h.value != "") {
         userStats.weight = parseInt(w.value);
+    }
+    else{
+        h.setAttribute('placeholder', 'Please enter your height');
+        error += 1;
     };
     if (w.value != "") {
         userStats.height = parseInt(h.value);
+    }
+    else{
+        w.setAttribute('placeholder', 'Please enter your weight');
+        error += 1;
     };
 
     //Make sure any imperial measures are converted back to metric to manage macro calculations
@@ -109,9 +127,11 @@ function statsCapture(e){
     
     //Calculate the calories based on the user input
     macros.calories = tdeeCalc(bmrCalc(userStats.age, userStats.weight, userStats.height));
-    if (window.location.pathname === '/' || window.location.pathname === "/placro/"){
-        document.getElementById('statSection').classList.toggle('d-none');
-        document.getElementById('goalSection').classList.toggle('d-none');  
+    if(error === 0){
+        if (window.location.pathname === '/' || window.location.pathname === "/placro/"){
+            document.getElementById('statSection').classList.toggle('d-none');
+            document.getElementById('goalSection').classList.toggle('d-none');  
+        };
     };
 };
 
