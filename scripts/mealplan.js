@@ -52,9 +52,6 @@ function postPlan(){
                             '</div>'+
                             '<div class="row no-gutters details">'+
                                 '<div class="col-11 d-none">'+
-                                    +mealPlan[j].desc+
-                                '</div>'+
-                                '<div class="col-11 d-none">'+
                                     +mealPlan[j].ing+
                                 '</div>'+
                             '</div>'+
