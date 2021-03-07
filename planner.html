@@ -3,31 +3,31 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <!---------- Add in Bootstrap and local CSS content -->
+    <!-- Add in Bootstrap and local CSS content -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
     <link rel="stylesheet" href="assets/css/style.css" type="text/css">
-    <!---------- Add in Fontawesome kit-->
+    <!-- Add in Fontawesome kit-->
     <script src="https://kit.fontawesome.com/dd053466e8.js" crossorigin="anonymous"></script>
     <title>Placro - Plan your meals to hit your macros!</title>
 </head>
 
 <body class="container-fluid px-0">
-    <!-- -------- Header content including Nav -->
+    <!-- Header content including Nav -->
     <header class="row no-gutters">
         <nav class="navbar navbar-expand-md navbar-light col-12 col-md-11 col-lg-10 mx-auto">
             <div class="navbar-brand">
-                <h1 id="logo">PLACRO</h1>
+                <span id="logo">PLACRO</span>
             </div>
-            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarMenu" aria-controls="navbarSupportedContent" aria-label="Toggle navigation">
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarMenu" aria-controls="navbarMenu" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse align-items-md-center" id="navbarMenu">
                 <ul class="navbar-nav justify-content-md-around align-items-md-center">
                     <li class="nav-item">
-                        <a type="button" data-toggle="modal" data-target="#amend-stats">Your stats</a>
+                        <a href="#" data-toggle="modal" data-target="#amend-stats">Your stats</a>
                     </li>
                     <li class="nav-item">
-                        <a type="button" data-toggle="modal" data-target="#amend-goal">Your goal</a>
+                        <a href="#" data-toggle="modal" data-target="#amend-goal">Your goal</a>
                     </li>
                     <li class="nav-item dropdown">
                         <a class="dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Meal</a>
@@ -48,10 +48,10 @@
 
     <hr class="nav-break d-md-none">
 
-    <!-- -------- Main body content -->
+    <!-- Main body content -->
     <main class="container-fluid px-0">
     
-    <!-- -------- Macro tracker bar -->
+    <!-- Macro tracker bar -->
         <div class="row no-gutters"> 
             <div class="col-12 col-md-11 col-lg-10 mx-auto">
                 <div class="row no-gutters">
@@ -83,7 +83,7 @@
             </div>
         </div>
 
-    <!-- -------- Meal stats tracker bar -->
+    <!-- Meal stats tracker bar -->
         <div class="row no-gutters">
             <div class="col-12 col-md-11 col-lg-10 mx-auto">
                 <div class="row no-gutters">
@@ -111,12 +111,12 @@
             </div>
         </div>
 
-        <!-- -------- Meal Header with reset button -->
+        <!-- Meal Header with reset button -->
         <div class="row no-gutters">
             <div class="col-12 col-md-11 col-lg-10 mx-auto">
                 <div class="row no-gutters meal-banner my-sm-3 px-2" id="paired-banner">
                     <div class="col-12 col-sm-7 col-md-10 mx-auto">
-                        <h2 class="heading" id="category"></h2>
+                        <h2 class="heading" id="category">MEAL</h2>
                     </div>
                     <div class="d-none d-sm-inline col-sm-5 col-md-2 mx-auto justify-content-right">
                         <button class="btn mx-auto" id="resetBtn">Reset</button> 
@@ -132,7 +132,7 @@
             </div>
         </div>
 
-        <!-- -------- Recipes display - populated with JS using JSON Data file -->
+        <!-- Recipes display - populated with JS using JSON Data file -->
         <div class="row no-gutters">
             <div class="col-11 col-md-10 col-lg-9 mx-auto">
                 <div class="row no-gutters" id="recipe-card-container">
@@ -141,18 +141,18 @@
         </div>
     </main>
 
-    <!-- -------- Footer content -->
+    <!-- Footer content -->
     <footer class="row no-gutters container-fluid">
         <div class="col-12 col-md-11 col-lg-10 mx-auto align-items-center justify-content-around">
             <i></i>
             <i></i>
-            <a href="#" type="button" data-toggle="modal" data-target="#about">About</a>
+            <a href="#" data-toggle="modal" data-target="#about">About</a>
             <span>Spiro Web Development 2021</span>
         </div>
     </footer>
 
-    <!-- -------- Stats Modal -->
-    <div class="modal fade" id="amend-stats" tabindex="-1" role="dialog" aria-labelledby="Amend Stats" aria-hidden="true">
+    <!-- Stats Modal -->
+    <div class="modal fade" id="amend-stats" tabindex="-1" role="dialog" aria-hidden="true">
         <div class="modal-dialog modal-dialog-scrollable" role="document">
             <div class="modal-content">
                 <div class="modal-header">
@@ -163,22 +163,32 @@
                 </div>
                 <div class="modal-body">
                     <form id="stats">
-                        <fieldset class="form-group">    
-                            <label class="sr-only" for="name">Name</label>
-                            <input class="form-control" id="name" type="text" placeholder="Name"/>
-                            <label class="sr-only" for="age">Age</label>
-                            <input class="form-control" id="age" type="number" placeholder="Age"/>
-                            <label class="sr-only" for="number">Weight</label>
-                            <input class="form-control" id="weight" type="number" placeholder="Weight kg"/>
-                            <label class="sr-only" for="height">Height</label>
-                            <input class="form-control" id="height" type="number" placeholder="Height cm"/>
-                            <div class="form-check form-check-inline">
-                                <input id="measure-imp" class="form-check-input" type="radio" name="measures" value="imperial"/>
-                                <label class="form-check-label" for="measure-imp">Imperial (in/lbs)</label>
+                        <fieldset class="form-group">
+                            <div class="row no-gutters">    
+                                <label class="col-3 my-auto" for="name">Name</label>
+                                <input class="col-9 form-control" id="name" type="text" placeholder="Name"/>
                             </div>
-                            <div class="form-check form-check-inline mx-auto">
-                                <input id="measure-met" class="form-check-input" type="radio" name="measures" value="metric" checked/>
-                                <label class="form-check-label" for="measure-met">Metric (cm/kg)</label>
+                            <div class="row no-gutters">
+                                <label class="col-3 my-auto" for="age">Age</label>
+                                <input class="col-9 form-control" id="age" type="number" placeholder="Age"/>
+                            </div>
+                            <div class="row no-gutters">
+                                <label class="col-3 my-auto" for="weight">Weight</label>
+                                <input class="col-9 form-control" id="weight" type="number" placeholder="kg"/>
+                            </div>
+                            <div class="row no-gutters">
+                                <label class="col-3 my-auto" for="height">Height</label>
+                                <input class="col-9 form-control" id="height" type="number" placeholder="cm"/>
+                            </div>
+                            <div class="row no-gutters">
+                                <div class="col-5 mx-auto form-check form-check-inline">
+                                    <input id="measure-imp" class="form-check-input" type="radio" name="measures" value="imperial"/>
+                                    <label class="form-check-label" for="measure-imp">Imperial (in/lbs)</label>
+                                </div>
+                                <div class="col-5 mx-auto form-check form-check-inline">
+                                    <input id="measure-met" class="form-check-input" type="radio" name="measures" value="metric" checked/>
+                                    <label class="form-check-label" for="measure-met">Metric (cm/kg)</label>
+                                </div>
                             </div>
                         </fieldset>
                     </form>
@@ -191,8 +201,8 @@
         </div>
     </div>
 
-    <!-- -------- Goals Modal -->
-    <div class="modal fade" id="amend-goal" tabindex="-1" role="dialog" aria-labelledby="Amend Goals" aria-hidden="true">
+    <!-- Goals Modal -->
+    <div class="modal fade" id="amend-goal" tabindex="-1" role="dialog" aria-hidden="true">
         <div class="modal-dialog modal-dialog-scrollable" role="document">
             <div class="modal-content">
                 <div class="modal-header">
@@ -229,8 +239,8 @@
         </div>
     </div>
 
-    <!-- -------- About Modal -->
-    <div class="modal fade" id="about" tabindex="-1" role="dialog" aria-labelledby="Amend Goals" aria-hidden="true">
+    <!-- About Modal -->
+    <div class="modal fade" id="about" tabindex="-1" role="dialog" aria-hidden="true">
         <div class="modal-dialog modal-dialog-scrollable" role="document">
             <div class="modal-content">
                 <div class="modal-header">
@@ -284,7 +294,7 @@
         </div>
     </div>
 
-    <!-- -------- Add in local JS and Jasmine test files -->
+    <!-- Add in local JS and Jasmine test files -->
     <script src="scripts/stats.js"></script>
     <script src="scripts/statssummary.js"></script>
     <script src="scripts/nav.js"></script>

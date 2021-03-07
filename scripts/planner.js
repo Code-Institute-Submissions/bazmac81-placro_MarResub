@@ -30,7 +30,7 @@ function loadRecipeData(recipeData){
                 '<div class="col-xs-12 col-sm-7">'+
                     '<div class="row no-gutters">'+
                         '<div class="middle col-5 mx-auto">'+
-                            '<span class="meal-stat meal-cals">'+recipeData[i].mealStats.calories+'</span>g'+
+                            '<span class="meal-stat meal-cals">'+recipeData[i].mealStats.calories+'</span>kcal'+
                         '</div>'+
                         '<div class="middle col-5 mx-auto">'+
                             '<span class="meal-stat meal-protein">'+recipeData[i].mealStats.protein+'</span>g'+
