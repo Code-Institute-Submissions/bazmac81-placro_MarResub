@@ -14,6 +14,9 @@ function menuOption(e){
         option = e;
     }
 
+    if (window.sessionStorage.getItem("menu") && window.sessionStorage.getItem("menu") != "Meal" && window.sessionStorage.getItem("menu") != option){
+        window.sessionStorage.setItem("prevMenu", window.sessionStorage.getItem("menu"));
+    }
     window.sessionStorage.setItem("menu", option);
 
     if (option === "Your stats" || option === "Your goal"){
@@ -24,7 +27,7 @@ function menuOption(e){
         storeStats();
         window.location.assign('./planner.html');
     }
-    else if((option === "Breakfast" || option === "Lunch" || option === "Dinner" || option === "Snacks") && (window.location.pathname !== ('/planner.html') || window.location.pathname !== ('/placro/planner.html'))){
+    else if((option === "Breakfast" || option === "Lunch" || option === "Dinner" || option === "Snacks") && (window.location.pathname === ('/planner.html') || window.location.pathname === ('/placro/planner.html'))){
         filterRecipes(option);
     }
     else if(option === "Meal plan"){
