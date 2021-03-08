@@ -270,7 +270,7 @@ function readRecipeFile(file, callback){
     fileReq.send(null);
 }
 
-function manageMeal(button){
+function manageMeal(){
     var manageMeal = document.getElementsByClassName('recipeBtn');
     var recipeHeaders = document.getElementsByClassName('recipe-name');
 
