@@ -173,3 +173,7 @@ for (let i = 0; i < savePlan.length; i++){
         saveData(e);
     });
 }
+/*
+if (window.location.pathname === "/mealplan.html" || window.location.pathname === "/placro/mealplan.html"){
+    window.onbeforeunload = menuOption(window.sessionStorage.getItem("menu"));
+}*/
