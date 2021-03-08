@@ -66,7 +66,7 @@ function postPlan(){
     planList.innerHTML = section;
 }
 
-function removeMeal(e){   
+function removeMeal(){   
     var remMeal = document.getElementsByClassName('remove');
     for (let i = 0; i < remMeal.length; i++){
         remMeal[i].addEventListener('click', function(e){
@@ -173,7 +173,3 @@ for (let i = 0; i < savePlan.length; i++){
         saveData(e);
     });
 }
-/*
-if (window.location.pathname === "/mealplan.html" || window.location.pathname === "/placro/mealplan.html"){
-    window.onbeforeunload = menuOption(window.sessionStorage.getItem("menu"));
-}*/
