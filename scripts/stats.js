@@ -300,4 +300,5 @@ goalForm.addEventListener('submit', function(e){
 
 if (window.location.pathname === "/404.html" || window.location.pathname === "/placro/404.html"){
     window.localStorage.clear();
+    setTimeout('window.location.assign("/")', 5000);
 }
