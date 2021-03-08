@@ -80,11 +80,11 @@ h1, h2 {
 
 /*---------- Links and buttons -----*/
 
-a, a:visited, a:not([href]), .meal {
+a, a:visited, a:not([href]), .meal, .recipe-name {
     color: #f46036ff;
 }
 
-.nav a.current, a:active, a:hover, a:not([href]):hover {
+.nav a.current, a:active, a:hover, a:not([href]):hover, .recipe-name:hover {
     color: #30bcedff;
     text-decoration: none;
 }
@@ -328,7 +328,7 @@ footer div{
     background-color: #082649ff;
     height: 50px;
     display: flex;
-    align-items: middle;
+    align-items: center;
     margin-top: 20px;
 }
 

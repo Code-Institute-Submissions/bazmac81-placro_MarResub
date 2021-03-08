@@ -161,7 +161,10 @@ _[Back to Contents](#Contents)_
 
 ## Testing <a name="testing"></a>
 ### HTML and CSS check using WC3
-   - All html, CSS, and Javascript files were validated using the W3C validation tools. This did highlight some errors and warnings in relation to the use of some tags and the nesting of tags:  
+   - All html, CSS, and Javascript files were validated using the W3C validation tools and JSHint.
+     - All HTML files pass with out any errors or warnings ![HTML validated](http://jigsaw.w3.org/css-validator/images/vcss)
+     - All CSS passes withouth any errors or warnings ![CSS validated](http://jigsaw.w3.org/css-validator/images/vcss)
+     - All JS content, when entered as one file, passes JSHint validation with minimal warnings, one related to us of Bootstrap JQuery and the other related to looping though form elements user activity. The output can be seen here
 
 ### User story review
 To validate that the site achieves the goals set out in the planning stage, below are the user stories that satisfy each requirement in this release.
@@ -202,10 +205,13 @@ _[Back to Contents](#Contents)_
 -------------
 ## Bugs and De-bugging <a name="bugs"></a>
 
-
 - Form measurements switch failed to work
     - **Issue**: Web app captures event when user switches between imperial and metric. This was failing when deployed.
     - **Fix**: Correct a variable was incorrectly names causing the event to fail in completing.
+
+- 'Your Stats' Form in nav bar failed to validate entries when Changed
+    - **Issue**: Lack of validation causing the site to mishandle incorrect data required to update the planner on the fully
+    - **Fix**: Applied more thorough validation to the form and ensured an status value was returned for the nav from entries to correctly handle incorrect data and prevent it from being submitted.
 
 - Lack of direction on meal plan builing page
     - **Issue**: Users found that once they finished selecting their meals, they were unclear where to go next.
@@ -227,6 +233,14 @@ _[Back to Contents](#Contents)_
     - **Issue**: The 'Go Back' button returned a 404 error when used to go back and re-enter / amend any stats. This same issue affected any code that made a page reference for checking the current page or loading the next page in a number of areas.
     - **Fix**: Correct the `window.location.assign` function to ensure it copes with various types of deployment.
 
+- Menu navigation for updating stats
+    - **Issue**: 'Your stats' section does not show labels to correcly identify content to signpost meaning to user
+    - **Fix**: Reintroduced labels to forms to allow for simple direction for users as well as simpler accessibilty
+
+- Recipe names not obviously an interactive object
+    - **Issue**: The recipe cards making up the meal planning selection are not obviously interactive outside of the Add / Remove buttons 
+    - **Fix**: Applied link colouring and hover styling to them to help signpost they are interact.
+
 ### Known Issues
 Below is a list of known bugs that are either not able to be resolved at this time due or are outside the scope of this project. They will be factored into the development of future releases to have them resolved.
 
@@ -234,12 +248,6 @@ Below is a list of known bugs that are either not able to be resolved at this ti
     - Placeholder images assigned to each recipe type
     - Recipe description not currently included, data contains placeholder text
     - Recipe ingredients is placeholder text
-
-- Planner.html
-    - Recipe header incorrect colour, should be orange to denote link / interactive inline with site design
-
-- Menu navigation
-    - Your stats section does not show labels to correcly identify content to signpost meaning to user
 
 _[Back to Contents](#Contents)_
 
