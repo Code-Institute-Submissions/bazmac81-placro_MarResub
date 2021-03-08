@@ -164,8 +164,8 @@ window.addEventListener('load', function(){
     removeMeal();
 });
 
-var shopListBtn = document.getElementById('list');
-shopListBtn.addEventListener('click', shoppingList, false);
+var shopList = document.getElementById('shopping-list');
+shopList.addEventListener('focus', shoppingList, false);
 
 var savePlan = document.getElementsByClassName('save');
 for (let i = 0; i < savePlan.length; i++){
