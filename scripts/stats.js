@@ -298,4 +298,6 @@ goalForm.addEventListener('submit', function(e){
     submitStats(e);
 });
 
-
+if (window.location.pathname === "/404.html" || window.location.pathname === "/placro/404.html"){
+    window.localStorage.clear();
+}
