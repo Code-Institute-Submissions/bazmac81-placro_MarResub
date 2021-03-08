@@ -74,7 +74,6 @@ function updateStats(e){
         pcCalc();
         mealPcCalc();
     }
-    console.log(success);
     //Close the BS Modal window
     if (success === 0){
         $(closemodal).modal('toggle');
