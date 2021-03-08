@@ -63,7 +63,7 @@ function updateStats(e){
     var closemodal = '#' + button.parentNode.parentNode.parentNode.parentNode.getAttribute('id');
         
     //Re-calculate the numbers and write them to memory
-    statsCapture();
+    let success = statsCapture();
     submitStats();
 
     //Write the numbers to the page
@@ -74,9 +74,11 @@ function updateStats(e){
         pcCalc();
         mealPcCalc();
     }
-
+    console.log(success);
     //Close the BS Modal window
-    $(closemodal).modal('toggle');
+    if (success === 0){
+        $(closemodal).modal('toggle');
+    }
 }
 
 menu.addEventListener('click', function(e){

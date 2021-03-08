@@ -2,7 +2,6 @@
 //Declare global key variables
 const lbsMulti = 2.20462;
 const inchMulti = 2.54;
-const $ = window.$;
 var userStats = {
     name:'',
     age:0,
@@ -77,7 +76,7 @@ function statsCapture(e){
     }
 
     let error = 0;
-    console.log(error);
+
     //Get user entered data from form
     let n = document.getElementById('name');
     let a = document.getElementById('age'); 
@@ -152,12 +151,17 @@ function statsCapture(e){
     
     //Calculate the calories based on the user input
     macros.calories = tdeeCalc(bmrCalc(userStats.age, userStats.weight, userStats.height));
-    console.log(error);
     if(error === 0){
         if (window.location.pathname === '/' || window.location.pathname === "/placro/"){
             document.getElementById('statSection').classList.toggle('d-none');
             document.getElementById('goalSection').classList.toggle('d-none');  
         }
+        else{
+            return(0);
+        }
+    }
+    else{
+        return(error);
     }
 }
 
