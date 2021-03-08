@@ -56,19 +56,11 @@ function macrosCalc(cals, g) {
 
 // Using user stats calculate Base Metabolic Rate
 function bmrCalc(a, w, h) {
-    var bmr = 0;
+    let bmr = 0;
 
-    if(typeof(a) == "number" && typeof(w) == "number" && typeof(h) == "number") {
-        if(a > 0 && h > 0 && w > 0){
-            bmr = Math.ceil(((w * 10) + (h * 6.25) - (a * 5)) + 5);
-            return bmr;
-        }
-        else{
-            return "Please make sure you are not using negative numbers";    
-        }
-    }
-    else {
-        return "Please provide all of your stats as numbers.";
+    if(a > 0 && h > 0 && w > 0){
+        bmr = Math.ceil(((w * 10) + (h * 6.25) - (a * 5)) + 5);
+        return bmr;
     }
 }
 
@@ -85,7 +77,7 @@ function statsCapture(e){
     }
 
     let error = 0;
-
+    console.log(error);
     //Get user entered data from form
     let n = document.getElementById('name');
     let a = document.getElementById('age'); 
@@ -93,6 +85,7 @@ function statsCapture(e){
     let w = document.getElementById('weight');
 
     //Assign data to variables and convert to numbers
+    //check name value
     if (n.value != ""){
         userStats.name = n.value;
     }
@@ -100,25 +93,54 @@ function statsCapture(e){
         n.setAttribute('placeholder', 'Please enter your name');
         error += 1;
     }
-    if (a.value != "") {
-        userStats.age = parseInt(a.value);
+    //check age value
+    if (a.value != ""){
+        if(typeof(parseInt(a.value)) == "number" && parseInt(a.value) > 0) {
+            userStats.age = a.value;
+        }
+        else {
+            a.value = null;
+            console.log("Age is negative");
+            a.setAttribute('placeholder', 'Please enter an age greater than 0');
+            error += 1;
+        }
     }
-    else{
+    else {
         a.setAttribute('placeholder', 'Please enter your age');
         error += 1;
     }
-    if (h.value != "") {
-        userStats.weight = parseInt(w.value);
+
+    //check weight value
+    if (w.value != ""){
+        if(typeof(parseInt(w.value)) == "number" && parseInt(w.value) > 0) {
+            userStats.weight = w.value;
+        }
+        else {
+            w.value = null;
+            console.log("Weight is negative");
+            w.setAttribute('placeholder', 'Please enter a weight greater than 0');
+            error += 1;
+        }
+    }
+    else {
+        w.setAttribute('placeholder', 'Please enter your weight');
+        error += 1;
+    }
+
+    //check height value
+    if (h.value != ""){
+        if(typeof(parseInt(h.value)) == "number" && parseInt(h.value) > 0) {
+            userStats.height = h.value;
+        }
+        else {
+            h.value = null;
+            console.log("height is negative");
+            h.setAttribute('placeholder', 'Please enter a height greater than 0');
+            error += 1;
+        }
     }
     else{
         h.setAttribute('placeholder', 'Please enter your height');
-        error += 1;
-    }
-    if (w.value != "") {
-        userStats.height = parseInt(h.value);
-    }
-    else{
-        w.setAttribute('placeholder', 'Please enter your weight');
         error += 1;
     }
 
@@ -130,6 +152,7 @@ function statsCapture(e){
     
     //Calculate the calories based on the user input
     macros.calories = tdeeCalc(bmrCalc(userStats.age, userStats.weight, userStats.height));
+    console.log(error);
     if(error === 0){
         if (window.location.pathname === '/' || window.location.pathname === "/placro/"){
             document.getElementById('statSection').classList.toggle('d-none');
