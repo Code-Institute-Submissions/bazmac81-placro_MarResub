@@ -75,7 +75,7 @@ function welcomMsg(){
     let message = document.getElementById('message');
 
     header.textContent = "Welcome back to Placro!";
-    message.textContent = "Placro is ready with your meal plan that you saved last time you visited. Update your plan either by adjusting your stats or goals, or by changing the meals in your plan. Remember to save the full plan so your changes are here for next time you come back.";
+    message.textContent = "Placro is ready with your meal plan that you saved last time you visited. Update your plan either by adjusting your stats or goals since your last visit by using the menu options above, or by changing the meals in your plan. Remember to save the full plan so your changes are here for the next time you come back.";
 }
 
 function getPrevData(){
