@@ -1,32 +1,33 @@
+/*jshint esversion: 6 */
 function retrieveData(){
     userStats = JSON.parse(window.sessionStorage.getItem('userStats'));
     modifiers = JSON.parse(window.sessionStorage.getItem('modifiers'));
     macros = JSON.parse(window.sessionStorage.getItem('macros'));
-    
+
     if(JSON.parse(window.sessionStorage.getItem('planStats')) !== null){
         if(window.location.pathname === "/planner.html" || window.location.pathname === "/mealplan.html" || window.location.pathname === "/placro/planner.html" || window.location.pathname === "/placro/mealplan.html"){
             retrievePlan();
-        };
-    };
+        }
+    }
     writeStats();
-};
+}
 
 function retrievePlan(){
     mealPlan = JSON.parse(window.sessionStorage.getItem('mealPlan'));
     planStats = JSON.parse(window.sessionStorage.getItem('planStats'));
     mealStats = JSON.parse(window.sessionStorage.getItem('mealStats'));
-};
+}
 
 function writeStats(){
-    macrosHTML = document.getElementsByClassName('stat');
+    let macrosHTML = document.getElementsByClassName('stat');
     let keys = Object.values(macros);
-    for (i = 0; i < macrosHTML.length; i++){
+    for (let i = 0; i < macrosHTML.length; i++){
         macrosHTML[i].firstChild.textContent = keys[i];
-    };
-};
+    }
+}
 
 function pcCalc(){
-    var statsPc = document.getElementsByClassName('stat_pc');
+    let statsPc = document.getElementsByClassName('stat_pc');
     
     let pcValues = Object.values(macros);
 
@@ -42,11 +43,11 @@ function pcCalc(){
             statsPc[i].firstChild.textContent = planPc[i] + '%';
         } 
     }
-};
+}
 
 function getOption(e){
-    var opt = e.target;
-    var o = '';
+    let opt = e.target;
+    let o = '';
 
     //if has class 'meal' send textContent
     if(opt.parentNode.classList.contains('meal')){
@@ -55,27 +56,27 @@ function getOption(e){
     else {
         o = e.target.getAttribute('id');
         opt = o.charAt(0).toUpperCase() + o.substring(1, o.indexOf('_'));
-    };
+    }
 
     menuOption(opt);
-};
+}
 
 function mOpts(){
-    var mealOpts = document.getElementsByClassName('meal');
+    let mealOpts = document.getElementsByClassName('meal');
     for(let i = 0; i < mealOpts.length; i++){
         mealOpts[i].addEventListener('click', function(e){
             getOption(e);
         });
-    }; 
-};
+    }
+}
 
 function welcomMsg(){
     let header = document.getElementById('header');
     let message = document.getElementById('message');
 
-    header.textContent = "Welcome back to Placro!"
-    message.textContent = "Placro is ready with your meal plan that you saved last time you visited. Update your plan either by adjusting your stats or goals, or by changing the meals in your plan. Remember to save the full plan so your changes are here for next time you come back."
-};
+    header.textContent = "Welcome back to Placro!";
+    message.textContent = "Placro is ready with your meal plan that you saved last time you visited. Update your plan either by adjusting your stats or goals, or by changing the meals in your plan. Remember to save the full plan so your changes are here for next time you come back.";
+}
 
 function getPrevData(){
     userStats = JSON.parse(window.localStorage.getItem('userStats'));
@@ -87,7 +88,7 @@ function getPrevData(){
     storeStats();
     storePlan();
     retrievePlan();
-};
+}
 
 function checkReturn(){
     let check = JSON.parse(window.localStorage.getItem('mealPlan')) || [];
@@ -95,14 +96,14 @@ function checkReturn(){
         getPrevData();
         if(window.location.pathname === "/stats.html" || window.location.pathname === "/placro/stats.html"){
             welcomMsg();
-        };
-    };
-};
+        }
+    }
+}
 
 window.addEventListener('load', function(){ 
     if(window.location.pathname === "/stats.html" || window.location.pathname === "/placro/stats.html"){
         checkReturn();
-    };
+    }
     retrieveData();
 });
 mOpts();

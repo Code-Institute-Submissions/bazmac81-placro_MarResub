@@ -1,3 +1,4 @@
+/*jshint esversion: 6 */
 function postPlan(){
     var meals = ['Breakfast', 'Lunch', 'Dinner', 'Snack'];
     var planList = document.getElementById('complete-plan');
@@ -32,11 +33,11 @@ function postPlan(){
                     '</div>'+
                 '</div>'+
             '</div>';
-        for (i = 0; i < meals.length; i++){
+        for (let i = 0; i < meals.length; i++){
             section += 
                 '<div class="meal-section">'+
                     '<h3 class="heading page-section"">'+meals[i]+'</h3>';
-            for(j = 0; j < mealPlan.length; j++){
+            for(let j = 0; j < mealPlan.length; j++){
                 if(mealPlan[j].type === meals[i].toLowerCase()){  
                     section+=
                         '<div class="row no-gutters">'+
@@ -52,27 +53,27 @@ function postPlan(){
                             '</div>'+
                             '<div class="row no-gutters details">'+
                                 '<div class="col-11 d-none">'+
-                                    +mealPlan[j].ing+
+                                    mealPlan[j].ing+
                                 '</div>'+
                             '</div>'+
                         '</div>';
-                };
-            };
+                }
+            }
             section+= 
                 '</div>';
-        };
-    };
+        }
+    }
     planList.innerHTML = section;
-};
+}
 
 function removeMeal(e){   
     var remMeal = document.getElementsByClassName('remove');
-    for (i = 0; i < remMeal.length; i++){
+    for (let i = 0; i < remMeal.length; i++){
         remMeal[i].addEventListener('click', function(e){
             delFromPlan(e);
         });
-    };
-};
+    }
+}
 
 function delFromPlan(e){
     var selected = e.target;
@@ -86,10 +87,10 @@ function delFromPlan(e){
             mealStats[mealType.toLowerCase()] -= mealPlan[i].cals;
             for(let j = 0; j < m.length; j++){
                 planStats[j] -= mealPlan[i][m[j]];
-            };
+            }
             mealPlan.splice(i, 1);
-        };
-    };
+        }
+    }
 
     rowToRem.classList.add('d-none');
     storeStats();
@@ -98,7 +99,7 @@ function delFromPlan(e){
     if(mealPlan.length === 0){
         postPlan();
     }
-};
+}
 
 function saveData(e){
     let sd = e.target;
@@ -118,13 +119,13 @@ function saveData(e){
         sd.classList.toggle('rem');
         sd.textContent = 'Save';
     }
-};
+}
 
 // Create shopping list items using meal plan ingredients
 function shoppingList(){
     let listItems = [];
     let list = document.getElementById('list-items');
-    let listHTML, item = ''
+    let listHTML, item = '';
 
     for(let i = 0; i < mealPlan.length; i++){
         for(let j = 0; j < mealPlan[i].ing.length; j++){
@@ -135,14 +136,14 @@ function shoppingList(){
                     //Remove duplicates and water from shopping list
                     if (item === listItems[k] || item === 'Water'){
                         check += 1;
-                    };
-                };
+                    }
+                }
                 if (check === 0){
                     listItems.push(item);
-                };
-            };
-        };
-    };
+                }
+            }
+        }
+    }
     
     listHTML = 
             '<ul>';
@@ -150,13 +151,13 @@ function shoppingList(){
     for(let i = 0; i < listItems.length; i++){
         listHTML += 
             '<li>'+listItems[i]+'</li>';
-    };
+    }
     
     listHTML += 
         '</ul>'; 
         
     list.innerHTML = listHTML;
-};
+}
 
 window.addEventListener('load', function(){
     postPlan();
@@ -164,11 +165,11 @@ window.addEventListener('load', function(){
 });
 
 var shopListBtn = document.getElementById('list');
-window.addEventListener('click', shoppingList, false);
+shopListBtn.addEventListener('click', shoppingList, false);
 
 var savePlan = document.getElementsByClassName('save');
 for (let i = 0; i < savePlan.length; i++){
     savePlan[i].addEventListener('click', function(e){
         saveData(e);
     });
-};
+}

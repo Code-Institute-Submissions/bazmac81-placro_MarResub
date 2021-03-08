@@ -1,9 +1,7 @@
+/*jshint esversion: 6 */
 //Plans refer to cals, prot, carbs, fat stats
 var planPc = [0, 0, 0, 0];
 var mealPc = [0, 0, 0, 0];
-
-//Array to store users selected recipes
-//var mealPlan = [];
 
 function loadRecipeData(recipeData){
     var recipeContainer = document.getElementById('recipe-card-container');
@@ -60,19 +58,19 @@ function loadRecipeData(recipeData){
             '</div>'+
             '<div class="row no-gutters d-none details mt-2">'+
                 '<div class="col-11 mx-auto">'+
-                    '<h3 class="heading">Ingredients:</h3>'
+                    '<h3 class="heading">Ingredients:</h3>'+
                     '<ul>';
 
         for(let k = 0; k < recipeData[i].ingredients[0].length; k++){
             recipeListHTML +=
             '<li class="meal-ings">'+recipeData[i].ingredients[0][k]+' '+recipeData[i].ingredients[1][k]+' - '+recipeData[i].ingredients[2][k]+'</li>';
-        };
+        }
         recipeListHTML +=
                     '</ul>'+
                 '</div>'+
             '</div>'+
         '</div>';
-    };
+    }
     recipeContainer.innerHTML = recipeListHTML;
     
     //check to see if mealPlan has data - update 
@@ -85,14 +83,14 @@ function loadRecipeData(recipeData){
                     mealPlanRec[i].parentNode.nextSibling.firstChild.classList.remove('add');
                     mealPlanRec[i].parentNode.nextSibling.firstChild.classList.add('rem');
                     mealPlanRec[i].parentNode.nextSibling.firstChild.textContent = 'Remove';
-                };
-            };
-        };
+                }
+            }
+        }
     }
 
     //only show recipes based on menu choice that loaded the page
     filterRecipes(menuChoice);
-};
+}
 
 // Refilter recipes by meal type based on menu selection
 function filterRecipes(opt){
@@ -111,13 +109,13 @@ function filterRecipes(opt){
         }
         else if(meals[i].classList.contains(opt.toLowerCase()) !== true && meals[i].classList.contains('d-none') !== true){
             meals[i].classList.add('d-none');
-        };
-    };
-};
+        }
+    }
+}
 
 // Calculate % of calories allocated to each meal type
 function mealPcCalc(){
-    mealPcGuage = document.getElementsByClassName('meal_pc');
+    let mealPcGuage = document.getElementsByClassName('meal_pc');
 
     // Check value of mealStats then calc and write meal % to HTML 
     let mSVals = Object.values(mealStats);
@@ -127,14 +125,14 @@ function mealPcCalc(){
         }
         else {
             mealPc[i] = 0;
-        };
+        }
         mealPcGuage[i].textContent = mealPc[i];
-    };
-};
+    }
+}
 
 function mealCalc(operator, rCard){
     var mt = rCard.classList;
-    var mc = rCard.getElementsByClassName('meal-stat')
+    var mc = rCard.getElementsByClassName('meal-stat');
     var mealCals = parseInt(mc[0].textContent,10);
     
     if(mt.contains('breakfast')){
@@ -176,16 +174,16 @@ function mealCalc(operator, rCard){
                 mealStats.snacks -= mealCals;
                 break;
         }
-    };
+    }
 
     mealPcCalc();
-};
+}
 
 function toggleRecipeBtn(btn, currentBtnClass, newBtnClass, btnText){
     btn.classList.remove(currentBtnClass);
     btn.classList.add(newBtnClass);
     btn.textContent = btnText;
-};
+}
 
 //Add recipe details to meal plan to carry over into Meal Plan page
 function addToPlan(rCard, s){
@@ -197,10 +195,10 @@ function addToPlan(rCard, s){
     meal.carb = rCard.querySelector('.meal-carb').textContent;
     meal.fat = rCard.querySelector('.meal-fat').textContent;
     meal.ing = [];
-    ings = rCard.querySelectorAll('.meal-ings');
+    let ings = rCard.querySelectorAll('.meal-ings');
     for (let i = 0; i < ings.length; i++){
         meal.ing[i] = ings[i].textContent;
-    };
+    }
 
     if(rCard.classList.contains('breakfast')){
         meal.type = 'breakfast';
@@ -210,7 +208,7 @@ function addToPlan(rCard, s){
         meal.type = 'dinner';
     } else if (rCard.classList.contains('snack')) {
         meal.type = 'snack';
-    };
+    }
 
     if(s === 'add'){
         mealPlan.push(meal); 
@@ -220,21 +218,21 @@ function addToPlan(rCard, s){
             if(mealPlan[i].name === meal.name){
                 mealPlan.splice(i, 1);
             }
-        };
-    };
-};
+        }
+    }
+}
 
 function recCalc(operator, rStats){
-    for(i = 0; i < rStats.length; i++){
+    for(let i = 0; i < rStats.length; i++){
         if(operator === "add"){
             planStats[i] += parseInt(rStats[i].textContent,10) || rStats[i];
         }
         else {
             planStats[i] -= parseInt(rStats[i].textContent,10) || rStats[i];
-        };
-    };
+        }
+    }
     pcCalc();
-};
+}
 
 // Capture recipe btn actived and update trackers and btn state
 function mealAddRemove(e){
@@ -255,10 +253,10 @@ function mealAddRemove(e){
         mealCalc('sub', recipeCard); // update relevant meal type %'s as a % of calories spent
         toggleRecipeBtn(recipeBtn, 'rem', 'add', 'Add');
         state = 'rem';
-    };
+    }
 
     addToPlan(recipeCard, state);
-};
+}
 
 function readRecipeFile(file, callback){
     var fileReq = new XMLHttpRequest();
@@ -267,10 +265,10 @@ function readRecipeFile(file, callback){
     fileReq.onreadystatechange = function(){
         if(fileReq.readyState === 4 && fileReq.status === 200){
             callback(fileReq.responseText);
-        };
+        }
     };
     fileReq.send(null);
-};
+}
 
 function manageMeal(button){
     var manageMeal = document.getElementsByClassName('recipeBtn');
@@ -280,73 +278,73 @@ function manageMeal(button){
         manageMeal[i].addEventListener('click', function(e){
             mealAddRemove(e);
         });
-    };
+    }
 
     for(let i = 0; i < recipeHeaders.length; i++){
         recipeHeaders[i].addEventListener('click', function(e){
             showDetail(e);
         });
-    };
-};
+    }
+}
 
 //Reset the plan and update the trackers % values back to zero
 function resetAll(){
-    var selMeals = document.querySelectorAll('.rem');
-    var selMealStats = [];
-    var planStatsAdjust = [0, 0, 0, 0];
-    var remMealType = [];
+    let selMeals = document.querySelectorAll('.rem');
+    let selMealStats = [];
+    let planStatsAdjust = [0, 0, 0, 0];
+    //var remMealType = [];
 
     // Get the macro stats for each recipe added to the meal plan
     for (let i = 0; i < selMeals.length; i++){
         selMealStats[i] = selMeals[i].parentNode.parentNode.parentNode.getElementsByClassName('meal-stat');
         mealCalc('sub', selMeals[i].parentNode.parentNode.parentNode);
-    };
+    }
 
     // Get total macros of all selected recipes
     for(let x = 0; x < 4; x++){
         for (let y = 0; y < selMealStats.length; y++){
             planStatsAdjust[x] += parseInt(selMealStats[y][x].textContent, 10);
-        };
-    };
+        }
+    }
     
     // Reset recipe button states back to Add
     for (let i = 0; i < selMeals.length; i++){
         toggleRecipeBtn(selMeals[i], 'rem', 'add', 'Add');
         mealPlan.pop();
-    };
+    }
 
     recCalc('sub', planStatsAdjust);
-};
+}
 
 function showDetail(e){
-    var rName = e.target;
-    var rCard = rName.parentNode.parentNode.parentNode;
-    var rDetails = rCard.getElementsByClassName('details');
+    let rName = e.target;
+    let rCard = rName.parentNode.parentNode.parentNode;
+    let rDetails = rCard.getElementsByClassName('details');
     
     for (let i = 0; i < rDetails.length; i++){
         rDetails[i].classList.toggle('d-none');
-    };   
-};
+    } 
+}
 
 if (window.location.pathname === "/planner.html" || window.location.pathname === "/placro/planner.html"){
-    var resetCat = document.getElementsByClassName('resetBtn');
-    var mpBtn = document.getElementsByClassName('mealPlan');
+    let resetCat = document.getElementsByClassName('resetBtn');
+    let mpBtn = document.getElementsByClassName('mealPlan');
     
-    for(i = 0; i < resetCat.length; i++){
+    for(let i = 0; i < resetCat.length; i++){
         resetCat[i].addEventListener('click', resetAll, false);
         mpBtn[i].addEventListener('click', function(e){
             menuOption(e);
         });
-    };
-};
+    }
+}
 
 if(window.location.pathname === "/planner.html" || window.location.pathname === "/placro/planner.html"){
     window.addEventListener('load', readRecipeFile("data/recipes.JSON", function(text){
-        var data = (JSON.parse(text));
+        let data = (JSON.parse(text));
         retrieveData(); //function in statsSummary.js that retrieves sessionStorage data
         pcCalc(); // function in statsSummary.js that calculates % of macros allocated
         mealPcCalc();
         loadRecipeData(data);
         manageMeal();
     }));
-};
+}

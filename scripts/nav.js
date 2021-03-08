@@ -1,17 +1,18 @@
+/*jshint esversion: 6 */
 var menu = document.getElementById('navbarMenu');
 var statsChangeSubmit = document.getElementById('update-stats');
 var goalsChangeSubmit = document.getElementById('update-goal');
 
 // Capture menu option selected and direct based on choice made
 function menuOption(e){
-    var option = ''
+    let option = '';
     
     if (e.target){
         option = e.target.textContent;
     }
     else{
         option = e;
-    };
+    }
 
     window.sessionStorage.setItem("menu", option);
 
@@ -29,32 +30,32 @@ function menuOption(e){
     else if(option === "Meal plan"){
         storeStats();
         window.location.assign('./mealplan.html');
-    };
-};
+    }
+}
 
 // Load Stats form with user entered data ready to change
 function changeStats(){
-    var statsForm = document.getElementById('stats');
-    var fields = statsForm.getElementsByClassName('form-control');
+    let statsForm = document.getElementById('stats');
+    let fields = statsForm.getElementsByClassName('form-control');
 
     let keys = Object.keys(userStats);
-    for(i = 0; i < fields.length; i++){
+    for(let i = 0; i < fields.length; i++){
         fields[i].value = userStats[keys[i]];
-    };
-};
+    }
+}
 
 // Load Goals form with user data ready to change
 function changeGoal(){
-    var goalForm = document.getElementsByName('goals');
+    let goalForm = document.getElementsByName('goals');
 
-    for(i = 0; i < goalForm.length; i++){
+    for(let i = 0; i < goalForm.length; i++){
         if(goalForm[i].value === modifiers.goal && goalForm[i].checked === false){
             goalForm[i].checked = true;
         } else if (goalForm[i].value !== modifiers.goal && goalForm[i].checked === true){
             goalForm[i].checked = false;
-        };
-    };
-};
+        }
+    }
+}
 
 // Take the navmenu form stats to recalculate and display new figures
 function updateStats(e){
@@ -72,11 +73,11 @@ function updateStats(e){
     if(window.location.pathname === "/mealplan.html" || window.location.pathname === "/planner.html" || window.location.pathname === "/placro/planner.html" || window.location.pathname === "/placro/mealplan.html"){
         pcCalc();
         mealPcCalc();
-    };
+    }
 
     //Close the BS Modal window
-    $(closemodal).modal('toggle')
-};
+    $(closemodal).modal('toggle');
+}
 
 menu.addEventListener('click', function(e){
     menuOption(e);
@@ -85,5 +86,5 @@ statsChangeSubmit.addEventListener('click', function(e) {
     updateStats(e);
 });
 goalsChangeSubmit.addEventListener('click', function(e){
-    updateStats(e)
+    updateStats(e);
 });
