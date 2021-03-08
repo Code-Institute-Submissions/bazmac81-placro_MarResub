@@ -162,9 +162,9 @@ _[Back to Contents](#Contents)_
 ## Testing <a name="testing"></a>
 ### HTML and CSS check using WC3
    - All html, CSS, and Javascript files were validated using the W3C validation tools and JSHint.
-     - All HTML files pass with out any errors or warnings ![HTML validated](http://jigsaw.w3.org/css-validator/images/vcss)
+     - All HTML files pass with out any errors or warnings
      - All CSS passes withouth any errors or warnings ![CSS validated](http://jigsaw.w3.org/css-validator/images/vcss)
-     - All JS content, when entered as one file, passes JSHint validation with minimal warnings, one related to us of Bootstrap JQuery and the other related to looping though form elements user activity. The output can be seen here
+     - All JS content, when entered as one file, passes JSHint validation with minimal warnings, one related to us of Bootstrap JQuery and the other related to looping though form elements user activity. The output can be seen [here](design/screenshots/jshintresults.png)
 
 ### User story review
 To validate that the site achieves the goals set out in the planning stage, below are the user stories that satisfy each requirement in this release.
